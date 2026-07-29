@@ -4,9 +4,10 @@
 official NEC2C project, does not claim succession to that project, and does not claim endorsement
 by Neoklis Kyriazis.
 
-The current repository establishes only the preservation intake of the original-author NEC2C
-1.3.1 distribution. It has not compiled, executed, patched, formatted, normalized, modernized,
-or otherwise modified the preserved source.
+The repository preserves the original-author NEC2C 1.3.1 distribution and records the
+v0.0.5f-A2 unmodified Windows x64 compiler baseline. Two authenticated fresh extractions reached
+the same MSVC failure at the original `unistd.h` dependency. No original byte was patched,
+formatted, normalized, modernized, or otherwise modified, and no executable was produced.
 
 ## Preservation identity
 
@@ -57,6 +58,22 @@ The verifier performs no network access and writes no files. It recomputes the f
 SHA-256, checks the archive byte count, verifies every extracted file from raw bytes, and detects
 missing, extra, linked, reparse-point, or other unsupported objects in the preserved tree.
 
+## Windows x64 compiler baseline
+
+The A2 build entry point is:
+
+```powershell
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass `
+    -File .\build-support\windows-x64\build.ps1 -BuildId <fresh-id>
+```
+
+It authenticates and freshly extracts the archive before compiling, keeps all generated
+material ignored, and reverifies source and preservation state afterward. The installed
+environment had no GCC/MinGW-w64 or Clang route. The only native AMD64 candidate, MSVC 19.29,
+failed consistently because the untouched source requires `unistd.h`. See
+[docs/WINDOWS_X64_UNMODIFIED_BUILD.md](docs/WINDOWS_X64_UNMODIFIED_BUILD.md) and
+[manifests/windows-x64-unmodified-build-v1.json](manifests/windows-x64-unmodified-build-v1.json).
+
 ## Relationship to HF Propagation Control
 
 HF Propagation Control remains a separate application. Its planned integration uses a documented
@@ -75,10 +92,10 @@ provenance and release management; it is not claimed to be a complete operating-
 
 ## Current boundary
 
-This intake contains no solver build, binary, release, Git LFS object, GitHub Actions workflow,
-submodule, package dependency, or Software Heritage submission. The next job, after human review,
-is v0.0.5f-A2: create a reproducible unmodified Windows x64 build outside the immutable upstream
-tree. A2 has not started.
+This repository contains no solver executable, release, Git LFS object, GitHub Actions workflow,
+submodule, package dependency, or Software Heritage submission. A2 establishes a reproducible
+unmodified compile failure, not a Windows port. Portability changes require a separate reviewed
+milestone outside the immutable upstream tree.
 
 See [PROVENANCE.md](PROVENANCE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
 [MAINTENANCE.md](MAINTENANCE.md) for the evidence and controls.

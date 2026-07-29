@@ -1,4 +1,6 @@
 .intake-temp/
+.build-output/
+.build-temp/
 .verification-temp/
 __pycache__/
 *.py[cod]

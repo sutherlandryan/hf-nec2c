@@ -29,6 +29,18 @@ After the initial `main` and tags are published, all source, build, and tooling 
 feature branches and pull requests. The immutable `archive/` and `upstream/` trees remain
 unchanged. Build systems and maintained source belong in separate project-authored paths.
 
+## Unmodified Windows baseline
+
+The v0.0.5f-A2 external driver authenticates a fresh extraction, compiles only from that
+disposable source tree, and performs source and repository preservation checks after every
+attempt. Its versioned result is a repeatable MSVC failure at the original `unistd.h` dependency;
+no executable exists.
+
+Local `.build-temp/` and `.build-output/` evidence is ignored and must never be staged,
+published, or copied into `upstream/`. Before removing an A2 temporary directory, resolve the
+exact target and confirm that it is a task-created child of one of those two repository-local
+roots. Never use a broad cleanup command.
+
 ## Post-review replication procedures
 
 The following actions are intentionally deferred until a human has reviewed the public intake.
