@@ -1,0 +1,4 @@
+.intake-temp/
+.verification-temp/
+__pycache__/
+*.py[cod]
