@@ -1,0 +1,40 @@
+# hf-nec2c original archive member listing schema v1
+# archive: archive/nec2c-1.3.1.tar.bz2
+# member-count: 35
+# String values are JSON encoded; fields are tab-separated.
+archive_order	path_json	type	typeflag_hex	size_bytes	mode_octal	mtime_epoch	mtime_utc	uid	gid	uname_json	gname_json	link_target_json	device_major	device_minor	pax_headers_json
+1	"nec2c-1.3.1"	directory	35	0	0755	1701496474	2023-12-02T05:54:34Z	1000	1000	""	""	""	0	0	{}
+2	"nec2c-1.3.1/Makefile.am"	regular_file	00	975	0644	1359702471	2013-02-01T07:07:51Z	1000	1000	""	""	""	0	0	{}
+3	"nec2c-1.3.1/NEWS"	regular_file	00	27	0644	1359702968	2013-02-01T07:16:08Z	1000	1000	""	""	""	0	0	{}
+4	"nec2c-1.3.1/aclocal.m4"	regular_file	00	43971	0644	1701494019	2023-12-02T05:13:39Z	1000	1000	""	""	""	0	0	{}
+5	"nec2c-1.3.1/compile"	regular_file	00	7333	0755	1371879424	2013-06-22T05:37:04Z	1000	1000	""	""	""	0	0	{}
+6	"nec2c-1.3.1/config.sub"	regular_file	00	34072	0755	1634604407	2021-10-19T00:46:47Z	1000	1000	""	""	""	0	0	{}
+7	"nec2c-1.3.1/autogen.sh"	regular_file	00	4402	0755	1359558891	2013-01-30T15:14:51Z	1000	1000	""	""	""	0	0	{}
+8	"nec2c-1.3.1/COPYING"	regular_file	00	35147	0644	1236086270	2009-03-03T13:17:50Z	1000	1000	""	""	""	0	0	{}
+9	"nec2c-1.3.1/README"	regular_file	00	11387	0644	1701493986	2023-12-02T05:13:06Z	1000	1000	""	""	""	0	0	{}
+10	"nec2c-1.3.1/network.c"	regular_file	00	14088	0644	1357805039	2013-01-10T08:03:59Z	1000	1000	""	""	""	0	0	{}
+11	"nec2c-1.3.1/depcomp"	regular_file	00	23566	0755	1371879424	2013-06-22T05:37:04Z	1000	1000	""	""	""	0	0	{}
+12	"nec2c-1.3.1/calculations.c"	regular_file	00	32477	0644	1357804546	2013-01-10T07:55:46Z	1000	1000	""	""	""	0	0	{}
+13	"nec2c-1.3.1/config.guess"	regular_file	00	48875	0755	1634604407	2021-10-19T00:46:47Z	1000	1000	""	""	""	0	0	{}
+14	"nec2c-1.3.1/Makefile.in"	regular_file	00	28189	0644	1701496462	2023-12-02T05:54:22Z	1000	1000	""	""	""	0	0	{}
+15	"nec2c-1.3.1/INSTALL"	regular_file	00	15749	0644	1371879424	2013-06-22T05:37:04Z	1000	1000	""	""	""	0	0	{}
+16	"nec2c-1.3.1/input.c"	regular_file	00	10136	0644	1357804746	2013-01-10T07:59:06Z	1000	1000	""	""	""	0	0	{}
+17	"nec2c-1.3.1/somnec.c"	regular_file	00	20024	0644	1701493419	2023-12-02T05:03:39Z	1000	1000	""	""	""	0	0	{}
+18	"nec2c-1.3.1/shared.c"	regular_file	00	965	0644	1357807364	2013-01-10T08:42:44Z	1000	1000	""	""	""	0	0	{}
+19	"nec2c-1.3.1/NEC2-bug.txt"	regular_file	00	3440	0644	1236086270	2009-03-03T13:17:50Z	1000	1000	""	""	""	0	0	{}
+20	"nec2c-1.3.1/install-sh"	regular_file	00	13997	0755	1371879424	2013-06-22T05:37:04Z	1000	1000	""	""	""	0	0	{}
+21	"nec2c-1.3.1/main.c"	regular_file	00	48505	0644	1359704318	2013-02-01T07:38:38Z	1000	1000	""	""	""	0	0	{}
+22	"nec2c-1.3.1/fields.c"	regular_file	00	39407	0644	1357805552	2013-01-10T08:12:32Z	1000	1000	""	""	""	0	0	{}
+23	"nec2c-1.3.1/shared.h"	regular_file	00	1079	0644	1357807376	2013-01-10T08:42:56Z	1000	1000	""	""	""	0	0	{}
+24	"nec2c-1.3.1/ground.c"	regular_file	00	7207	0644	1357804719	2013-01-10T07:58:39Z	1000	1000	""	""	""	0	0	{}
+25	"nec2c-1.3.1/missing"	regular_file	00	6873	0755	1371879424	2013-06-22T05:37:04Z	1000	1000	""	""	""	0	0	{}
+26	"nec2c-1.3.1/geometry.c"	regular_file	00	54396	0644	1378738703	2013-09-09T14:58:23Z	1000	1000	""	""	""	0	0	{}
+27	"nec2c-1.3.1/configure.ac"	regular_file	00	1070	0644	1701493525	2023-12-02T05:05:25Z	1000	1000	""	""	""	0	0	{}
+28	"nec2c-1.3.1/ChangeLog"	regular_file	00	27	0644	1359702984	2013-02-01T07:16:24Z	1000	1000	""	""	""	0	0	{}
+29	"nec2c-1.3.1/nec2c.h"	regular_file	00	14635	0644	1359704189	2013-02-01T07:36:29Z	1000	1000	""	""	""	0	0	{}
+30	"nec2c-1.3.1/radiation.c"	regular_file	00	23470	0644	1378444822	2013-09-06T05:20:22Z	1000	1000	""	""	""	0	0	{}
+31	"nec2c-1.3.1/AUTHORS"	regular_file	00	57	0644	1381218082	2013-10-08T07:41:22Z	1000	1000	""	""	""	0	0	{}
+32	"nec2c-1.3.1/configure"	regular_file	00	203435	0755	1701496463	2023-12-02T05:54:23Z	1000	1000	""	""	""	0	0	{}
+33	"nec2c-1.3.1/misc.c"	regular_file	00	4796	0644	1357804982	2013-01-10T08:03:02Z	1000	1000	""	""	""	0	0	{}
+34	"nec2c-1.3.1/matrix.c"	regular_file	00	30370	0644	1357806726	2013-01-10T08:32:06Z	1000	1000	""	""	""	0	0	{}
+35	"nec2c-1.3.1/config.h.in"	regular_file	00	2436	0644	1701494033	2023-12-02T05:13:53Z	1000	1000	""	""	""	0	0	{}

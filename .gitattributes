@@ -1,0 +1,10 @@
+* text=auto
+
+# Preserve the selected archive and extracted upstream bytes without Git filters
+# or text, line-ending, keyword, or working-tree encoding conversions.
+/archive/** binary -filter -ident -working-tree-encoding
+/upstream/nec2c-1.3.1/** binary -filter -ident -working-tree-encoding
+
+# Repository-authored manifests use ordinary text handling.
+/.gitattributes text
+/manifests/** text
