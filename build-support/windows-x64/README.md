@@ -11,12 +11,31 @@ The driver:
 3. rejects unsafe archive members and extracts exactly 34 original regular files into a new
    ignored `.build-temp/<id>/source/` tree;
 4. rehashes the complete extracted tree before compilation;
-5. locates the installed Visual Studio x64 C toolset without recording its local path;
+5. selects the pinned Visual Studio 2019, MSVC v142, and Windows SDK identities without
+   recording their local paths;
 6. invokes the twelve-source production list from the original `Makefile.am` with deterministic
    environment and compiler flags;
-7. writes raw and normalized local evidence below ignored `.build-output/<id>/`;
+7. records the driver, source guard, tool binaries, arguments, runtime, exit, and post-compile
+   artifact inventory and writes unnormalized and normalized local diagnostics below ignored
+   `.build-output/<id>/`;
 8. reverifies every extracted source byte; and
 9. reruns preservation verification even after a compiler failure.
+
+The source guard and driver are correctness controls for a non-adversarial local workspace, not
+an operating-system security sandbox. They reject persistent path, link, inventory, and byte
+contradictions, but cannot prevent a concurrent local process with the same user permissions
+from replacing or mutating paths before, during, or between checks. Process timeouts use bounded
+best-effort Windows process-tree termination and make any timeout, stream-drain uncertainty, or
+termination failure a driver validation failure rather than canonical A2 evidence. Trusted local
+tools are assumed not to spawn detached descendants; a process that escapes the targeted tree
+remains outside the claimed boundary. Captured output is held in memory, so this driver is scoped
+to the fixed authenticated A2 inputs and trusted installed tools, not arbitrary noisy commands.
+
+If extraction or verification fails after creating the fresh destination, the partial
+`.build-temp/<id>/source/` tree is deliberately retained for diagnosis and the identifier remains
+burned. The guard does not race an untrusted workspace by recursively cleaning a path that may
+have been replaced. Inspect and remove only that exact task-created directory under the manual
+cleanup rule below.
 
 The original GNU Autotools route is preferred in principle but unavailable in the recorded A2
 environment: no GCC, MinGW-w64, Clang, GNU make, or complete MSYS2 toolchain is installed.
@@ -27,15 +46,20 @@ Autotools build.
 Run two attempts from Windows PowerShell:
 
 ```powershell
+$stamp = Get-Date -Format yyyyMMddHHmmss
 powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass `
-    -File .\build-support\windows-x64\build.ps1 -BuildId build-a
+    -File .\build-support\windows-x64\build.ps1 -BuildId "manual-a-$stamp"
 powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass `
-    -File .\build-support\windows-x64\build.ps1 -BuildId build-b
+    -File .\build-support\windows-x64\build.ps1 -BuildId "manual-b-$stamp"
 ```
 
 Each build identifier is single-use. The driver refuses to reuse an extraction or output path.
 Only remove a task-created `.build-temp/<id>/` and `.build-output/<id>/` directory after first
 confirming its exact repository-local path.
+
+Invalid, reserved-device, or colliding identifiers are pre-attempt refusals. They return `20`,
+rerun preservation verification when the repository is available, and do not overwrite or add
+an attempt record below an existing output path.
 
 Exit codes are:
 
@@ -43,7 +67,7 @@ Exit codes are:
 |---:|---|
 | `0` | The executable, PE inspection, and smoke path completed |
 | `10` | Untouched source failed to compile or link |
-| `20` | Authentication, tool discovery, driver, or post-build preservation failed |
+| `20` | Authentication, tool discovery, timeout/termination, capture, driver, or post-build preservation failed |
 
 The current versioned result is in
 [`../../manifests/windows-x64-unmodified-build-v1.json`](../../manifests/windows-x64-unmodified-build-v1.json).

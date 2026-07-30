@@ -28,6 +28,25 @@ class SourceGuardError(Exception):
     """The archive, manifest, requested path, or extracted tree is unsafe."""
 
 
+def validate_archive_path(
+    value: str, *, label: str, expected_component_count: int
+) -> PurePosixPath:
+    raw_components = value.split("/")
+    pure_path = PurePosixPath(value)
+    if (
+        not value
+        or pure_path.is_absolute()
+        or any(component in {"", ".", ".."} for component in raw_components)
+        or tuple(pure_path.parts) != tuple(raw_components)
+        or "\\" in value
+        or ":" in value
+        or raw_components[0] != ARCHIVE_TOP_LEVEL
+        or len(raw_components) != expected_component_count
+    ):
+        raise SourceGuardError(f"{label} path is unsafe")
+    return pure_path
+
+
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
     try:
@@ -147,15 +166,11 @@ def parse_file_manifest(repository_root: Path) -> dict[str, str]:
         ):
             raise SourceGuardError("source-file manifest record is malformed")
         archive_relative = repository_relative.removeprefix(MANIFEST_PREFIX)
-        pure_path = PurePosixPath(archive_relative)
-        if (
-            pure_path.is_absolute()
-            or any(part in {"", ".", ".."} for part in pure_path.parts)
-            or "\\" in archive_relative
-            or ":" in archive_relative
-            or pure_path.parts[0] != ARCHIVE_TOP_LEVEL
-        ):
-            raise SourceGuardError("source-file manifest path is unsafe")
+        validate_archive_path(
+            archive_relative,
+            label="source-file manifest",
+            expected_component_count=2,
+        )
         if archive_relative in records or archive_relative.casefold() in casefolded:
             raise SourceGuardError("source-file manifest path is duplicated")
         records[archive_relative] = digest
@@ -195,16 +210,11 @@ def validate_archive_members(
 
     for member in members:
         name = member.name.removesuffix("/") if member.isdir() else member.name
-        pure_path = PurePosixPath(name)
-        if (
-            not name
-            or pure_path.is_absolute()
-            or any(part in {"", ".", ".."} for part in pure_path.parts)
-            or "\\" in name
-            or ":" in name
-            or pure_path.parts[0] != ARCHIVE_TOP_LEVEL
-        ):
-            raise SourceGuardError("archive contains an unsafe member path")
+        validate_archive_path(
+            name,
+            label="archive member",
+            expected_component_count=1 if member.isdir() else 2,
+        )
         folded = name.casefold()
         if folded in casefolded:
             raise SourceGuardError(

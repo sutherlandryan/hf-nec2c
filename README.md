@@ -73,6 +73,8 @@ environment had no GCC/MinGW-w64 or Clang route. The only native AMD64 candidate
 failed consistently because the untouched source requires `unistd.h`. See
 [docs/WINDOWS_X64_UNMODIFIED_BUILD.md](docs/WINDOWS_X64_UNMODIFIED_BUILD.md) and
 [manifests/windows-x64-unmodified-build-v1.json](manifests/windows-x64-unmodified-build-v1.json).
+The canonical disposition is: **UNMODIFIED MSVC WINDOWS X64 BUILD ATTEMPT REPRODUCIBLY BLOCKED
+BY POSIX HEADER DEPENDENCY**.
 
 ## Relationship to HF Propagation Control
 
