@@ -1,0 +1,1241 @@
+{
+  "acquisition": {
+    "authenticode": {
+      "signer_issuer": "CN=Microsoft ID Verified CS AOC CA 04, O=Microsoft Corporation, C=US",
+      "signer_subject": "CN=Christoph Reiter, O=Christoph Reiter, L=Graz, C=AT",
+      "signer_thumbprint": "47F81859AE612659DD2248E76A58347A073B2933",
+      "status": "Valid",
+      "timestamp_issuer": "CN=Microsoft Public RSA Timestamping CA 2020, O=Microsoft Corporation, C=US",
+      "timestamp_subject": "CN=Microsoft Public RSA Time Stamping Authority, OU=nShield TSS ESN:7800-05E0-D947, OU=Microsoft America Operations, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+      "timestamp_thumbprint": "FD2F31399C42510141364ACDF168A28F5C79CBC3"
+    },
+    "checksum_match": true,
+    "final_redirect_url_without_expiring_query": "https://release-assets.githubusercontent.com/github-production-release-asset/80988227/382f1d65-3d78-403f-bbbf-96d1da06ab24",
+    "full_resolved_url_storage": "ignored acquisition-local.json only",
+    "github_api_asset_sha256": "3150d7d9aa5dedd900a7f52300d4d918271e3a8fc47de94848818fd5a430e6b0",
+    "installer_bytes": 94016640,
+    "installer_file": "msys2-x86_64-20260611.exe",
+    "installer_sha256": "3150d7d9aa5dedd900a7f52300d4d918271e3a8fc47de94848818fd5a430e6b0",
+    "release": "2026-06-11",
+    "release_published_utc": "2026-06-11T07:23:06Z",
+    "requested_url": "https://github.com/msys2/msys2-installer/releases/download/2026-06-11/msys2-x86_64-20260611.exe",
+    "retrieval_completed_utc": "2026-07-30T05:22:28.9087464Z",
+    "retrieval_started_utc": "2026-07-30T05:20:03.2123942Z",
+    "sha256_sidecar_url": "https://github.com/msys2/msys2-installer/releases/download/2026-06-11/msys2-x86_64-20260611.exe.sha256",
+    "sidecar_sha256_value": "3150d7d9aa5dedd900a7f52300d4d918271e3a8fc47de94848818fd5a430e6b0",
+    "signature_asset_url": "https://github.com/msys2/msys2-installer/releases/download/2026-06-11/msys2-x86_64-20260611.exe.sig",
+    "source": "official msys2/msys2-installer dated GitHub release"
+  },
+  "build": {
+    "attempt": {
+      "build_id": "canonical-ucrt64-v4-20260730",
+      "completed_utc": "2026-07-30T08:56:07.3556545Z",
+      "driver_exit_code": 10,
+      "duration_milliseconds": 37278,
+      "failing_stage": "compile",
+      "outcome": "unmodified_source_build_failed",
+      "record_sha256": "7de74afe975cf1da3218dcb9300a371db7291b420e5106af460ca0a5a233b2f2",
+      "started_utc": "2026-07-30T08:55:30.0774555Z"
+    },
+    "authentication_helpers": {
+      "preservation_verifier_sha256": "4fbfebcf7a09307dc7314a75fe2789860f243ae60e8b64604125821f729fc658",
+      "preservation_wrapper_sha256": "a8c19981db3fdbcaee380755c29f56975ea1ead3d78976fb90c81c22e438e0f7",
+      "source_guard_sha256": "331718ae2b79390b71b8eb935953b7652d5a702a3e56cf1deb6aa51152b88b13"
+    },
+    "autotools": {
+      "configure": {
+        "command_template": "clear environment; bash --noprofile --norc -c; PATH=/ucrt64/bin:/usr/bin CC=/ucrt64/bin/gcc CFLAGS='-O2 -fno-ident -ffile-prefix-map=<SOURCE_ROOT>=/usr/src/nec2c-1.3.1 -fdebug-prefix-map=<SOURCE_ROOT>=/usr/src/nec2c-1.3.1' LDFLAGS='-Wl,--no-insert-timestamp -Wl,--build-id=none' <SOURCE_ROOT>/configure (working directory <BUILD_ROOT>)",
+        "duration_milliseconds": 35048,
+        "exit_code": 0,
+        "normalized_stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "normalized_stdout": {
+          "bytes": 2282,
+          "sha256": "2c651e1c5545facc71a4fd7a6fb4e6680ae6c38b6adaaa6251ef186cb17c9248"
+        },
+        "timed_out": false
+      },
+      "make": {
+        "command_template": "clear environment; bash --noprofile --norc -c; PATH=/ucrt64/bin:/usr/bin CC=/ucrt64/bin/gcc /usr/bin/make -j1 V=1 (working directory <BUILD_ROOT>)",
+        "duration_milliseconds": 546,
+        "exit_code": 2,
+        "normalized_stderr": {
+          "bytes": 352,
+          "sha256": "526284c767fb1b96646ace2e47a4819c84b9ded1ad78c5cb9cf1bc91458a3d89"
+        },
+        "normalized_stderr_text": "In file included from <ATTEMPT_ROOT>/source/nec2c-1.3.1/calculations.c:26:\n<ATTEMPT_ROOT>/source/nec2c-1.3.1/nec2c.h:15:10: fatal error: sys/times.h: No such file or directory\n   15 | #include <sys/times.h>\n      |          ^~~~~~~~~~~~~\ncompilation terminated.\nmake[1]: *** [Makefile:450: calculations.o] Error 1\nmake: *** [Makefile:325: all] Error 2",
+        "normalized_stdout": {
+          "bytes": 593,
+          "sha256": "3dd261400f1c4912d772f19e9240eeef1d3f921e18ffddb87d40e63ce97a806d"
+        },
+        "timed_out": false
+      },
+      "route": "shipped configure followed by GNU make in an out-of-tree build"
+    },
+    "branch": "agent/v005f-a2b-mingw-ucrt64-build",
+    "direct_gcc": {
+      "reason": "The shipped Autotools route is authoritative. A direct command is not used to bypass a configure, compile, or link result from that route.",
+      "status": "not_attempted"
+    },
+    "driver": {
+      "bound_in_attempt_record": true,
+      "path": "build-support/windows-x64-mingw-ucrt64/build.ps1",
+      "sha256": "021d370f0472158af43045e87ac2a980564137abb9b1ff497b8bccc7222d3e04"
+    },
+    "environment": {
+      "boundary": {
+        "arbitrary_parent_variables_inherited": false,
+        "environment_policy": "explicit allowlist",
+        "shell_invocation": "bash --noprofile --norc -c",
+        "startup_files_executed": false,
+        "windows_runtime_variables_copied": [
+          "SystemRoot",
+          "WINDIR"
+        ]
+      },
+      "controls": {
+        "AR": "/ucrt64/bin/ar",
+        "CC": "/ucrt64/bin/gcc",
+        "CHERE_INVOKING": "yes",
+        "CONFIG_SITE": "/dev/null",
+        "HOME": "<ATTEMPT_ROOT>/control/home",
+        "LANG": "C",
+        "LANGUAGE": "C",
+        "LC_ALL": "C",
+        "LD": "/ucrt64/bin/ld",
+        "MSYS2_PATH_TYPE": "strict",
+        "MSYSTEM": "UCRT64",
+        "NM": "/ucrt64/bin/nm",
+        "PATH": "/ucrt64/bin:/usr/bin",
+        "RANLIB": "/ucrt64/bin/ranlib",
+        "SOURCE_DATE_EPOCH": "1701496474",
+        "STRIP": "/ucrt64/bin/strip",
+        "TEMP": "<ATTEMPT_ROOT>/control/tmp",
+        "TMP": "<ATTEMPT_ROOT>/control/tmp",
+        "TMPDIR": "<ATTEMPT_ROOT>/control/tmp",
+        "TZ": "UTC"
+      }
+    },
+    "failure": {
+      "category": "compile_time_header_failure",
+      "expected_blocker_matched": true,
+      "first_reached_blocker": "original nec2c.h line 15 requires sys/times.h"
+    },
+    "generated_build_inventory": {
+      "executable_present": false,
+      "file_count": 17,
+      "files": [
+        {
+          "bytes": 8,
+          "path": ".deps/calculations.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/fields.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/geometry.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/ground.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/input.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/main.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/matrix.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/misc.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/network.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/radiation.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/shared.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 8,
+          "path": ".deps/somnec.Po",
+          "sha256": "ddb1c8705176da86c285112f625f6a732bf7353b0a17835e8bcbc27c0e4243d9"
+        },
+        {
+          "bytes": 28357,
+          "path": "Makefile",
+          "sha256": "1eaef6c10f362eb578eb3868c4f418aba6881fd87e41e039f193dd806fde5e23"
+        },
+        {
+          "bytes": 2649,
+          "path": "config.h",
+          "sha256": "cdd4efc50fc7a1bbb1beb67613e9c2f724c873a81f93cb878eab63359df29bee"
+        },
+        {
+          "bytes": 32827,
+          "path": "config.log",
+          "sha256": "e8dee3b80b06676432eae3b3e4ebccad809c843a1ad571240eb7157060cd700e"
+        },
+        {
+          "bytes": 34837,
+          "path": "config.status",
+          "sha256": "14d69d67437d116d58cff1025e45a223effbfa100edaaa15f85ba1870f8a349a"
+        },
+        {
+          "bytes": 23,
+          "path": "stamp-h1",
+          "sha256": "24fdde0aee1f49666fc7a5bd7f422dc0118e4db128bc1f606f7f047c9b245bb4"
+        }
+      ],
+      "final_link_reached": false,
+      "object_file_present": false,
+      "total_bytes": 98789
+    },
+    "linker_flags": [
+      "-Wl,--no-insert-timestamp",
+      "-Wl,--build-id=none"
+    ],
+    "pe_inspection": {
+      "reason": "no executable was produced",
+      "status": "not_reached"
+    },
+    "reproducibility": {
+      "build_a": null,
+      "build_b": null,
+      "reason": "linking did not succeed",
+      "status": "not_reached"
+    },
+    "smoke_tests": {
+      "reason": "no executable was produced",
+      "status": "not_reached"
+    },
+    "starting_main_sha": "e74b603cab40ed7d8613d6318acc84abd4ba4217"
+  },
+  "external_repository_observation": {
+    "access": "read-only",
+    "branch_after": "main",
+    "branch_before": "main",
+    "clean_after": true,
+    "clean_before": true,
+    "head_after": "ac231157b218415598f9d8a389492bef11d0a5a6",
+    "head_before": "ac231157b218415598f9d8a389492bef11d0a5a6",
+    "repository": "HF Propagation Control"
+  },
+  "installation": {
+    "command": "msys2-x86_64-20260611.exe in --confirm-command --accept-messages --root C:/msys64",
+    "completed_utc": "2026-07-30T05:24:33.7332405Z",
+    "elevation": "not_required",
+    "exit_code": 0,
+    "global_windows_path_changed": false,
+    "installation_path": "C:\\msys64",
+    "installation_root_reparse_point": false,
+    "pre_install_inventory": {
+      "all_users_appx_query": "access denied non-elevated; recorded coverage limitation",
+      "c_msys64_existed": false,
+      "current_user_appx_matches": 0,
+      "disposition": "no detected installation, ownership, or provenance conflict",
+      "matching_commands": [],
+      "matching_common_installation_roots": [],
+      "matching_path_entries": [],
+      "matching_processes": [],
+      "matching_uninstall_entries": [],
+      "scope": "targeted filesystem, command, PATH, process, uninstall, and AppX inventory",
+      "stop_condition": false
+    },
+    "started_utc": "2026-07-30T05:22:56.9228315Z"
+  },
+  "msys2": {
+    "initialization_command": "MSYSTEM=UCRT64 CHERE_INVOKING=yes C:\\msys64\\usr\\bin\\bash.exe -lc ' '",
+    "mirror_configuration": {
+      "mirrorlist_mingw_sha256": "0ba99a1ca7a8c1499daff0f70281a90abf034dbfdbffac7a68f2c4538d74a8e3",
+      "mirrorlist_msys_sha256": "7353fdc95956d12a76b6d65231137f0166baf6e88661f142d1876dfe3b7f884d",
+      "pacman_conf_sha256": "0f25288c70ade80c7fac57d3149209b64a7ba23f00232b7e42103f6330b0c1c0",
+      "primary_mingw_server": "https://mirror.msys2.org/mingw/$repo/",
+      "primary_msys_server": "https://mirror.msys2.org/msys/$arch/"
+    },
+    "package_database_sha256": {
+      "clang64": "8ef51581da6034feef4391073bfcb6f5ebfd87187254c1cc966c8280c94a4607",
+      "clangarm64": "703675a504a4790589c9674e91e0d95b04a9bfd2d96375c65c4d9db3660eb047",
+      "mingw32": "702080897b29b8131e277ec56b3e49ef8c59aa20a5535716404c387fc553dbcd",
+      "mingw64": "782532f64adea194ee127cb391b7f70336112fc440911b05a08baad67d973336",
+      "msys": "ef311b071c671688b609de16962b7f05a63098c9c8c87aa93b652b78ca91d7b9",
+      "ucrt64": "2fc7cf4e16fba45fe0c9458c5c2e73dfae150a6210da3f58b96aaa64fb986a04"
+    },
+    "post_toolchain_inventory": {
+      "bytes": 2765,
+      "count": 128,
+      "line_endings": "CRLF",
+      "packages": [
+        "autoconf-wrapper 20260320-1",
+        "autoconf2.13 2.13-6",
+        "autoconf2.69 2.69-4",
+        "autoconf2.71 2.71-4",
+        "autoconf2.72 2.72-4",
+        "autoconf2.73 2.73-1",
+        "automake-wrapper 20260320-1",
+        "automake1.11 1.11.6-6",
+        "automake1.12 1.12.6-6",
+        "automake1.13 1.13.4-7",
+        "automake1.14 1.14.1-6",
+        "automake1.15 1.15.1-4",
+        "automake1.16 1.16.5-1",
+        "automake1.17 1.17-1",
+        "automake1.18 1.18.1-1",
+        "base 2022.06-1",
+        "bash 5.3.015-1",
+        "bash-completion 2.18.0-1",
+        "brotli 1.2.0-1",
+        "bsdtar 3.8.8-1",
+        "bzip2 1.0.8-4",
+        "ca-certificates 20250419-1",
+        "coreutils 8.32-5",
+        "curl 8.21.0-1",
+        "dash 0.5.13.4-1",
+        "db 6.2.32-6",
+        "diffutils 3.12-1",
+        "file 5.48-1",
+        "filesystem 2026.03.06-1",
+        "findutils 4.10.0-3",
+        "gawk 5.4.1-1",
+        "gcc-libs 15.3.0-1",
+        "gdbm 1.26-1",
+        "getent 2.18.90-6",
+        "gettext 0.22.5-1",
+        "gmp 6.3.0-2",
+        "gnupg 2.4.9-1",
+        "grep 1~3.0-7",
+        "gzip 1.14-2",
+        "inetutils 2.7-1",
+        "info 7.2-3",
+        "less 704-1",
+        "libargp 20260115-1",
+        "libasprintf 0.22.5-1",
+        "libassuan 3.0.2-1",
+        "libbz2 1.0.8-4",
+        "libcurl 8.21.0-1",
+        "libdb 6.2.32-6",
+        "libexpat 2.8.2-1",
+        "libffi 3.7.1-1",
+        "libgcrypt 1.12.2-1",
+        "libgdbm 1.26-1",
+        "libgettextpo 0.22.5-1",
+        "libgnutls 3.8.13-2",
+        "libgpg-error 1.61-1",
+        "libhogweed 4.0-1",
+        "libiconv 1.19-1",
+        "libidn2 2.3.8-1",
+        "libintl 0.22.5-1",
+        "libksba 1.8.0-1",
+        "libltdl 2.5.4-5",
+        "liblz4 1.10.0-1",
+        "liblzma 5.8.3-1",
+        "libnettle 4.0-1",
+        "libnghttp2 1.69.0-1",
+        "libnghttp3 1.18.0-1",
+        "libngtcp2 1.25.0-1",
+        "libnpth 1.8-1",
+        "libopenssl 3.6.3-1",
+        "libp11-kit 0.26.4-1",
+        "libpcre 8.45-5",
+        "libpcre2_8 10.47-1",
+        "libpsl 0.21.5-2",
+        "libreadline 8.3.003-1",
+        "libsqlite 3.53.3-1",
+        "libssh2 1.11.1-1",
+        "libtasn1 4.21.0-1",
+        "libtool 2.5.4-5",
+        "libunistring 1.4.2-1",
+        "libutil-linux 2.40.2-2",
+        "libxcrypt 4.5.2-1",
+        "libzstd 1.5.7-1",
+        "m4 1.4.21-1",
+        "make 4.4.1-3",
+        "mingw-w64-ucrt-x86_64-binutils 2.47-1",
+        "mingw-w64-ucrt-x86_64-crt 14.0.0.r220.gd999af622-1",
+        "mingw-w64-ucrt-x86_64-gcc 16.1.0-5",
+        "mingw-w64-ucrt-x86_64-gcc-libs 16.1.0-5",
+        "mingw-w64-ucrt-x86_64-gettext-runtime 1.0-1",
+        "mingw-w64-ucrt-x86_64-gmp 6.3.0-2",
+        "mingw-w64-ucrt-x86_64-headers 14.0.0.r220.gd999af622-1",
+        "mingw-w64-ucrt-x86_64-isl 0.28-1",
+        "mingw-w64-ucrt-x86_64-libiconv 1.19-1",
+        "mingw-w64-ucrt-x86_64-libwinpthread 14.0.0.r220.gd999af622-1",
+        "mingw-w64-ucrt-x86_64-mpc 1.4.1-1",
+        "mingw-w64-ucrt-x86_64-mpfr 4.2.2-3",
+        "mingw-w64-ucrt-x86_64-tzdata 2026c-1",
+        "mingw-w64-ucrt-x86_64-windows-default-manifest 6.4-4",
+        "mingw-w64-ucrt-x86_64-winpthreads 14.0.0.r220.gd999af622-1",
+        "mingw-w64-ucrt-x86_64-zlib 1.3.2-2",
+        "mingw-w64-ucrt-x86_64-zstd 1.5.7-2",
+        "mintty 1~3.8.3-1",
+        "mpfr 4.2.2-1",
+        "msys2-keyring 1~20260214-1",
+        "msys2-launcher 1.5-3",
+        "msys2-runtime 3.6.10-1",
+        "nano 9.1-1",
+        "ncurses 6.6-2",
+        "nettle 4.0-1",
+        "openssl 3.6.3-1",
+        "p11-kit 0.26.4-1",
+        "pacman 6.1.0-25",
+        "pacman-contrib 1.10.6-1",
+        "pacman-mirrors 20260129-1",
+        "perl 5.42.2-1",
+        "pinentry 1.3.3-1",
+        "pkgconf 2.5.1-1",
+        "rebase 4.5.0-5",
+        "sed 4.9-1",
+        "tar 1.35-3",
+        "time 1.10-1",
+        "tzcode 2026c-1",
+        "util-linux 2.40.2-2",
+        "wget 1.25.0-2",
+        "which 2.25-1",
+        "xz 5.8.3-1",
+        "zlib 1.3.2-1",
+        "zstd 1.5.7-1"
+      ],
+      "sha256": "b3351b4a97d5e2d56763c5dd84f3bb88ffaeb43fdc4dfde7a0f03705e9a1066c"
+    },
+    "post_update_pre_toolchain_inventory": {
+      "bytes": 1500,
+      "count": 90,
+      "line_endings": "LF",
+      "packages": [
+        "base 2022.06-1",
+        "bash 5.3.015-1",
+        "bash-completion 2.18.0-1",
+        "brotli 1.2.0-1",
+        "bsdtar 3.8.8-1",
+        "bzip2 1.0.8-4",
+        "ca-certificates 20250419-1",
+        "coreutils 8.32-5",
+        "curl 8.21.0-1",
+        "dash 0.5.13.4-1",
+        "db 6.2.32-6",
+        "file 5.48-1",
+        "filesystem 2026.03.06-1",
+        "findutils 4.10.0-3",
+        "gawk 5.4.1-1",
+        "gcc-libs 15.3.0-1",
+        "gdbm 1.26-1",
+        "getent 2.18.90-6",
+        "gettext 0.22.5-1",
+        "gmp 6.3.0-2",
+        "gnupg 2.4.9-1",
+        "grep 1~3.0-7",
+        "gzip 1.14-2",
+        "inetutils 2.7-1",
+        "info 7.2-3",
+        "less 704-1",
+        "libargp 20260115-1",
+        "libasprintf 0.22.5-1",
+        "libassuan 3.0.2-1",
+        "libbz2 1.0.8-4",
+        "libcurl 8.21.0-1",
+        "libdb 6.2.32-6",
+        "libexpat 2.8.2-1",
+        "libffi 3.7.1-1",
+        "libgcrypt 1.12.2-1",
+        "libgdbm 1.26-1",
+        "libgettextpo 0.22.5-1",
+        "libgnutls 3.8.13-2",
+        "libgpg-error 1.61-1",
+        "libhogweed 4.0-1",
+        "libiconv 1.19-1",
+        "libidn2 2.3.8-1",
+        "libintl 0.22.5-1",
+        "libksba 1.8.0-1",
+        "liblz4 1.10.0-1",
+        "liblzma 5.8.3-1",
+        "libnettle 4.0-1",
+        "libnghttp2 1.69.0-1",
+        "libnghttp3 1.18.0-1",
+        "libngtcp2 1.25.0-1",
+        "libnpth 1.8-1",
+        "libopenssl 3.6.3-1",
+        "libp11-kit 0.26.4-1",
+        "libpcre 8.45-5",
+        "libpcre2_8 10.47-1",
+        "libpsl 0.21.5-2",
+        "libreadline 8.3.003-1",
+        "libsqlite 3.53.3-1",
+        "libssh2 1.11.1-1",
+        "libtasn1 4.21.0-1",
+        "libunistring 1.4.2-1",
+        "libutil-linux 2.40.2-2",
+        "libxcrypt 4.5.2-1",
+        "libzstd 1.5.7-1",
+        "mintty 1~3.8.3-1",
+        "mpfr 4.2.2-1",
+        "msys2-keyring 1~20260214-1",
+        "msys2-launcher 1.5-3",
+        "msys2-runtime 3.6.10-1",
+        "nano 9.1-1",
+        "ncurses 6.6-2",
+        "nettle 4.0-1",
+        "openssl 3.6.3-1",
+        "p11-kit 0.26.4-1",
+        "pacman 6.1.0-25",
+        "pacman-contrib 1.10.6-1",
+        "pacman-mirrors 20260129-1",
+        "perl 5.42.2-1",
+        "pinentry 1.3.3-1",
+        "rebase 4.5.0-5",
+        "sed 4.9-1",
+        "tar 1.35-3",
+        "time 1.10-1",
+        "tzcode 2026c-1",
+        "util-linux 2.40.2-2",
+        "wget 1.25.0-2",
+        "which 2.25-1",
+        "xz 5.8.3-1",
+        "zlib 1.3.2-1",
+        "zstd 1.5.7-1"
+      ],
+      "sha256": "5358bdbbc7df5b3a83c915c7a379e2394e3b49463923fa7e84d0f6dfa358f227"
+    },
+    "update_command": "pacman --noconfirm -Suy",
+    "update_passes": [
+      {
+        "result": "core runtime upgraded; controlled shell closed",
+        "stderr_sha256": "3e98e73075f83750df9ca15dc8ba38fc711a4748812717865c2fe10fbb773d5a",
+        "stdout_sha256": "354a3b3d4446a38ed5282f2c26ec644d636c1dd26126d78d1e0d98f7a3c97be3"
+      },
+      {
+        "result": "remaining full-system upgrades completed",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "a066982d2db04eab53c13452f818cec432ff69585bd836e9a035cf758ea8cfc0"
+      },
+      {
+        "result": "core and full system both reported nothing to do",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "51001320b1fb297ab1ab718affa70755206ec86e8fe44ed2c36efebc46ab4b8b"
+      }
+    ],
+    "versions": {
+      "msys2_keyring": "1~20260214-1",
+      "msys2_runtime": "3.6.10-1",
+      "pacman": "6.1.0-25"
+    }
+  },
+  "outcome": "UNMODIFIED MSYS2 UCRT64 WINDOWS X64 BUILD ATTEMPT BLOCKED BY SYS/TIMES.H DEPENDENCY",
+  "schema": "org.sutherlandryan.hf-nec2c.windows-x64-mingw-ucrt64-unmodified-build.v1",
+  "serialization": {
+    "encoding": "UTF-8",
+    "final_newline": true,
+    "indentation_spaces": 2,
+    "key_order": "recursive ASCII lexical",
+    "line_endings": "LF"
+  },
+  "source": {
+    "archive_bytes": 186124,
+    "archive_sha256": "8c706008bcb11c34bf33a3f8f78711c79f7bb49de8a22d74df6b10e1203c013e",
+    "archive_tag_object": "cf3bbcd328ea239b7a2291e3b25e1ed1c273b2fa",
+    "file_count": 34,
+    "maintained_v1_3_3_imported": false,
+    "preservation_after": true,
+    "preservation_before": true,
+    "preservation_tag_object": "3e9ab7a1438401fc40e6c970facfc0fc25142678",
+    "preservation_verifier_sha256": "4fbfebcf7a09307dc7314a75fe2789860f243ae60e8b64604125821f729fc658",
+    "preservation_wrapper_sha256": "a8c19981db3fdbcaee380755c29f56975ea1ead3d78976fb90c81c22e438e0f7",
+    "source_authentication_after": true,
+    "source_authentication_before": true,
+    "source_guard_bound_in_attempt_record": true,
+    "source_guard_path": "build-support/windows-x64/source_guard.py",
+    "source_guard_sha256": "331718ae2b79390b71b8eb935953b7652d5a702a3e56cf1deb6aa51152b88b13",
+    "upstream_bytes_changed": false
+  },
+  "statements": {
+    "executable_or_build_product_tracked": false,
+    "hf_propagation_control_modified": false,
+    "numerical_qualification_claimed": false,
+    "structured_output_started": false,
+    "untouched_source": true
+  },
+  "toolchain": {
+    "added_packages": [
+      {
+        "archive_file": "autoconf2.13-2.13-6-any.pkg.tar.zst",
+        "archive_sha256": "38bd817375f053b6d939f80a30582d05bc6ed5cd07db135e7f3120a27f1b9512",
+        "name": "autoconf2.13",
+        "version": "2.13-6"
+      },
+      {
+        "archive_file": "autoconf2.69-2.69-4-any.pkg.tar.zst",
+        "archive_sha256": "56b2de8e53e46a88bb217a427c2f7b5671ac6400148681fb2089e9b7be817364",
+        "name": "autoconf2.69",
+        "version": "2.69-4"
+      },
+      {
+        "archive_file": "autoconf2.71-2.71-4-any.pkg.tar.zst",
+        "archive_sha256": "55be2b911beaa0424d60fdcf206f2411a0eb24cb53e66a82964497ef8a4faac0",
+        "name": "autoconf2.71",
+        "version": "2.71-4"
+      },
+      {
+        "archive_file": "autoconf2.72-2.72-4-any.pkg.tar.zst",
+        "archive_sha256": "65b3a37edf8bb4221d38db910ce1acc1ed879c7bcba33faa058066d06d35e7b0",
+        "name": "autoconf2.72",
+        "version": "2.72-4"
+      },
+      {
+        "archive_file": "autoconf2.73-2.73-1-any.pkg.tar.zst",
+        "archive_sha256": "716d0542dc12a481f1c2d5574f17f1470eb9d3226cf6e206d4e243c12fa95e1a",
+        "name": "autoconf2.73",
+        "version": "2.73-1"
+      },
+      {
+        "archive_file": "autoconf-wrapper-20260320-1-any.pkg.tar.zst",
+        "archive_sha256": "84c1f93d4450b3bf1ef567110b51c15ffb3f13670d656cc48fea70a01371b20c",
+        "name": "autoconf-wrapper",
+        "version": "20260320-1"
+      },
+      {
+        "archive_file": "automake1.11-1.11.6-6-any.pkg.tar.zst",
+        "archive_sha256": "25ecc6296e1416513153c290442cbca6dcb813c1c50e5beb3a708408ba5de3a5",
+        "name": "automake1.11",
+        "version": "1.11.6-6"
+      },
+      {
+        "archive_file": "automake1.12-1.12.6-6-any.pkg.tar.zst",
+        "archive_sha256": "b6c91241999c6ff8d04c5ea8011b10544a373b01eacb7993c66db99e5f4fb373",
+        "name": "automake1.12",
+        "version": "1.12.6-6"
+      },
+      {
+        "archive_file": "automake1.13-1.13.4-7-any.pkg.tar.zst",
+        "archive_sha256": "a0d3eb1b359a67c1c8a9161cf79ba681cccabf47c78cb40d3065b5eff02a82f0",
+        "name": "automake1.13",
+        "version": "1.13.4-7"
+      },
+      {
+        "archive_file": "automake1.14-1.14.1-6-any.pkg.tar.zst",
+        "archive_sha256": "0b097559c1fa79124552334b63d13417bcec8a08008ab65f77d27300a4ccc5b4",
+        "name": "automake1.14",
+        "version": "1.14.1-6"
+      },
+      {
+        "archive_file": "automake1.15-1.15.1-4-any.pkg.tar.zst",
+        "archive_sha256": "e3c73d0094eebbc2353b2ddd0b7c81020917c2ec09d3e4967d7abc9794fa7843",
+        "name": "automake1.15",
+        "version": "1.15.1-4"
+      },
+      {
+        "archive_file": "automake1.16-1.16.5-1-any.pkg.tar.zst",
+        "archive_sha256": "1963b5fa0ab5eaf1bdc311501cd742c6bb19941e831dcc8ab1e51a8c7f1634fe",
+        "name": "automake1.16",
+        "version": "1.16.5-1"
+      },
+      {
+        "archive_file": "automake1.17-1.17-1-any.pkg.tar.zst",
+        "archive_sha256": "bb069dbb6f580c2346d2f6d74268b5e12e625f7ba57299426f9cd6c0fa714191",
+        "name": "automake1.17",
+        "version": "1.17-1"
+      },
+      {
+        "archive_file": "automake1.18-1.18.1-1-any.pkg.tar.zst",
+        "archive_sha256": "c045d9eddf900dbacae06d9e0e19e250cc32d849def7d06b833253f85e3fc941",
+        "name": "automake1.18",
+        "version": "1.18.1-1"
+      },
+      {
+        "archive_file": "automake-wrapper-20260320-1-any.pkg.tar.zst",
+        "archive_sha256": "693817c288c81bb9f94ac92e5b6f914402735b80bb33e326ccddd7c89cc6a719",
+        "name": "automake-wrapper",
+        "version": "20260320-1"
+      },
+      {
+        "archive_file": "diffutils-3.12-1-x86_64.pkg.tar.zst",
+        "archive_sha256": "7902c8ce3d4dd69a0f5e98dc9d5c83c17b23314ba486169db57ef6e2835ce3b6",
+        "name": "diffutils",
+        "version": "3.12-1"
+      },
+      {
+        "archive_file": "libltdl-2.5.4-5-x86_64.pkg.tar.zst",
+        "archive_sha256": "8ccdc691a02b5cd2b07a95aa6df340e374673e5c9ab526e5da2e67d5f2a881b8",
+        "name": "libltdl",
+        "version": "2.5.4-5"
+      },
+      {
+        "archive_file": "libtool-2.5.4-5-x86_64.pkg.tar.zst",
+        "archive_sha256": "e7d27e7543dbe6ce2dae863a412455ab68f7bf8d1670762a0aded62480bf08f0",
+        "name": "libtool",
+        "version": "2.5.4-5"
+      },
+      {
+        "archive_file": "m4-1.4.21-1-x86_64.pkg.tar.zst",
+        "archive_sha256": "b561e8871c7599502d9fae7196ee965b3fed3d7af09154eb8d2f5e4d9e5e5106",
+        "name": "m4",
+        "version": "1.4.21-1"
+      },
+      {
+        "archive_file": "make-4.4.1-3-x86_64.pkg.tar.zst",
+        "archive_sha256": "af0bdba17f06fe037f0194069adaa31a8fe45f1a11381501896aea1fae37bd5d",
+        "name": "make",
+        "version": "4.4.1-3"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-binutils-2.47-1-any.pkg.tar.zst",
+        "archive_sha256": "c28d432cfd251840df4da4245fed2898aef8f7008fc100ff7e085f1b4c3d872d",
+        "name": "mingw-w64-ucrt-x86_64-binutils",
+        "version": "2.47-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-crt-14.0.0.r220.gd999af622-1-any.pkg.tar.zst",
+        "archive_sha256": "c88943b95bfd98d36a8f29f28ffbee261ddb0fc6f23c442715a761003f2fb0ac",
+        "name": "mingw-w64-ucrt-x86_64-crt",
+        "version": "14.0.0.r220.gd999af622-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-gcc-16.1.0-5-any.pkg.tar.zst",
+        "archive_sha256": "2b5be791133f5fafac2537ad9d1579c9a421b791d7bf57fba6fb54484ec59622",
+        "name": "mingw-w64-ucrt-x86_64-gcc",
+        "version": "16.1.0-5"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-gcc-libs-16.1.0-5-any.pkg.tar.zst",
+        "archive_sha256": "4dab54c95756da3e18ca375ae4c7fdeb709fc04bf209eb131c120e27704fb5b3",
+        "name": "mingw-w64-ucrt-x86_64-gcc-libs",
+        "version": "16.1.0-5"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-gettext-runtime-1.0-1-any.pkg.tar.zst",
+        "archive_sha256": "ba693dda4ac375af76ce481ff3a6e7481286546cc7dc6d56c7021dae34084157",
+        "name": "mingw-w64-ucrt-x86_64-gettext-runtime",
+        "version": "1.0-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-gmp-6.3.0-2-any.pkg.tar.zst",
+        "archive_sha256": "e82a75968a556484a50084578238a84eb60fb93e34986fd6695c537975bd39ea",
+        "name": "mingw-w64-ucrt-x86_64-gmp",
+        "version": "6.3.0-2"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-headers-14.0.0.r220.gd999af622-1-any.pkg.tar.zst",
+        "archive_sha256": "1b042ff83021daf0190e2b84b5bcd7d39228874a3a90ee719659cb6a4ce5da02",
+        "name": "mingw-w64-ucrt-x86_64-headers",
+        "version": "14.0.0.r220.gd999af622-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-isl-0.28-1-any.pkg.tar.zst",
+        "archive_sha256": "8594e01a253d5a72646c586cf5a1626c1b1c2be7c30060fe67abd9bebe3fe223",
+        "name": "mingw-w64-ucrt-x86_64-isl",
+        "version": "0.28-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-libiconv-1.19-1-any.pkg.tar.zst",
+        "archive_sha256": "9a500f38c2b91808741c62fae746b3e9110b33a1ecf5c30fa0c66dbedddf7e16",
+        "name": "mingw-w64-ucrt-x86_64-libiconv",
+        "version": "1.19-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-libwinpthread-14.0.0.r220.gd999af622-1-any.pkg.tar.zst",
+        "archive_sha256": "a3f0a17a5c8544174bbe05c5905934f208205969e0b8be6f36c880b4a4547fe8",
+        "name": "mingw-w64-ucrt-x86_64-libwinpthread",
+        "version": "14.0.0.r220.gd999af622-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-mpc-1.4.1-1-any.pkg.tar.zst",
+        "archive_sha256": "f06556e811c711ce91609484e31d358e4f495811ba29813bf2284a3b236d82ce",
+        "name": "mingw-w64-ucrt-x86_64-mpc",
+        "version": "1.4.1-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-mpfr-4.2.2-3-any.pkg.tar.zst",
+        "archive_sha256": "6b70a275d2ec75c70aa50a236c218e6b7ee9a5ab4c6d52cb0b580267b7d200fe",
+        "name": "mingw-w64-ucrt-x86_64-mpfr",
+        "version": "4.2.2-3"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-tzdata-2026c-1-any.pkg.tar.zst",
+        "archive_sha256": "b6af6fd6acb676b9bb0761b75b1d8330b89abd4c8d467fda35cee8925b170db9",
+        "name": "mingw-w64-ucrt-x86_64-tzdata",
+        "version": "2026c-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-windows-default-manifest-6.4-4-any.pkg.tar.zst",
+        "archive_sha256": "6d1c9e2ab75aace04d30fb43974b24d5505bfd7872ca23fea773fc9ae70bd248",
+        "name": "mingw-w64-ucrt-x86_64-windows-default-manifest",
+        "version": "6.4-4"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-winpthreads-14.0.0.r220.gd999af622-1-any.pkg.tar.zst",
+        "archive_sha256": "53cb2aea001c48cfdffb8fbc2b8c4b5e383f08ffe1df1f3e1abe576db8ab2a63",
+        "name": "mingw-w64-ucrt-x86_64-winpthreads",
+        "version": "14.0.0.r220.gd999af622-1"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-zlib-1.3.2-2-any.pkg.tar.zst",
+        "archive_sha256": "841401182976d2f9e17e5c0ebaac51f2a8014140ea53d67625e91c8fb3c85ea0",
+        "name": "mingw-w64-ucrt-x86_64-zlib",
+        "version": "1.3.2-2"
+      },
+      {
+        "archive_file": "mingw-w64-ucrt-x86_64-zstd-1.5.7-2-any.pkg.tar.zst",
+        "archive_sha256": "dbdb8427280046a2b41697780aa4c52983b708082b0da4755951dc3bea96ca89",
+        "name": "mingw-w64-ucrt-x86_64-zstd",
+        "version": "1.5.7-2"
+      },
+      {
+        "archive_file": "pkgconf-2.5.1-1-x86_64.pkg.tar.zst",
+        "archive_sha256": "38efd4928ac0cb06e9bd558baa533fc923c0592115bf9bd44970250f3ae2cb7e",
+        "name": "pkgconf",
+        "version": "2.5.1-1"
+      }
+    ],
+    "added_packages_inventory": {
+      "bytes": 1137,
+      "count": 38,
+      "line_endings": "LF",
+      "sha256": "4945889638eca6aae89e124803115f55dfe9fc0aa3cd814680872fdd0573c4ce"
+    },
+    "attempt_start_integrity": {
+      "inventory_stdout_sha256": "9173804f4f2cb15a4e554182113b3f1ab58ff77527616ce32610d408e870ee18",
+      "package_count": 13,
+      "status": "pacman-Qkk-zero-altered-files-at-attempt-start"
+    },
+    "autoconf": "2.73 via autoconf-wrapper 20260320-1",
+    "automake": "1.18.1 via automake-wrapper 20260320-1",
+    "bash": {
+      "executable_sha256": "41b09f0a9c1c68fd65253a7e8087b3775f0af245b729ade74ca4425d14392c2d",
+      "package": "bash 5.3.015-1",
+      "resolved_path": "/usr/bin/bash"
+    },
+    "binutils": {
+      "identity": "GNU ld (GNU Binutils) 2.47.20260726",
+      "linker_sha256": "fb152d34cf00bf66fc57a66522806a4e64914654d8c1ab8cdd0a1d78283ec215",
+      "package": "mingw-w64-ucrt-x86_64-binutils 2.47-1",
+      "resolved_linker_path": "/ucrt64/bin/ld"
+    },
+    "explicit_requests": [
+      "mingw-w64-ucrt-x86_64-gcc",
+      "make",
+      "autoconf",
+      "automake",
+      "libtool",
+      "pkgconf"
+    ],
+    "gcc": {
+      "executable_sha256": "f96a3bdb1d3a3967b309d75c7413399391e857b5be4cb17162572ed66f6772a0",
+      "identity": "gcc.exe (Rev5, Built by MSYS2 project) 16.1.0",
+      "package": "mingw-w64-ucrt-x86_64-gcc 16.1.0-5",
+      "resolved_compiler_path": "/ucrt64/bin/gcc",
+      "target": "x86_64-w64-mingw32"
+    },
+    "install_command": "pacman --noconfirm --needed -S mingw-w64-ucrt-x86_64-gcc make autoconf automake libtool pkgconf",
+    "integrity": {
+      "affected_legacy_audit": {
+        "audit_exit_code": 0,
+        "classification": "legacy-md5-only-mtree-sha256-check-false-positive",
+        "expected_package_count": 6,
+        "expected_qkk_sha256_warning_count": 606,
+        "observed_qkk_sha256_warning_count": 606,
+        "overall_pass": true,
+        "packages": [
+          {
+            "aggregate_payload": {
+              "archive_bytes": 1509016,
+              "archive_sha256": "cdedbb0508189bb0e19fc71c7968f321fa2ff8998a02be8e3cb6a92875ed5c8b",
+              "installed_bytes": 1509016,
+              "installed_sha256": "cdedbb0508189bb0e19fc71c7968f321fa2ff8998a02be8e3cb6a92875ed5c8b",
+              "match": true
+            },
+            "archive": "automake1.11-1.11.6-6-any.pkg.tar.zst",
+            "detached_signature": {
+              "signature_file_sha256": "99a5cad2d07ddea9df55c583f3b4ddad36497b0005877493160faafab05e38c0",
+              "signer_fingerprint": "5F944B027F7FE2091985AA2EFA11531AA0AA7F57",
+              "valid": true,
+              "verification_exit_code": 0
+            },
+            "mtree": {
+              "archive_sha256": "b0c9ed3062ed3cedbc625f13a8f471e0f799d0e872ecd0c5f10b937265ee2276",
+              "local_database_matches_archive": true,
+              "local_database_sha256": "b0c9ed3062ed3cedbc625f13a8f471e0f799d0e872ecd0c5f10b937265ee2276",
+              "md5_file_entries": 128,
+              "sha256_file_entries": 0
+            },
+            "name": "automake1.11",
+            "pacman_qkk": {
+              "altered_files": 128,
+              "exit_code": 1,
+              "other_warnings": 0,
+              "sha256_mismatch_warnings": 128,
+              "total_files": 138
+            },
+            "payload": {
+              "archive_install_scripts": 0,
+              "directories": 10,
+              "entries": 138,
+              "local_install_scripts": 0,
+              "regular_files": 128,
+              "symlinks": 0
+            },
+            "repository": "msys",
+            "repository_archive": {
+              "cached_sha256": "25ecc6296e1416513153c290442cbca6dcb813c1c50e5beb3a708408ba5de3a5",
+              "match": true,
+              "repository_sha256": "25ecc6296e1416513153c290442cbca6dcb813c1c50e5beb3a708408ba5de3a5"
+            },
+            "stored_md5_vs_installed": {
+              "all_match": true,
+              "difference_lines": 0,
+              "installed_set_sha256": "eb1eacea4aff366f57aace20126c526a6cf0d84b69642a6bd6b37cebaa7b2838",
+              "signed_mtree_set_sha256": "eb1eacea4aff366f57aace20126c526a6cf0d84b69642a6bd6b37cebaa7b2838"
+            },
+            "version": "1.11.6-6"
+          },
+          {
+            "aggregate_payload": {
+              "archive_bytes": 1505491,
+              "archive_sha256": "deb441e5e354dfc4c612af024d4d8db3e42ab393a11b66f8a59642b1ddf336f9",
+              "installed_bytes": 1505491,
+              "installed_sha256": "deb441e5e354dfc4c612af024d4d8db3e42ab393a11b66f8a59642b1ddf336f9",
+              "match": true
+            },
+            "archive": "automake1.12-1.12.6-6-any.pkg.tar.zst",
+            "detached_signature": {
+              "signature_file_sha256": "fdb398d249cece07264a185177ff1e54573c0b9df184c094ead7a0105c598d99",
+              "signer_fingerprint": "5F944B027F7FE2091985AA2EFA11531AA0AA7F57",
+              "valid": true,
+              "verification_exit_code": 0
+            },
+            "mtree": {
+              "archive_sha256": "af453d41e87df9829a82c6b3a07db24db984071a491344d5d99e88c2494f846e",
+              "local_database_matches_archive": true,
+              "local_database_sha256": "af453d41e87df9829a82c6b3a07db24db984071a491344d5d99e88c2494f846e",
+              "md5_file_entries": 122,
+              "sha256_file_entries": 0
+            },
+            "name": "automake1.12",
+            "pacman_qkk": {
+              "altered_files": 122,
+              "exit_code": 1,
+              "other_warnings": 0,
+              "sha256_mismatch_warnings": 122,
+              "total_files": 133
+            },
+            "payload": {
+              "archive_install_scripts": 0,
+              "directories": 11,
+              "entries": 133,
+              "local_install_scripts": 0,
+              "regular_files": 122,
+              "symlinks": 0
+            },
+            "repository": "msys",
+            "repository_archive": {
+              "cached_sha256": "b6c91241999c6ff8d04c5ea8011b10544a373b01eacb7993c66db99e5f4fb373",
+              "match": true,
+              "repository_sha256": "b6c91241999c6ff8d04c5ea8011b10544a373b01eacb7993c66db99e5f4fb373"
+            },
+            "stored_md5_vs_installed": {
+              "all_match": true,
+              "difference_lines": 0,
+              "installed_set_sha256": "bcc3d8ab7d821e602255522b33435c78e1e459f957c0897b6c8b0cfbc8351d31",
+              "signed_mtree_set_sha256": "bcc3d8ab7d821e602255522b33435c78e1e459f957c0897b6c8b0cfbc8351d31"
+            },
+            "version": "1.12.6-6"
+          },
+          {
+            "aggregate_payload": {
+              "archive_bytes": 1497266,
+              "archive_sha256": "5b93b09550b841aabc6c550d906aa7252a741b0d1a9384e84a95ba9fc014d07f",
+              "installed_bytes": 1497266,
+              "installed_sha256": "5b93b09550b841aabc6c550d906aa7252a741b0d1a9384e84a95ba9fc014d07f",
+              "match": true
+            },
+            "archive": "automake1.13-1.13.4-7-any.pkg.tar.zst",
+            "detached_signature": {
+              "signature_file_sha256": "58af6d9609e881ff51c42c78166823b6db7e0f19bd6b88952337dc941c1bf5a6",
+              "signer_fingerprint": "5F944B027F7FE2091985AA2EFA11531AA0AA7F57",
+              "valid": true,
+              "verification_exit_code": 0
+            },
+            "mtree": {
+              "archive_sha256": "4f9d60b5d23ca96be37225adcc0ae4fcd748312f686e7ac93ac710be8abac634",
+              "local_database_matches_archive": true,
+              "local_database_sha256": "4f9d60b5d23ca96be37225adcc0ae4fcd748312f686e7ac93ac710be8abac634",
+              "md5_file_entries": 118,
+              "sha256_file_entries": 0
+            },
+            "name": "automake1.13",
+            "pacman_qkk": {
+              "altered_files": 118,
+              "exit_code": 1,
+              "other_warnings": 0,
+              "sha256_mismatch_warnings": 118,
+              "total_files": 130
+            },
+            "payload": {
+              "archive_install_scripts": 0,
+              "directories": 12,
+              "entries": 130,
+              "local_install_scripts": 0,
+              "regular_files": 118,
+              "symlinks": 0
+            },
+            "repository": "msys",
+            "repository_archive": {
+              "cached_sha256": "a0d3eb1b359a67c1c8a9161cf79ba681cccabf47c78cb40d3065b5eff02a82f0",
+              "match": true,
+              "repository_sha256": "a0d3eb1b359a67c1c8a9161cf79ba681cccabf47c78cb40d3065b5eff02a82f0"
+            },
+            "stored_md5_vs_installed": {
+              "all_match": true,
+              "difference_lines": 0,
+              "installed_set_sha256": "abf4966738fc07474877b39ae239dacb80fe7bfb112a6acc99aa78fa67fbe8f2",
+              "signed_mtree_set_sha256": "abf4966738fc07474877b39ae239dacb80fe7bfb112a6acc99aa78fa67fbe8f2"
+            },
+            "version": "1.13.4-7"
+          },
+          {
+            "aggregate_payload": {
+              "archive_bytes": 1504833,
+              "archive_sha256": "0b7e41804965ce1fbda97ad54edc236460e3a95be7808ad193daebf7281020e8",
+              "installed_bytes": 1504833,
+              "installed_sha256": "0b7e41804965ce1fbda97ad54edc236460e3a95be7808ad193daebf7281020e8",
+              "match": true
+            },
+            "archive": "automake1.14-1.14.1-6-any.pkg.tar.zst",
+            "detached_signature": {
+              "signature_file_sha256": "821f02f882a2b393e9bad3ff2a6e60a70fa12e4ff0faa8f1817360c2238fcd8e",
+              "signer_fingerprint": "5F944B027F7FE2091985AA2EFA11531AA0AA7F57",
+              "valid": true,
+              "verification_exit_code": 0
+            },
+            "mtree": {
+              "archive_sha256": "9a18b3471874a52fc7046b70eeddf43fa1189609e1a7370cf2ce56565b658f08",
+              "local_database_matches_archive": true,
+              "local_database_sha256": "9a18b3471874a52fc7046b70eeddf43fa1189609e1a7370cf2ce56565b658f08",
+              "md5_file_entries": 119,
+              "sha256_file_entries": 0
+            },
+            "name": "automake1.14",
+            "pacman_qkk": {
+              "altered_files": 119,
+              "exit_code": 1,
+              "other_warnings": 0,
+              "sha256_mismatch_warnings": 119,
+              "total_files": 131
+            },
+            "payload": {
+              "archive_install_scripts": 0,
+              "directories": 12,
+              "entries": 131,
+              "local_install_scripts": 0,
+              "regular_files": 119,
+              "symlinks": 0
+            },
+            "repository": "msys",
+            "repository_archive": {
+              "cached_sha256": "0b097559c1fa79124552334b63d13417bcec8a08008ab65f77d27300a4ccc5b4",
+              "match": true,
+              "repository_sha256": "0b097559c1fa79124552334b63d13417bcec8a08008ab65f77d27300a4ccc5b4"
+            },
+            "stored_md5_vs_installed": {
+              "all_match": true,
+              "difference_lines": 0,
+              "installed_set_sha256": "2a34eb6b5addfba962c5c6ffaaf8d932593b3d99fa5caf9678d8981b60abf7f2",
+              "signed_mtree_set_sha256": "2a34eb6b5addfba962c5c6ffaaf8d932593b3d99fa5caf9678d8981b60abf7f2"
+            },
+            "version": "1.14.1-6"
+          },
+          {
+            "aggregate_payload": {
+              "archive_bytes": 1552982,
+              "archive_sha256": "ff6964e1987fe9213d8f6d4e142db51771805b231018cccf5d143650f699db89",
+              "installed_bytes": 1552982,
+              "installed_sha256": "ff6964e1987fe9213d8f6d4e142db51771805b231018cccf5d143650f699db89",
+              "match": true
+            },
+            "archive": "automake1.15-1.15.1-4-any.pkg.tar.zst",
+            "detached_signature": {
+              "signature_file_sha256": "1138487e8b7e859929e7ed0da75b718dab4a48dfffa5564b5e7ff519b789e554",
+              "signer_fingerprint": "5F944B027F7FE2091985AA2EFA11531AA0AA7F57",
+              "valid": true,
+              "verification_exit_code": 0
+            },
+            "mtree": {
+              "archive_sha256": "a6446019bce74e76387b8dc1cc586af05969987fa0045cfc8f1aa4a44fdbf191",
+              "local_database_matches_archive": true,
+              "local_database_sha256": "a6446019bce74e76387b8dc1cc586af05969987fa0045cfc8f1aa4a44fdbf191",
+              "md5_file_entries": 118,
+              "sha256_file_entries": 0
+            },
+            "name": "automake1.15",
+            "pacman_qkk": {
+              "altered_files": 118,
+              "exit_code": 1,
+              "other_warnings": 0,
+              "sha256_mismatch_warnings": 118,
+              "total_files": 130
+            },
+            "payload": {
+              "archive_install_scripts": 0,
+              "directories": 12,
+              "entries": 130,
+              "local_install_scripts": 0,
+              "regular_files": 118,
+              "symlinks": 0
+            },
+            "repository": "msys",
+            "repository_archive": {
+              "cached_sha256": "e3c73d0094eebbc2353b2ddd0b7c81020917c2ec09d3e4967d7abc9794fa7843",
+              "match": true,
+              "repository_sha256": "e3c73d0094eebbc2353b2ddd0b7c81020917c2ec09d3e4967d7abc9794fa7843"
+            },
+            "stored_md5_vs_installed": {
+              "all_match": true,
+              "difference_lines": 0,
+              "installed_set_sha256": "3154c69a6769ad6b53526915482643c5dbfc128c910cc0d67da49396a0dac80a",
+              "signed_mtree_set_sha256": "3154c69a6769ad6b53526915482643c5dbfc128c910cc0d67da49396a0dac80a"
+            },
+            "version": "1.15.1-4"
+          },
+          {
+            "aggregate_payload": {
+              "archive_bytes": 1348,
+              "archive_sha256": "d2a37dc06a868339fb0e6dcddebfae1656bd7e9e62ea1c70df4458e195ef7783",
+              "installed_bytes": 1348,
+              "installed_sha256": "d2a37dc06a868339fb0e6dcddebfae1656bd7e9e62ea1c70df4458e195ef7783",
+              "match": true
+            },
+            "archive": "mingw-w64-ucrt-x86_64-windows-default-manifest-6.4-4-any.pkg.tar.zst",
+            "detached_signature": {
+              "signature_file_sha256": "8e701ba98ab7b9f72d001c7600bcff07ace72c79d89cc68137cbefc12c6e5dfa",
+              "signer_fingerprint": "5F944B027F7FE2091985AA2EFA11531AA0AA7F57",
+              "valid": true,
+              "verification_exit_code": 0
+            },
+            "mtree": {
+              "archive_sha256": "12d5a4b9183e0b04c3dd46d2519226faf625f6ebc91e5de4745ba1bcdb715a3a",
+              "local_database_matches_archive": true,
+              "local_database_sha256": "12d5a4b9183e0b04c3dd46d2519226faf625f6ebc91e5de4745ba1bcdb715a3a",
+              "md5_file_entries": 1,
+              "sha256_file_entries": 0
+            },
+            "name": "mingw-w64-ucrt-x86_64-windows-default-manifest",
+            "pacman_qkk": {
+              "altered_files": 1,
+              "exit_code": 1,
+              "other_warnings": 0,
+              "sha256_mismatch_warnings": 1,
+              "total_files": 3
+            },
+            "payload": {
+              "archive_install_scripts": 0,
+              "directories": 2,
+              "entries": 3,
+              "local_install_scripts": 0,
+              "regular_files": 1,
+              "symlinks": 0
+            },
+            "repository": "ucrt64",
+            "repository_archive": {
+              "cached_sha256": "6d1c9e2ab75aace04d30fb43974b24d5505bfd7872ca23fea773fc9ae70bd248",
+              "match": true,
+              "repository_sha256": "6d1c9e2ab75aace04d30fb43974b24d5505bfd7872ca23fea773fc9ae70bd248"
+            },
+            "stored_md5_vs_installed": {
+              "all_match": true,
+              "difference_lines": 0,
+              "installed_set_sha256": "8ad3cee5cd58e1671f115537db7652971a0638312dab7f250439993bf99c38cf",
+              "signed_mtree_set_sha256": "8ad3cee5cd58e1671f115537db7652971a0638312dab7f250439993bf99c38cf"
+            },
+            "version": "6.4-4"
+          }
+        ],
+        "script": {
+          "bytes": 13890,
+          "sha256": "57a052664da2f74a567e564097ada78178b1c6894ed7d986ecf306faed125b17"
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout_json": {
+          "bytes": 12585,
+          "sha256": "bc4712392646ac0516c21b99af989e15131cae2927541dc5960618c7690c32b6"
+        }
+      },
+      "classification": "pacman 6.1 SHA-256-only Qkk false positive for legacy MD5-only MTREE records",
+      "compiler_and_explicit_packages": "zero altered files reported",
+      "explicit_integrity_stderr_sha256": "54770f2c040cc72595f9bd603aee6c3a1f90aec3f629a1e7a944dd270210f4b1",
+      "explicit_integrity_stdout_sha256": "f5628f3ce7fd24cd16d23ee5767263b9deb1eded37b0e7e4e2f22c349186ac97",
+      "full_added_package_qkk": {
+        "altered_file_reports": 606,
+        "package_count": 38,
+        "pacman_exit_code": 1,
+        "stderr": {
+          "bytes": 53263,
+          "line_endings": "LF",
+          "sha256": "8bef86a26cc3a49e00f3298d7d7ef9545f5c49c0409cd9393702a1350f3192dc"
+        },
+        "stdout": {
+          "bytes": 2059,
+          "line_endings": "LF",
+          "sha256": "f9a0033fff832a6b33f9332a4e3000abcd70f8f617d204d560abf410f67a3457"
+        }
+      },
+      "package_archives_match_repository_sha256": true,
+      "pacman_remote_package_signature_policy": "Required",
+      "pacman_transaction_authentication": "enforced for the 38-package transaction",
+      "qualified_exception": true
+    },
+    "libtool": "2.5.4-5",
+    "make": {
+      "package": "make 4.4.1-3",
+      "resolved_path": "/usr/bin/make"
+    },
+    "msys_runtime": {
+      "executable_sha256": "0cb645ead21947b7e865448413f3e281236638ed38695b43c2a6d9c06598e046",
+      "package": "msys2-runtime 3.6.10-1",
+      "resolved_path": "/usr/bin/msys-2.0.dll"
+    },
+    "package_file_inventory": {
+      "lines": 9203,
+      "sha256": "32f3877b23b7fc42d3d14b043ceea6accc6ef512abf7034bb80e654bba6c1600"
+    },
+    "pacman": {
+      "executable_sha256": "209b2d527f359608cdb092515d3d99f46ac9d2209d130adced81a8cdd79057d8",
+      "package": "pacman 6.1.0-25",
+      "remote_package_signature_policy": "Required",
+      "resolved_path": "/usr/bin/pacman"
+    },
+    "pkgconf": "2.5.1-1",
+    "runtime": {
+      "crt_package": "mingw-w64-ucrt-x86_64-crt 14.0.0.r220.gd999af622-1",
+      "gcc_libraries_package": "mingw-w64-ucrt-x86_64-gcc-libs 16.1.0-5",
+      "headers_package": "mingw-w64-ucrt-x86_64-headers 14.0.0.r220.gd999af622-1",
+      "unistd_path": "C:\\msys64\\ucrt64\\include\\unistd.h",
+      "unistd_sha256": "33515907c2e69329c9e60e7b2ea7e9dadd76aa9f7adb0aaec2c967769f02652d"
+    }
+  }
+}

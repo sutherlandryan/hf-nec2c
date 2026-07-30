@@ -5,6 +5,8 @@
 /__pycache__/
 /tools/__pycache__/
 /build-support/**/__pycache__/
+/tests/__pycache__/
 /*.py[cod]
 /tools/*.py[cod]
 /build-support/**/*.py[cod]
+/tests/*.py[cod]
