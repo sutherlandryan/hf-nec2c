@@ -32,5 +32,7 @@ Every pull request that draws on external technical evidence must identify that 
 state whether the implementation is copied, adapted, or independently authored. Later
 maintained-tree code requires separately established provenance and licensing before import.
 
-The next planned engineering slice is v0.0.5f-A2: a reproducible unmodified Windows x64 build
-outside the archival tree. It is a separate reviewed job and is not part of preservation intake.
+v0.0.5f-A2 records the unmodified Windows x64 compiler baseline outside the archival tree. Its
+two clean MSVC attempts fail consistently at the original `unistd.h` dependency and produce no
+executable. Any Windows portability layer, alternate compiler policy, or source change is a
+separate reviewed job; do not turn an A2 contribution into an unreviewed port.

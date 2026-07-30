@@ -1,0 +1,530 @@
+{
+  "attempts": {
+    "build_a": {
+      "build_products_after_compile": [],
+      "compiler_exit_code": 2,
+      "driver_exit_code": 10,
+      "duration_milliseconds": 4193,
+      "duration_scope": "timed phase after fresh path reservation through post-build source and preservation checks; excludes reservation and attempt-record serialization",
+      "executable_byte_count": null,
+      "executable_present": false,
+      "executable_sha256": null,
+      "expected_a2_blocker_observed": true,
+      "fresh_extraction": true,
+      "id": "final-a-20260729",
+      "linker_exit_code": null,
+      "normalized_stderr_byte_count": 0,
+      "normalized_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalized_stdout_byte_count": 1694,
+      "normalized_stdout_sha256": "3ac5a36f556c88b7f538d1e4ef899b34b44bf00c82e774dd4530ac169223ab91",
+      "outcome": "unmodified_source_build_failed",
+      "preservation_after": "pass",
+      "preservation_before": "pass",
+      "raw_stderr_byte_count": 0,
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_byte_count": 2019,
+      "raw_stdout_sha256": "752ff4830542e791a6d29a28a0c7efe326a208f23b9c972536d9f5d1e2a3625c",
+      "source_authentication_after": "pass",
+      "source_authentication_before": "pass"
+    },
+    "build_b": {
+      "build_products_after_compile": [],
+      "compiler_exit_code": 2,
+      "driver_exit_code": 10,
+      "duration_milliseconds": 3838,
+      "duration_scope": "timed phase after fresh path reservation through post-build source and preservation checks; excludes reservation and attempt-record serialization",
+      "executable_byte_count": null,
+      "executable_present": false,
+      "executable_sha256": null,
+      "expected_a2_blocker_observed": true,
+      "fresh_extraction": true,
+      "id": "final-b-20260729",
+      "linker_exit_code": null,
+      "normalized_stderr_byte_count": 0,
+      "normalized_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalized_stdout_byte_count": 1694,
+      "normalized_stdout_sha256": "3ac5a36f556c88b7f538d1e4ef899b34b44bf00c82e774dd4530ac169223ab91",
+      "outcome": "unmodified_source_build_failed",
+      "preservation_after": "pass",
+      "preservation_before": "pass",
+      "raw_stderr_byte_count": 0,
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stdout_byte_count": 2019,
+      "raw_stdout_sha256": "5da644ba61153a8ad98817dcab7c69d0b5bf62c9dd165ede316f023b9ccf94d9",
+      "source_authentication_after": "pass",
+      "source_authentication_before": "pass"
+    }
+  },
+  "build_definition": {
+    "build_driver": {
+      "byte_count": 57277,
+      "path": "build-support/windows-x64/build.ps1",
+      "sha256": "e10bff5cc16bdd39d443e9d3982a15e4d56b4153c03a855b07dc1d4a9654370e",
+      "spdx_license_identifier": "BSD-2-Clause"
+    },
+    "compile": {
+      "arguments": [
+        "/nologo",
+        "/TC",
+        "/std:c11",
+        "/O2",
+        "/W4",
+        "/MD",
+        "/Brepro",
+        "/DPACKAGE_STRING=\"nec2c 1.3.1\"",
+        "/c",
+        "calculations.c",
+        "geometry.c",
+        "input.c",
+        "matrix.c",
+        "network.c",
+        "shared.c",
+        "fields.c",
+        "ground.c",
+        "main.c",
+        "misc.c",
+        "radiation.c",
+        "somnec.c",
+        "/Fo..\\..\\build\\"
+      ],
+      "executable": "cl.exe",
+      "source_order_identity": "upstream Makefile.am nec2c_SOURCES order",
+      "working_directory": "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1"
+    },
+    "configure": {
+      "command": null,
+      "reason": "No installed GNU compiler and GNU make route; direct external build driver selected.",
+      "status": "not_run"
+    },
+    "link": {
+      "arguments": [
+        "/NOLOGO",
+        "/OUT:..\\..\\build\\nec2c.exe",
+        "/MACHINE:X64",
+        "/SUBSYSTEM:CONSOLE",
+        "/INCREMENTAL:NO",
+        "/BREPRO",
+        "..\\..\\build\\calculations.obj",
+        "..\\..\\build\\geometry.obj",
+        "..\\..\\build\\input.obj",
+        "..\\..\\build\\matrix.obj",
+        "..\\..\\build\\network.obj",
+        "..\\..\\build\\shared.obj",
+        "..\\..\\build\\fields.obj",
+        "..\\..\\build\\ground.obj",
+        "..\\..\\build\\main.obj",
+        "..\\..\\build\\misc.obj",
+        "..\\..\\build\\radiation.obj",
+        "..\\..\\build\\somnec.obj"
+      ],
+      "executable": "link.exe",
+      "status": "not_reached",
+      "working_directory": "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1"
+    },
+    "original_autotools": {
+      "autoconf_distribution_version": "2.71",
+      "automake_distribution_version": "1.16.5",
+      "out_of_tree_supported": true,
+      "reason_not_used": "No installed GCC, MinGW-w64, Clang, GNU make, or complete MSYS2 toolchain.",
+      "used": false
+    },
+    "source_guard": {
+      "byte_count": 14832,
+      "path": "build-support/windows-x64/source_guard.py",
+      "sha256": "331718ae2b79390b71b8eb935953b7652d5a702a3e56cf1deb6aa51152b88b13",
+      "spdx_license_identifier": "BSD-2-Clause"
+    }
+  },
+  "controlled_environment": {
+    "child_environment": {
+      "CL": "",
+      "ComSpec": "${SYSTEM_ROOT}\\System32\\cmd.exe",
+      "INCLUDE": "${VC_INCLUDE};${SDK_UCRT_INCLUDE};${SDK_SHARED_INCLUDE};${SDK_UM_INCLUDE};${SDK_WINRT_INCLUDE}",
+      "LANG": "C",
+      "LANGUAGE": "C",
+      "LC_ALL": "C",
+      "LIB": "",
+      "LIBPATH": "",
+      "LINK": "",
+      "PATH": "${MSVC_X64_BIN};${SYSTEM_ROOT}\\System32;${SYSTEM_ROOT}",
+      "PATHEXT": ".COM;.EXE;.BAT;.CMD",
+      "SOURCE_DATE_EPOCH": "1701496474",
+      "SystemRoot": "${SYSTEM_ROOT}",
+      "TEMP": "${ATTEMPT_ROOT}\\build\\tmp",
+      "TMP": "${ATTEMPT_ROOT}\\build\\tmp",
+      "TZ": "UTC",
+      "VSLANG": "1033",
+      "_CL_": "",
+      "_LINK_": "",
+      "windir": "${SYSTEM_ROOT}"
+    },
+    "driver_runtime": {
+      "powershell": "Windows PowerShell 5.1.26100.8894",
+      "python": "CPython 3.14.0b3 via py.exe -3 -I"
+    },
+    "epoch_derivation": {
+      "evidence": "manifests/nec2c-1.3.1-tar-listing.txt",
+      "member": "nec2c-1.3.1",
+      "policy": "maximum authenticated archive-member modification time",
+      "utc": "2023-12-02T05:54:34Z"
+    },
+    "planned_link_environment": {
+      "LIB": "${VC_X64_LIB};${SDK_UCRT_X64_LIB};${SDK_UM_X64_LIB}",
+      "status": "not_reached"
+    }
+  },
+  "deterministic_build_policy": {
+    "absolute_path_policy": "relative compile inputs and outputs; machine paths normalized only in diagnostics",
+    "build_a_and_b_directories_differed": true,
+    "compiler_flags_attempted": [
+      "/Brepro"
+    ],
+    "debug_information": "disabled by omission; no PDB requested",
+    "directory_ordering": "fixed original Makefile.am source order",
+    "executable_comparison": "not_evaluated_no_executable",
+    "executable_hashes_equal": null,
+    "linker_flags_attempted": [],
+    "linker_flags_planned": [
+      "/BREPRO",
+      "/INCREMENTAL:NO"
+    ],
+    "locale": "C",
+    "normalized_failure_equal": true,
+    "pe_timestamp_policy": "MSVC /BREPRO planned; link not reached",
+    "post_process_binary_rewrite": false,
+    "timezone": "UTC"
+  },
+  "failure": {
+    "classification": [
+      "posix_header_dependency"
+    ],
+    "diagnostic_normalization": {
+      "line_endings": "LF",
+      "path_replacements": [
+        "${ATTEMPT_ROOT}",
+        "${REPOSITORY_ROOT}",
+        "${VISUAL_STUDIO_ROOT}",
+        "${WINDOWS_SDK_ROOT}",
+        "${PROGRAM_FILES_X86}",
+        "${USER_PROFILE}",
+        "${SYSTEM_ROOT}"
+      ],
+      "replacement_matching": "case-insensitive, culture-invariant, longest absolute root first; no bare username replacement",
+      "semantic_text_changed": false
+    },
+    "failing_stage": "compile",
+    "first_missing_api_or_header": "unistd.h",
+    "later_portability_blockers": "not empirically established; each of the twelve translation units stopped at the unconditional unistd.h include",
+    "normalized_diagnostics": [
+      "calculations.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "geometry.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "input.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "matrix.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "network.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "shared.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "fields.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "ground.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "main.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "misc.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "radiation.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "somnec.c",
+      "${ATTEMPT_ROOT}\\source\\nec2c-1.3.1\\nec2c.h(9): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory",
+      "Generating Code..."
+    ],
+    "smallest_future_source_portability_decision": "Decide whether to provision and pin a compatible GNU/MinGW-w64 toolchain for another untouched-source attempt or authorize a separate independently authored Windows portability milestone; this MSVC result alone does not prove that source changes are unavoidable under every native Windows compiler."
+  },
+  "known_limitations": [
+    "No unmodified Windows x64 executable was produced.",
+    "The first missing header prevents empirical observation of later source portability failures in this toolchain.",
+    "Stable-handle and post-read identity checks do not prevent malicious concurrent mutation or replacement before, during, or between path-based archive authentication, manifest reading, extraction, or verification phases, or after final checks; the build assumes a non-adversarial local workspace.",
+    "A failed extraction is retained for diagnosis and its build identifier remains burned; cleanup is a manual exact-path operation because the guard does not recursively remove a path that a concurrent process may have replaced.",
+    "Timeout handling performs bounded best-effort Windows process-tree termination and makes timeout, stream-drain uncertainty, or termination failure a driver validation failure; trusted installed tools are assumed not to spawn detached descendants, and a process that escapes the targeted tree is outside the claimed boundary.",
+    "Captured process output is held in memory; the driver is limited to fixed authenticated A2 inputs and trusted installed tools rather than arbitrary noisy commands.",
+    "No numerical behavior, tolerance, or equivalence claim was evaluated.",
+    "No PE, import, export, embedded-string, or smoke evidence exists without an executable.",
+    "The exact PowerShell wrapper command without -ExecutionPolicy Bypass is blocked by the host LocalMachine Restricted policy before verifier code runs."
+  ],
+  "numerical_qualification": {
+    "equivalence_result": null,
+    "performed": false,
+    "result": null,
+    "tolerances": null
+  },
+  "outcome": {
+    "executable_produced": false,
+    "status": "unmodified_source_build_failed",
+    "v005f_a2_result": "truthful_reproducible_compile_failure"
+  },
+  "pe_inspection": {
+    "actual_architecture": null,
+    "actual_coff_timestamp": null,
+    "debug_or_pdb_scan": null,
+    "embedded_environment_scan": null,
+    "expected_machine_if_linked": "0x8664",
+    "exported_symbols": null,
+    "format": null,
+    "headers": null,
+    "imported_dlls": null,
+    "inspection_tool_invoked": false,
+    "inspection_tool_planned": "dumpbin.exe 14.29.30159.0",
+    "local_identity_scan": null,
+    "machine": null,
+    "repository_path_scan": null,
+    "sections": null,
+    "status": "not_run_no_executable"
+  },
+  "schema": "org.sutherlandryan.hf-nec2c.windows-x64-unmodified-build.v1",
+  "serialization": {
+    "encoding": "UTF-8 without BOM",
+    "indent_spaces": 2,
+    "key_order": "recursive lexicographic order for ASCII property names",
+    "line_endings": "LF",
+    "terminal_newline": true
+  },
+  "smoke_tests": {
+    "cases": [
+      {
+        "command": [
+          "nec2c.exe"
+        ],
+        "duration_milliseconds": null,
+        "exit_code": null,
+        "name": "no_arguments",
+        "output_byte_count": null,
+        "output_created": null,
+        "output_sha256": null,
+        "status": "not_run_no_executable",
+        "stderr_byte_count": null,
+        "stderr_sha256": null,
+        "stdout_byte_count": null,
+        "stdout_sha256": null,
+        "timed_out": null
+      },
+      {
+        "command": [
+          "nec2c.exe",
+          "-imissing.nec",
+          "-omissing.out"
+        ],
+        "duration_milliseconds": null,
+        "exit_code": null,
+        "name": "missing_input",
+        "output_byte_count": null,
+        "output_created": null,
+        "output_sha256": null,
+        "status": "not_run_no_executable",
+        "stderr_byte_count": null,
+        "stderr_sha256": null,
+        "stdout_byte_count": null,
+        "stdout_sha256": null,
+        "timed_out": null
+      },
+      {
+        "command": [
+          "nec2c.exe",
+          "-imalformed.nec",
+          "-omalformed.out"
+        ],
+        "duration_milliseconds": null,
+        "exit_code": null,
+        "input_sha256": "607abb39475310a1b9b5e864b3f85acfe09f4bab11dc8a12ade3ebab1a1f186e",
+        "name": "malformed_input",
+        "output_byte_count": null,
+        "output_created": null,
+        "output_sha256": null,
+        "status": "not_run_no_executable",
+        "stderr_byte_count": null,
+        "stderr_sha256": null,
+        "stdout_byte_count": null,
+        "stdout_sha256": null,
+        "timed_out": null
+      },
+      {
+        "command": [
+          "nec2c.exe",
+          "-iinput.nec",
+          "-ovalid-1.out"
+        ],
+        "duration_milliseconds": null,
+        "exit_code": null,
+        "name": "minimal_dipole_run_1",
+        "output_byte_count": null,
+        "output_created": null,
+        "output_sha256": null,
+        "status": "not_run_no_executable",
+        "stderr_byte_count": null,
+        "stderr_sha256": null,
+        "stdout_byte_count": null,
+        "stdout_sha256": null,
+        "timed_out": null
+      },
+      {
+        "command": [
+          "nec2c.exe",
+          "-iinput.nec",
+          "-ovalid-2.out"
+        ],
+        "duration_milliseconds": null,
+        "exit_code": null,
+        "name": "minimal_dipole_run_2",
+        "output_byte_count": null,
+        "output_created": null,
+        "output_sha256": null,
+        "status": "not_run_no_executable",
+        "stderr_byte_count": null,
+        "stderr_sha256": null,
+        "stdout_byte_count": null,
+        "stdout_sha256": null,
+        "timed_out": null
+      }
+    ],
+    "minimal_dipole": {
+      "byte_count": 196,
+      "origin": "independently project-authored; not copied from maintained v1.3.3",
+      "path": "tests/smoke/minimal-dipole.nec",
+      "sha256": "395603f62e0e0682215d9985443e4e13ff73f583646427b8dc9785ca76571520",
+      "spdx_license_identifier": "BSD-2-Clause"
+    },
+    "repeatability_equal": null,
+    "results": null,
+    "status": "not_run_no_executable"
+  },
+  "source": {
+    "archive": {
+      "byte_count": 186124,
+      "path": "archive/nec2c-1.3.1.tar.bz2",
+      "sha256": "8c706008bcb11c34bf33a3f8f78711c79f7bb49de8a22d74df6b10e1203c013e"
+    },
+    "archive_member_count": 35,
+    "archive_tag": {
+      "name": "archive/nec2c-1.3.1-original",
+      "peeled_commit": "b1ff42e308c8a1c80dc7a77636a5908e870af6f6",
+      "tag_object": "cf3bbcd328ea239b7a2291e3b25e1ed1c273b2fa"
+    },
+    "extracted_regular_file_bytes": 786583,
+    "file_manifest": {
+      "path": "manifests/nec2c-1.3.1-files.sha256",
+      "regular_file_count": 34,
+      "sha256": "18041012c506a3c3d0f46dc9a3ce18c38d369192801db537f294d5381a40cb7d"
+    },
+    "main_commit": "58df591335b8b19babf960e9825a423a2cf836f7",
+    "original_release": "NEC2C 1.3.1",
+    "preservation_tag": {
+      "name": "preservation/nec2c-1.3.1-intake-v1",
+      "peeled_commit": "58df591335b8b19babf960e9825a423a2cf836f7",
+      "tag_object": "3e9ab7a1438401fc40e6c970facfc0fc25142678"
+    },
+    "repository": "https://github.com/sutherlandryan/hf-nec2c.git"
+  },
+  "statements": {
+    "executable_or_build_product_tracked": false,
+    "hf_propagation_control_modified": false,
+    "maintained_v1_3_3_code_imported": false,
+    "numerical_qualification_performed": false,
+    "original_archive_member_changed": false,
+    "source_or_compatibility_patch_applied": false,
+    "structured_output_added": false
+  },
+  "toolchain": {
+    "available_binary_inspection": [
+      "dumpbin.exe 14.29.30159.0",
+      "link.exe /DUMP 14.29.30159.0",
+      "file.exe 5.48"
+    ],
+    "build_tools": [
+      "nmake.exe 14.29.30159.0",
+      "MSBuild.exe 16.11.6.22506",
+      "cmake.exe 3.20.21032501-MSVC_2",
+      "ninja.exe 1.10.2"
+    ],
+    "compiler": {
+      "architecture": "AMD64/x64",
+      "byte_count": 402544,
+      "compiler_reported_target": "x64",
+      "compiler_reported_target_triple": null,
+      "executable": "cl.exe",
+      "name": "Microsoft C/C++ Optimizing Compiler",
+      "project_normalized_target": "x86_64-pc-windows-msvc",
+      "sha256": "8e4352b523f4ff37b429aea1d340094be1e17bbdf4f687247fc0be92d6eb9440",
+      "version": "19.29.30159.0"
+    },
+    "dumpbin": {
+      "byte_count": 23648,
+      "executable": "dumpbin.exe",
+      "sha256": "c0f34347853d568e30780146231dd417771bd7515868d6097bca02e7854caa1b",
+      "status": "installed_but_not_invoked",
+      "version": "14.29.30159.0"
+    },
+    "linker": {
+      "byte_count": 2243680,
+      "executable": "link.exe",
+      "name": "Microsoft Incremental Linker",
+      "sha256": "7d80b89e242e2ab4d002c3b3508361a45691a01bd1f4be4d19eb765c8d319762",
+      "version": "14.29.30159.0"
+    },
+    "rejected_or_unavailable_routes": [
+      {
+        "installed": false,
+        "native_amd64_pe_capability": "yes_when_a_MinGW-w64_target_is_installed",
+        "reason": "not installed",
+        "route": "GCC / MinGW-w64",
+        "suitable_in_recorded_environment": false
+      },
+      {
+        "installed": false,
+        "native_amd64_pe_capability": "yes_when_a_Windows_target_and_runtime_are_installed",
+        "reason": "not installed",
+        "route": "Clang / LLVM",
+        "suitable_in_recorded_environment": false
+      },
+      {
+        "installed": true,
+        "native_amd64_pe_capability": "not_a_compiler_route",
+        "reason": "shell present without compiler, linker, GNU make, Autoconf, or Automake",
+        "route": "Git MSYS shell",
+        "suitable_in_recorded_environment": false
+      },
+      {
+        "installed": false,
+        "native_amd64_pe_capability": "yes_with_an_explicit_non_system_runtime_dependency",
+        "reason": "not installed",
+        "route": "MSYS2 / Cygwin toolchain",
+        "suitable_in_recorded_environment": false
+      },
+      {
+        "installed": false,
+        "native_amd64_pe_capability": "yes_when_an_x86_64-w64-mingw32_cross_compiler_is_installed",
+        "reason": "no user build distribution or cross-compiler",
+        "route": "WSL x86_64-w64-mingw32 cross compiler",
+        "suitable_in_recorded_environment": false
+      },
+      {
+        "installed": true,
+        "native_amd64_pe_capability": "not_evaluated_for_this_general_C_package",
+        "reason": "not a general C/Autotools route",
+        "route": "CUDA nvcc 12.9.86",
+        "suitable_in_recorded_environment": false
+      }
+    ],
+    "runtime": {
+      "link_status": "not_reached",
+      "policy": "dynamic /MD",
+      "runtime": "Universal CRT plus VC Runtime"
+    },
+    "selected_route": "pinned MSVC v142 direct external PowerShell driver",
+    "selection_policy": "exact product ID Microsoft.VisualStudio.Product.BuildTools, Visual Studio installation version 16.11.36128.20, product display version 16.11.48, MSVC tools 14.29.30133, Windows SDK 10.0.19041.0, and compiler file version 19.29.30159.0; no latest-version discovery",
+    "visual_studio_build_tools": "2019 16.11.48",
+    "windows_sdk": "10.0.19041.0"
+  }
+}

@@ -8,3 +8,9 @@
 # Repository-authored manifests use ordinary text handling.
 /.gitattributes text
 /manifests/** text
+
+# Keep A2 project-authored evidence hashes stable across Windows clones.
+/build-support/** text eol=lf
+/docs/** text eol=lf
+/manifests/windows-x64-unmodified-build-v1.json text eol=lf
+/tests/** text eol=lf

@@ -1,4 +1,10 @@
-.intake-temp/
-.verification-temp/
-__pycache__/
-*.py[cod]
+/.intake-temp/
+/.build-output/
+/.build-temp/
+/.verification-temp/
+/__pycache__/
+/tools/__pycache__/
+/build-support/**/__pycache__/
+/*.py[cod]
+/tools/*.py[cod]
+/build-support/**/*.py[cod]
