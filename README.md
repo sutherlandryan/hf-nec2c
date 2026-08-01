@@ -105,6 +105,20 @@ and
 The canonical disposition is: **UNMODIFIED MSYS2 UCRT64 WINDOWS X64 BUILD ATTEMPT BLOCKED BY
 SYS/TIMES.H DEPENDENCY**.
 
+### Native process-timing reconnaissance
+
+A project-authored BSD-2-Clause reconnaissance candidate now records the smallest tested
+process-CPU-time boundary for the original NEC2C 1.3.1 source. The candidate remains a patch
+artifact under [`probes/`](probes/portable-process-timing-v1.patch); it is not a maintained source
+tree, qualified solver, or distribution approval.
+
+The corrected patch preserved the existing source-file EOF bytes and every non-timing line in the
+MSYS minimal-dipole report. Under native UCRT64, it advanced compilation beyond `sys/times.h` to
+the first new proven blocker: the unavailable `struct sigaction` interface at original `main.c`
+line 84. Linking was not reached and no native executable was produced. See the
+[native UCRT64 timing probe](docs/NATIVE_UCRT64_TIMING_PROBE.md) for the bounded evidence and
+non-qualification limits.
+
 ## Relationship to HF Propagation Control
 
 HF Propagation Control remains a separate application. Its planned integration uses a documented

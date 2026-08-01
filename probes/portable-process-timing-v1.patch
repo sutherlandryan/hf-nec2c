@@ -1,0 +1,85 @@
+diff --git a/misc.c b/misc.c
+index 0b7ef6854c2d327c83e0af7b7fc1ba28d540a0c3..8077b92c58e7cf8255b1f388e309d84df474068a 100644
+--- a/misc.c
++++ b/misc.c
+@@ -3,6 +3,7 @@
+  */
+ 
+ #include "shared.h"
++#include "platform_time.h"
+ 
+ /*------------------------------------------------------------------------*/
+ 
+@@ -77,12 +78,32 @@ void abort_on_error( int why )
+ /* Returns process time (user+system) BUT in _msec_ */
+ void secnds( double *x)
+ {
++#if defined(NEC2C_PROCESS_TIME_NATIVE_WINDOWS)
++  FILETIME creation_time, exit_time, kernel_time, user_time;
++  ULARGE_INTEGER kernel_ticks, user_ticks;
++
++  if( GetProcessTimes( GetCurrentProcess(), &creation_time, &exit_time,
++      &kernel_time, &user_time ) == 0 )
++  {
++    *x = 0.0;
++    return;
++  }
++
++  kernel_ticks.LowPart = kernel_time.dwLowDateTime;
++  kernel_ticks.HighPart = kernel_time.dwHighDateTime;
++  user_ticks.LowPart = user_time.dwLowDateTime;
++  user_ticks.HighPart = user_time.dwHighDateTime;
++
++  /* FILETIME process counters are expressed in 100-nanosecond units. */
++  *x = (double)(kernel_ticks.QuadPart + user_ticks.QuadPart) / 10000.0;
++#else
+   struct tms buffer;
+   double clk_tck;
+ 
+   times(&buffer);
+   clk_tck = sysconf( _SC_CLK_TCK );
+   *x = 1000.0 * (double)(buffer.tms_utime + buffer.tms_stime) / clk_tck;
++#endif
+ 
+   return;
+ }
+diff --git a/nec2c.h b/nec2c.h
+index 5354032e49fa4e2475f7b2c5f171ed7a154495cf..2d20bbbb3c9ed8e535012871bdf6b0250e894537 100644
+--- a/nec2c.h
++++ b/nec2c.h
+@@ -12,7 +12,6 @@
+ #include <errno.h>
+ #include <time.h>
+ #include <sys/types.h>
+-#include <sys/times.h>
+ 
+ #ifndef	TRUE
+ #define	TRUE	1
+diff --git a/platform_time.h b/platform_time.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..5b1c6fe051a02ecadf29fea9246049ab2c3531d4
+--- /dev/null
++++ b/platform_time.h
+@@ -0,0 +1,22 @@
++/* SPDX-License-Identifier: BSD-2-Clause */
++/*
++ * Project-authored reconnaissance candidate.
++ * This is not maintained source, is not qualified, and is not approved for
++ * distribution.
++ */
++
++#ifndef PLATFORM_TIME_H
++#define PLATFORM_TIME_H 1
++
++/*
++ * MSYS and Cygwin retain the original POSIX timing route even though their
++ * compilers also define _WIN32. Native MinGW/UCRT64 uses GetProcessTimes().
++ */
++#if defined(_WIN32) && !defined(__CYGWIN__) && !defined(__MSYS__)
++#define NEC2C_PROCESS_TIME_NATIVE_WINDOWS 1
++#include <windows.h>
++#else
++#include <sys/times.h>
++#endif
++
++#endif /* PLATFORM_TIME_H */
