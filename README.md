@@ -5,9 +5,11 @@ official NEC2C project, does not claim succession to that project, and does not 
 by Neoklis Kyriazis.
 
 The repository preserves the original-author NEC2C 1.3.1 distribution and records the
-v0.0.5f-A2 unmodified Windows x64 compiler baseline. Two authenticated fresh extractions reached
-the same MSVC failure at the original `unistd.h` dependency. No original byte was patched,
-formatted, normalized, modernized, or otherwise modified, and no executable was produced.
+v0.0.5f-A2 and v0.0.5f-A2b untouched-source Windows x64 compiler baselines. Two authenticated
+fresh extractions reached the same MSVC failure at the original `unistd.h` dependency. A separate
+authenticated MSYS2 UCRT64 / MinGW-w64 attempt configured successfully, then failed at the
+original `sys/times.h` dependency. No original byte was patched, formatted, normalized,
+modernized, or otherwise modified, and no executable was produced.
 
 ## Preservation identity
 
@@ -58,7 +60,9 @@ The verifier performs no network access and writes no files. It recomputes the f
 SHA-256, checks the archive byte count, verifies every extracted file from raw bytes, and detects
 missing, extra, linked, reparse-point, or other unsupported objects in the preserved tree.
 
-## Windows x64 compiler baseline
+## Windows x64 untouched-source build baselines
+
+### A2: MSVC
 
 The A2 build entry point is:
 
@@ -75,6 +79,31 @@ failed consistently because the untouched source requires `unistd.h`. See
 [manifests/windows-x64-unmodified-build-v1.json](manifests/windows-x64-unmodified-build-v1.json).
 The canonical disposition is: **UNMODIFIED MSVC WINDOWS X64 BUILD ATTEMPT REPRODUCIBLY BLOCKED
 BY POSIX HEADER DEPENDENCY**.
+
+### A2b: MSYS2 UCRT64 / MinGW-w64
+
+The A2b build entry point is:
+
+```powershell
+powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass `
+    -File .\build-support\windows-x64-mingw-ucrt64\build.ps1 `
+    -BuildId <fresh-id>
+```
+
+The authenticated, fully updated MSYS2 environment at `C:\msys64` used UCRT64 GCC 16.1.0-5
+targeting `x86_64-w64-mingw32`. The shipped `configure` completed out of tree, then GNU `make`
+failed while compiling the first translation unit because original `nec2c.h` line 15 requires
+`sys/times.h`, which the installed MinGW-w64 UCRT64 headers do not provide. Source authentication
+and preservation checks passed before and after the attempt. No source byte was changed, no
+compatibility code was added, no executable was produced, and numerical behavior remains
+unqualified.
+
+See
+[docs/WINDOWS_X64_MINGW_UCRT64_UNMODIFIED_BUILD.md](docs/WINDOWS_X64_MINGW_UCRT64_UNMODIFIED_BUILD.md)
+and
+[manifests/windows-x64-mingw-ucrt64-unmodified-build-v1.json](manifests/windows-x64-mingw-ucrt64-unmodified-build-v1.json).
+The canonical disposition is: **UNMODIFIED MSYS2 UCRT64 WINDOWS X64 BUILD ATTEMPT BLOCKED BY
+SYS/TIMES.H DEPENDENCY**.
 
 ## Relationship to HF Propagation Control
 
@@ -96,8 +125,8 @@ provenance and release management; it is not claimed to be a complete operating-
 
 This repository contains no solver executable, release, Git LFS object, GitHub Actions workflow,
 submodule, package dependency, or Software Heritage submission. A2 establishes a reproducible
-unmodified compile failure, not a Windows port. Portability changes require a separate reviewed
-milestone outside the immutable upstream tree.
+MSVC failure and A2b establishes an authenticated UCRT64/MinGW-w64 failure, not a Windows port.
+Portability changes require a separate reviewed milestone outside the immutable upstream tree.
 
 See [PROVENANCE.md](PROVENANCE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
 [MAINTENANCE.md](MAINTENANCE.md) for the evidence and controls.

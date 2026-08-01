@@ -41,6 +41,18 @@ published, or copied into `upstream/`. Before removing an A2 temporary directory
 exact target and confirm that it is a task-created child of one of those two repository-local
 roots. Never use a broad cleanup command.
 
+The v0.0.5f-A2b driver applies the same source and preservation controls to the authenticated
+MSYS2 UCRT64 / MinGW-w64 route at `C:\msys64`. The versioned result is a compile failure at the
+original `sys/times.h` dependency after the shipped `configure` succeeds. No executable exists.
+The package, installer, compiler, build-route, and normalized-diagnostic identities are pinned in
+`manifests/windows-x64-mingw-ucrt64-unmodified-build-v1.json`.
+
+A2b local evidence uses the same ignored `.build-temp/` and `.build-output/` roots. Attempt
+identifiers are single-use. Do not delete evidence during a run; if later removal is explicitly
+authorized, validate the exact task-created child path first. A future portability change must be
+independently authored in a separately reviewed project-authored layer and must not mutate
+`upstream/` or silently borrow maintained v1.3.3 code.
+
 ## Post-review replication procedures
 
 The following actions are intentionally deferred until a human has reviewed the public intake.
