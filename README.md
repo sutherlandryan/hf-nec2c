@@ -135,3 +135,5 @@ See [PROVENANCE.md](PROVENANCE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
 
 - [Engineering execution policy](docs/ENGINEERING_EXECUTION_POLICY.md)
 - [NEC2C 1.3.1 portability map](docs/NEC2C_PORTABILITY_MAP.md)
+- [MSYS POSIX unmodified build probe](docs/MSYS_POSIX_UNMODIFIED_BUILD_PROBE.md) records that
+  untouched NEC2C 1.3.1 builds and runs as an unqualified, MSYS-runtime regression-baseline candidate.
