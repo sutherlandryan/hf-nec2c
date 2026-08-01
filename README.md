@@ -130,3 +130,8 @@ Portability changes require a separate reviewed milestone outside the immutable 
 
 See [PROVENANCE.md](PROVENANCE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
 [MAINTENANCE.md](MAINTENANCE.md) for the evidence and controls.
+
+## Engineering policy and portability map
+
+- [Engineering execution policy](docs/ENGINEERING_EXECUTION_POLICY.md)
+- [NEC2C 1.3.1 portability map](docs/NEC2C_PORTABILITY_MAP.md)
