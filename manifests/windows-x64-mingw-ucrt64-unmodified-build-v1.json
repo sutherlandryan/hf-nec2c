@@ -65,7 +65,7 @@
           "bytes": 352,
           "sha256": "526284c767fb1b96646ace2e47a4819c84b9ded1ad78c5cb9cf1bc91458a3d89"
         },
-        "normalized_stderr_text": "In file included from <ATTEMPT_ROOT>/source/nec2c-1.3.1/calculations.c:26:\n<ATTEMPT_ROOT>/source/nec2c-1.3.1/nec2c.h:15:10: fatal error: sys/times.h: No such file or directory\n   15 | #include <sys/times.h>\n      |          ^~~~~~~~~~~~~\ncompilation terminated.\nmake[1]: *** [Makefile:450: calculations.o] Error 1\nmake: *** [Makefile:325: all] Error 2",
+        "normalized_stderr_text": "In file included from <ATTEMPT_ROOT>/source/nec2c-1.3.1/calculations.c:26:\n<ATTEMPT_ROOT>/source/nec2c-1.3.1/nec2c.h:15:10: fatal error: sys/times.h: No such file or directory\n   15 | #include <sys/times.h>\n      |          ^~~~~~~~~~~~~\ncompilation terminated.\nmake[1]: *** [Makefile:450: calculations.o] Error 1\nmake: *** [Makefile:325: all] Error 2\n",
         "normalized_stdout": {
           "bytes": 593,
           "sha256": "3dd261400f1c4912d772f19e9240eeef1d3f921e18ffddb87d40e63ce97a806d"

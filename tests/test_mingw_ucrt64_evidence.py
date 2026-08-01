@@ -378,6 +378,17 @@ class MingwUcrt64EvidenceTests(unittest.TestCase):
                     SHA256_PATTERN,
                 )
                 self.assertGreaterEqual(autotools[stage][channel]["bytes"], 0)
+        normalized_stderr_text = autotools["make"]["normalized_stderr_text"].encode(
+            "utf-8"
+        )
+        self.assertEqual(
+            len(normalized_stderr_text),
+            autotools["make"]["normalized_stderr"]["bytes"],
+        )
+        self.assertEqual(
+            hashlib.sha256(normalized_stderr_text).hexdigest(),
+            autotools["make"]["normalized_stderr"]["sha256"],
+        )
 
         failure = self.manifest["build"]["failure"]
         self.assertEqual(failure["category"], "compile_time_header_failure")
