@@ -192,6 +192,9 @@ an internal secondary cross-check. The
 [internal native build probe](docs/NEC2DX_INTERNAL_BUILD_PROBE.md) records that untouched NEC2DX
 is blocked at its legacy `SECOND` timing interface under UCRT64 GNU Fortran 16.1.0; no executable,
 smoke run, or numerical comparison resulted, and public intake remains blocked.
+The [internal `SECOND` compatibility probe](docs/NEC2DX_SECOND_COMPATIBILITY_PROBE.md) records that
+two ignored declaration-only edits enabled a native build and bounded smoke; NEC2DX remains an
+unqualified, non-redistributable secondary cross-check.
 
 See [PROVENANCE.md](PROVENANCE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
 [MAINTENANCE.md](MAINTENANCE.md) for the evidence and controls.
