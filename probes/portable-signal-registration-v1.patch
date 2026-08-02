@@ -1,0 +1,92 @@
+diff --git a/main.c b/main.c
+index e6d39ff20715c2bbdcf8796de5ee303a35280524..a314a5aad63b05b80222614a4d6599dae3de9f77 100644
+--- a/main.c
++++ b/main.c
+@@ -29,6 +29,7 @@
+ 
+ #include "nec2c.h"
+ #include "shared.h"
++#include "platform_signal.h"
+ 
+ /* signal handler */
+ static void sig_handler( int signal );
+@@ -79,22 +80,12 @@ int main( int argc, char **argv )
+   /* getopt() variables */
+   int option;
+ 
+-  /*** signal handler related code ***/
+-  /* new and old actions for sigaction() */
+-  struct sigaction sa_new, sa_old;
+-
+-
+-  /* initialize new actions */
+-  sa_new.sa_handler = sig_handler;
+-  sigemptyset( &sa_new.sa_mask );
+-  sa_new.sa_flags = 0;
+-
+   /* register function to handle signals */
+-  sigaction( SIGINT,  &sa_new, &sa_old );
+-  sigaction( SIGSEGV, &sa_new, 0 );
+-  sigaction( SIGFPE,  &sa_new, 0 );
+-  sigaction( SIGTERM, &sa_new, 0 );
+-  sigaction( SIGABRT, &sa_new, 0 );
++  if( nec2c_register_signal_handlers( sig_handler ) != 0 )
++  {
++    fprintf( stderr, "nec2c: signal handler registration failed\n" );
++    return( EXIT_FAILURE );
++  }
+ 
+   /*** command line arguments handler ***/
+   if( argc == 1 )
+diff --git a/platform_signal.h b/platform_signal.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..74a0bf64ff2a3aa81703078d44b5eb4a364d67ec
+--- /dev/null
++++ b/platform_signal.h
+@@ -0,0 +1,46 @@
++/* SPDX-License-Identifier: BSD-2-Clause */
++/*
++ * Project-authored reconnaissance candidate.
++ * This is not maintained source and is not qualified for distribution.
++ */
++
++#ifndef PLATFORM_SIGNAL_H
++#define PLATFORM_SIGNAL_H 1
++
++#include <signal.h>
++
++/*
++ * Preserve POSIX sigaction behavior for MSYS and Cygwin. Native MinGW/UCRT64
++ * uses the ISO C signal interface for the same five signals and handler.
++ */
++static int nec2c_register_signal_handlers( void (*handler)(int) )
++{
++#if defined(_WIN32) && !defined(__CYGWIN__) && !defined(__MSYS__)
++  if( signal( SIGINT, handler ) == SIG_ERR )
++    return( -1 );
++  if( signal( SIGSEGV, handler ) == SIG_ERR )
++    return( -1 );
++  if( signal( SIGFPE, handler ) == SIG_ERR )
++    return( -1 );
++  if( signal( SIGTERM, handler ) == SIG_ERR )
++    return( -1 );
++  if( signal( SIGABRT, handler ) == SIG_ERR )
++    return( -1 );
++#else
++  struct sigaction sa_new, sa_old;
++
++  sa_new.sa_handler = handler;
++  sigemptyset( &sa_new.sa_mask );
++  sa_new.sa_flags = 0;
++
++  sigaction( SIGINT,  &sa_new, &sa_old );
++  sigaction( SIGSEGV, &sa_new, 0 );
++  sigaction( SIGFPE,  &sa_new, 0 );
++  sigaction( SIGTERM, &sa_new, 0 );
++  sigaction( SIGABRT, &sa_new, 0 );
++#endif
++
++  return( 0 );
++}
++
++#endif /* PLATFORM_SIGNAL_H */
