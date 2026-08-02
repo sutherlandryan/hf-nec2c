@@ -1,0 +1,60 @@
+diff --git a/misc.c b/misc.c
+index 8077b92c58e7cf8255b1f388e309d84df474068a..362976240d912e6b14f5dd76291cfb6d5eaa7178 100644
+--- a/misc.c
++++ b/misc.c
+@@ -5,6 +5,12 @@
+ #include "shared.h"
+ #include "platform_time.h"
+ 
++enum
++{
++  NEC2C_CR = 0x0d,
++  NEC2C_LF = 0x0a
++};
++
+ /*------------------------------------------------------------------------*/
+ 
+ /*  usage()
+@@ -150,16 +156,16 @@ int load_line( char *buff, FILE *pfile )
+ 
+   while( (chr == '#') ||
+ 	  (chr == ' ') ||
+-	  (chr == CR ) ||
+-	  (chr == LF ) )
++	  (chr == NEC2C_CR ) ||
++	  (chr == NEC2C_LF ) )
+   {
+ 	/* go to the end of line (look for lf or cr) */
+-	while( (chr != CR) && (chr != LF) )
++	while( (chr != NEC2C_CR) && (chr != NEC2C_LF) )
+ 	  if( (chr = fgetc(pfile)) == EOF )
+ 		return( EOF );
+ 
+ 	/* dump any cr/lf remaining */
+-	while( (chr == CR) || (chr == LF) )
++	while( (chr == NEC2C_CR) || (chr == NEC2C_LF) )
+ 	  if( (chr = fgetc(pfile)) == EOF )
+ 		return( EOF );
+ 
+@@ -168,7 +174,7 @@ int load_line( char *buff, FILE *pfile )
+   while( num_chr < LINE_LEN )
+   {
+ 	/* if lf/cr reached before filling buffer, return */
+-	if( (chr == CR) || (chr == LF) )
++	if( (chr == NEC2C_CR) || (chr == NEC2C_LF) )
+ 	  break;
+ 
+ 	/* enter new char to buffer */
+diff --git a/nec2c.h b/nec2c.h
+index 2d20bbbb3c9ed8e535012871bdf6b0250e894537..e03fc557007522a2e97de72883de4aca8e7edde7 100644
+--- a/nec2c.h
++++ b/nec2c.h
+@@ -73,8 +73,6 @@
+ #define	PCHCON  100000
+ 
+ /* carriage return and line feed */
+-#define	CR	0x0d
+-#define	LF	0x0a
+ 
+ /* max length of a line read from input file */
+ #define	LINE_LEN	132

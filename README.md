@@ -133,6 +133,21 @@ while compiling `misc.c`. Linking was not reached and no native executable was p
 the [native UCRT64 signal probe](docs/NATIVE_UCRT64_SIGNAL_PROBE.md) for the bounded evidence and
 non-qualification limits.
 
+### Native parser-control-character reconnaissance
+
+A third project-authored BSD-2-Clause reconnaissance patch localizes NEC2C's generic `CR` and
+`LF` parser constants. It remains a patch artifact under
+[`probes/`](probes/portable-parser-control-chars-v1.patch), not a maintained source tree,
+qualified solver, release artifact, or integration approval.
+
+After the validated timing and signal patches, this patch preserved the complete accepted
+6,825-byte MSYS report. Native UCRT64 then compiled all 12 translation units, linked a PE32+
+AMD64 executable with no `msys-2.0.dll` import, and passed `-v`, `-h`, and one
+minimal-dipole run. Normalizing only native CRLF to LF made the complete native report
+byte-identical to the MSYS report. See the
+[native UCRT64 parser-control-character probe](docs/NATIVE_UCRT64_CONTROL_CHAR_PROBE.md) for the
+bounded evidence and non-qualification limits.
+
 ## Relationship to HF Propagation Control
 
 HF Propagation Control remains a separate application. Its planned integration uses a documented
