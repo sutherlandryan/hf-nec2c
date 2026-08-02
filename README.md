@@ -186,8 +186,10 @@ provenance and release management; it is not claimed to be a complete operating-
 This repository contains maintained source but no tracked solver executable, release, Git LFS
 object, GitHub Actions workflow, submodule, package dependency, or Software Heritage submission.
 The maintained candidate is independent, numerically unqualified, unreleased, and unapplied. It
-is not approved for distribution or HF Propagation Control integration. The next separately
-authorized milestone is the `v0.0.5f-B` nec2dx numerical baseline and comparison corpus.
+is not approved for distribution or HF Propagation Control integration. The
+[NEC2DX oracle decision](docs/NEC2DX_ORACLE_DECISION.md) limits the historical Fortran source to
+an internal secondary cross-check; the next bounded job is its native UCRT64 untouched build
+probe, not a numerical comparison corpus.
 
 See [PROVENANCE.md](PROVENANCE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
 [MAINTENANCE.md](MAINTENANCE.md) for the evidence and controls.
