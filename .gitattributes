@@ -14,6 +14,7 @@
 /docs/** text eol=lf
 /manifests/windows-x64-unmodified-build-v1.json text eol=lf
 /manifests/windows-x64-mingw-ucrt64-unmodified-build-v1.json text eol=lf
+/probes/** text eol=lf
 /tests/** text eol=lf
 /tools/verify_preservation.py text eol=lf
 /verify-preservation.ps1 text eol=lf
@@ -22,6 +23,7 @@
 /src/nec2c/** text eol=lf
 /src/nec2c/somnec.c binary !eol -filter -ident -working-tree-encoding
 /patches/maintained/** text eol=lf
+/manifests/maintained-source-v1.json text eol=lf
 
 # Maintained source and literal reconstruction patches preserve authenticated
 # historical formatting. Their manifests and byte-reconstruction checks are
