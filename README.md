@@ -188,8 +188,10 @@ object, GitHub Actions workflow, submodule, package dependency, or Software Heri
 The maintained candidate is independent, numerically unqualified, unreleased, and unapplied. It
 is not approved for distribution or HF Propagation Control integration. The
 [NEC2DX oracle decision](docs/NEC2DX_ORACLE_DECISION.md) limits the historical Fortran source to
-an internal secondary cross-check; the next bounded job is its native UCRT64 untouched build
-probe, not a numerical comparison corpus.
+an internal secondary cross-check. The
+[internal native build probe](docs/NEC2DX_INTERNAL_BUILD_PROBE.md) records that untouched NEC2DX
+is blocked at its legacy `SECOND` timing interface under UCRT64 GNU Fortran 16.1.0; no executable,
+smoke run, or numerical comparison resulted, and public intake remains blocked.
 
 See [PROVENANCE.md](PROVENANCE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
 [MAINTENANCE.md](MAINTENANCE.md) for the evidence and controls.
