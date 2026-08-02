@@ -61,8 +61,10 @@ retain the mixed-provenance license boundary.
 
 Builds stay out of tree under ignored task directories. Executables, objects, dependency files,
 generated Makefiles, configuration logs, and smoke reports are never tracked. The v1 candidate is
-unqualified, unreleased, and unapplied. Its next milestone is the separately reviewed
-`v0.0.5f-B` nec2dx numerical baseline and comparison corpus, not distribution or integration.
+unqualified, unreleased, and unapplied. The
+[NEC2DX oracle decision](docs/NEC2DX_ORACLE_DECISION.md) allows only internal secondary-cross-check
+use and requires a separately authorized native UCRT64 untouched build probe before any numerical
+comparison work. It does not authorize distribution or integration.
 
 ## Post-review replication procedures
 
