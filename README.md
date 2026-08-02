@@ -119,6 +119,20 @@ line 84. Linking was not reached and no native executable was produced. See the
 [native UCRT64 timing probe](docs/NATIVE_UCRT64_TIMING_PROBE.md) for the bounded evidence and
 non-qualification limits.
 
+### Native signal-registration reconnaissance
+
+A second project-authored BSD-2-Clause reconnaissance patch records the smallest tested
+signal-registration platform boundary. It remains a patch artifact under
+[`probes/`](probes/portable-signal-registration-v1.patch), not a maintained source tree,
+qualified solver, or distribution approval.
+
+The patch preserved the complete 6,825-byte MSYS minimal-dipole report and advanced native
+UCRT64 compilation beyond `struct sigaction`, producing `main.o`. The next proven blocker is
+the original `CR` macro at `nec2c.h:76` colliding with the native `winnt.h` `CR` bit-field
+while compiling `misc.c`. Linking was not reached and no native executable was produced. See
+the [native UCRT64 signal probe](docs/NATIVE_UCRT64_SIGNAL_PROBE.md) for the bounded evidence and
+non-qualification limits.
+
 ## Relationship to HF Propagation Control
 
 HF Propagation Control remains a separate application. Its planned integration uses a documented
