@@ -30,6 +30,14 @@ BSD-2-Clause as described in [LICENSES/README.md](LICENSES/README.md). That lice
 asserted over the original archive or extracted upstream source merely because they are stored
 in this repository.
 
+The maintained `src/nec2c/` tree is mixed-provenance work. Original NEC2C 1.3.1 material remains
+handled under the preserved original-author public-domain statement. Project-authored portability
+additions and modifications are BSD-2-Clause and are identified exactly by
+`manifests/maintained-source-v1.json` and
+`patches/maintained/nec2c-1.3.1-hf-portability-v1.patch`. The two platform headers are wholly
+project-authored BSD-2-Clause files. The maintained source is independent, not official NEC2C,
+and remains unqualified, unreleased, and unapplied.
+
 ## Excluded maintained-tree code
 
 The maintained NEC2C v1.3.3 tree is a research/comparison reference only and is not the source

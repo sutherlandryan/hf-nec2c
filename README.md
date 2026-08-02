@@ -4,12 +4,11 @@
 official NEC2C project, does not claim succession to that project, and does not claim endorsement
 by Neoklis Kyriazis.
 
-The repository preserves the original-author NEC2C 1.3.1 distribution and records the
-v0.0.5f-A2 and v0.0.5f-A2b untouched-source Windows x64 compiler baselines. Two authenticated
-fresh extractions reached the same MSVC failure at the original `unistd.h` dependency. A separate
-authenticated MSYS2 UCRT64 / MinGW-w64 attempt configured successfully, then failed at the
-original `sys/times.h` dependency. No original byte was patched, formatted, normalized,
-modernized, or otherwise modified, and no executable was produced.
+The repository preserves the original-author NEC2C 1.3.1 distribution, records the untouched-source
+Windows compiler baselines, and carries the independently authored
+`HF_NEC2C_MAINTAINED_SOURCE_V1` portability candidate under `src/nec2c/`. The immutable archive and
+upstream extraction remain byte-preserved; maintained changes are isolated and reconstructible
+from a deterministic combined patch.
 
 ## Preservation identity
 
@@ -148,6 +147,24 @@ byte-identical to the MSYS report. See the
 [native UCRT64 parser-control-character probe](docs/NATIVE_UCRT64_CONTROL_CHAR_PROBE.md) for the
 bounded evidence and non-qualification limits.
 
+## Maintained source candidate
+
+The validated probe sequence has been promoted into the provenance-complete
+`HF_NEC2C_MAINTAINED_SOURCE_V1` tree at `src/nec2c/`. The final tree contains 36 files and 788,897
+bytes. A fresh authenticated extraction reconstructed it byte-for-byte using only the combined
+[`nec2c-1.3.1-hf-portability-v1.patch`](patches/maintained/nec2c-1.3.1-hf-portability-v1.patch),
+whose SHA-256 is
+`cfb8da8689ec85817d12c2f95c51c599117c1b5e140f589a0a05bd82c9899e5b`.
+
+Exactly one maintained-source MSYS build retained the accepted 6,825-byte report identity.
+Exactly one native UCRT64 build compiled all 12 translation units, linked PE32+ AMD64 without an
+`msys-2.0.dll` import, and produced a report that matched MSYS byte-for-byte after only CRLF-to-LF
+normalization. These are build and bounded regression results, not numerical qualification.
+
+See the [maintained-source record](docs/MAINTAINED_SOURCE_V1.md) and
+[manifest](manifests/maintained-source-v1.json) for construction, provenance, hashes, build
+evidence, and current limitations.
+
 ## Relationship to HF Propagation Control
 
 HF Propagation Control remains a separate application. Its planned integration uses a documented
@@ -166,10 +183,11 @@ provenance and release management; it is not claimed to be a complete operating-
 
 ## Current boundary
 
-This repository contains no solver executable, release, Git LFS object, GitHub Actions workflow,
-submodule, package dependency, or Software Heritage submission. A2 establishes a reproducible
-MSVC failure and A2b establishes an authenticated UCRT64/MinGW-w64 failure, not a Windows port.
-Portability changes require a separate reviewed milestone outside the immutable upstream tree.
+This repository contains maintained source but no tracked solver executable, release, Git LFS
+object, GitHub Actions workflow, submodule, package dependency, or Software Heritage submission.
+The maintained candidate is independent, numerically unqualified, unreleased, and unapplied. It
+is not approved for distribution or HF Propagation Control integration. The next separately
+authorized milestone is the `v0.0.5f-B` nec2dx numerical baseline and comparison corpus.
 
 See [PROVENANCE.md](PROVENANCE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
 [MAINTENANCE.md](MAINTENANCE.md) for the evidence and controls.

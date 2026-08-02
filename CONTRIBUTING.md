@@ -13,9 +13,11 @@ The immutable preservation layer is evidence, not a normal development tree.
 - Never imply that this repository is official NEC2C or endorsed by Neoklis Kyriazis.
 - Never apply BSD-2-Clause as a blanket label over upstream or other third-party material.
 
-Future source, build, and tooling changes use ordinary feature branches and pull requests. Keep
+Source, build, and tooling changes use ordinary feature branches and pull requests. Keep
 project-authored maintained source outside `upstream/`, preserve file-level provenance, and add
 `SPDX-License-Identifier: BSD-2-Clause` to eligible scripts and source files where appropriate.
+Changes to `src/nec2c/` must update the combined maintained patch and deterministic manifest and
+must reproduce byte-for-byte from a fresh authenticated original extraction.
 
 ## Before proposing a change
 
@@ -39,7 +41,7 @@ separate reviewed job; do not turn an A2 contribution into an unreviewed port.
 
 v0.0.5f-A2b records the separately authenticated MSYS2 UCRT64 / MinGW-w64 route. Its shipped
 Autotools configuration succeeds, but untouched source compilation stops at original `nec2c.h`
-line 15 because `sys/times.h` is unavailable. A2b is not authorization to edit upstream, add a
-compatibility unit, copy maintained NEC2C v1.3.3 code, publish a binary, begin structured output,
-integrate HF Propagation Control, or claim numerical qualification. Any such work requires its own
-reviewed milestone.
+line 15 because `sys/times.h` is unavailable. The later maintained-source milestone addressed
+that portability boundary only in `src/nec2c/`; it did not edit upstream, copy maintained NEC2C
+v1.3.3 code, publish a binary, begin structured output, integrate HF Propagation Control, or claim
+numerical qualification. Each such action still requires its own reviewed milestone.
