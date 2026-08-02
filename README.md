@@ -195,6 +195,9 @@ smoke run, or numerical comparison resulted, and public intake remains blocked.
 The [internal `SECOND` compatibility probe](docs/NEC2DX_SECOND_COMPATIBILITY_PROBE.md) records that
 two ignored declaration-only edits enabled a native build and bounded smoke; NEC2DX remains an
 unqualified, non-redistributable secondary cross-check.
+The [NEC2DX reproducibility probe](docs/NEC2DX_REPRODUCIBILITY_PROBE.md) records repeatable edited
+source, compilation, executable structure, raw report bytes, and parsed physical output; the two
+executables differed only in identified PE timestamp and checksum metadata.
 
 See [PROVENANCE.md](PROVENANCE.md), [CONTRIBUTING.md](CONTRIBUTING.md), and
 [MAINTENANCE.md](MAINTENANCE.md) for the evidence and controls.
