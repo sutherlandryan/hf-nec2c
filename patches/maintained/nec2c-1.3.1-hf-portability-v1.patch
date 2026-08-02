@@ -1,0 +1,221 @@
+diff --git a/main.c b/main.c
+index e6d39ff20715c2bbdcf8796de5ee303a35280524..a314a5aad63b05b80222614a4d6599dae3de9f77 100644
+--- a/main.c
++++ b/main.c
+@@ -29,6 +29,7 @@
+ 
+ #include "nec2c.h"
+ #include "shared.h"
++#include "platform_signal.h"
+ 
+ /* signal handler */
+ static void sig_handler( int signal );
+@@ -79,22 +80,12 @@ int main( int argc, char **argv )
+   /* getopt() variables */
+   int option;
+ 
+-  /*** signal handler related code ***/
+-  /* new and old actions for sigaction() */
+-  struct sigaction sa_new, sa_old;
+-
+-
+-  /* initialize new actions */
+-  sa_new.sa_handler = sig_handler;
+-  sigemptyset( &sa_new.sa_mask );
+-  sa_new.sa_flags = 0;
+-
+   /* register function to handle signals */
+-  sigaction( SIGINT,  &sa_new, &sa_old );
+-  sigaction( SIGSEGV, &sa_new, 0 );
+-  sigaction( SIGFPE,  &sa_new, 0 );
+-  sigaction( SIGTERM, &sa_new, 0 );
+-  sigaction( SIGABRT, &sa_new, 0 );
++  if( nec2c_register_signal_handlers( sig_handler ) != 0 )
++  {
++    fprintf( stderr, "nec2c: signal handler registration failed\n" );
++    return( EXIT_FAILURE );
++  }
+ 
+   /*** command line arguments handler ***/
+   if( argc == 1 )
+diff --git a/misc.c b/misc.c
+index 0b7ef6854c2d327c83e0af7b7fc1ba28d540a0c3..362976240d912e6b14f5dd76291cfb6d5eaa7178 100644
+--- a/misc.c
++++ b/misc.c
+@@ -3,6 +3,13 @@
+  */
+ 
+ #include "shared.h"
++#include "platform_time.h"
++
++enum
++{
++  NEC2C_CR = 0x0d,
++  NEC2C_LF = 0x0a
++};
+ 
+ /*------------------------------------------------------------------------*/
+ 
+@@ -77,12 +84,32 @@ void abort_on_error( int why )
+ /* Returns process time (user+system) BUT in _msec_ */
+ void secnds( double *x)
+ {
++#if defined(NEC2C_PROCESS_TIME_NATIVE_WINDOWS)
++  FILETIME creation_time, exit_time, kernel_time, user_time;
++  ULARGE_INTEGER kernel_ticks, user_ticks;
++
++  if( GetProcessTimes( GetCurrentProcess(), &creation_time, &exit_time,
++      &kernel_time, &user_time ) == 0 )
++  {
++    *x = 0.0;
++    return;
++  }
++
++  kernel_ticks.LowPart = kernel_time.dwLowDateTime;
++  kernel_ticks.HighPart = kernel_time.dwHighDateTime;
++  user_ticks.LowPart = user_time.dwLowDateTime;
++  user_ticks.HighPart = user_time.dwHighDateTime;
++
++  /* FILETIME process counters are expressed in 100-nanosecond units. */
++  *x = (double)(kernel_ticks.QuadPart + user_ticks.QuadPart) / 10000.0;
++#else
+   struct tms buffer;
+   double clk_tck;
+ 
+   times(&buffer);
+   clk_tck = sysconf( _SC_CLK_TCK );
+   *x = 1000.0 * (double)(buffer.tms_utime + buffer.tms_stime) / clk_tck;
++#endif
+ 
+   return;
+ }
+@@ -129,16 +156,16 @@ int load_line( char *buff, FILE *pfile )
+ 
+   while( (chr == '#') ||
+ 	  (chr == ' ') ||
+-	  (chr == CR ) ||
+-	  (chr == LF ) )
++	  (chr == NEC2C_CR ) ||
++	  (chr == NEC2C_LF ) )
+   {
+ 	/* go to the end of line (look for lf or cr) */
+-	while( (chr != CR) && (chr != LF) )
++	while( (chr != NEC2C_CR) && (chr != NEC2C_LF) )
+ 	  if( (chr = fgetc(pfile)) == EOF )
+ 		return( EOF );
+ 
+ 	/* dump any cr/lf remaining */
+-	while( (chr == CR) || (chr == LF) )
++	while( (chr == NEC2C_CR) || (chr == NEC2C_LF) )
+ 	  if( (chr = fgetc(pfile)) == EOF )
+ 		return( EOF );
+ 
+@@ -147,7 +174,7 @@ int load_line( char *buff, FILE *pfile )
+   while( num_chr < LINE_LEN )
+   {
+ 	/* if lf/cr reached before filling buffer, return */
+-	if( (chr == CR) || (chr == LF) )
++	if( (chr == NEC2C_CR) || (chr == NEC2C_LF) )
+ 	  break;
+ 
+ 	/* enter new char to buffer */
+diff --git a/nec2c.h b/nec2c.h
+index 5354032e49fa4e2475f7b2c5f171ed7a154495cf..e03fc557007522a2e97de72883de4aca8e7edde7 100644
+--- a/nec2c.h
++++ b/nec2c.h
+@@ -12,7 +12,6 @@
+ #include <errno.h>
+ #include <time.h>
+ #include <sys/types.h>
+-#include <sys/times.h>
+ 
+ #ifndef	TRUE
+ #define	TRUE	1
+@@ -74,8 +73,6 @@
+ #define	PCHCON  100000
+ 
+ /* carriage return and line feed */
+-#define	CR	0x0d
+-#define	LF	0x0a
+ 
+ /* max length of a line read from input file */
+ #define	LINE_LEN	132
+diff --git a/platform_signal.h b/platform_signal.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..b2a67d4f04fa8ae5047198b230a154e69a78388f
+--- /dev/null
++++ b/platform_signal.h
+@@ -0,0 +1,46 @@
++/* SPDX-License-Identifier: BSD-2-Clause */
++/*
++ * Project-authored maintained portability code.
++ * Original NEC2C source provenance remains documented by this repository.
++ */
++
++#ifndef PLATFORM_SIGNAL_H
++#define PLATFORM_SIGNAL_H 1
++
++#include <signal.h>
++
++/*
++ * Preserve POSIX sigaction behavior for MSYS and Cygwin. Native MinGW/UCRT64
++ * uses the ISO C signal interface for the same five signals and handler.
++ */
++static int nec2c_register_signal_handlers( void (*handler)(int) )
++{
++#if defined(_WIN32) && !defined(__CYGWIN__) && !defined(__MSYS__)
++  if( signal( SIGINT, handler ) == SIG_ERR )
++    return( -1 );
++  if( signal( SIGSEGV, handler ) == SIG_ERR )
++    return( -1 );
++  if( signal( SIGFPE, handler ) == SIG_ERR )
++    return( -1 );
++  if( signal( SIGTERM, handler ) == SIG_ERR )
++    return( -1 );
++  if( signal( SIGABRT, handler ) == SIG_ERR )
++    return( -1 );
++#else
++  struct sigaction sa_new, sa_old;
++
++  sa_new.sa_handler = handler;
++  sigemptyset( &sa_new.sa_mask );
++  sa_new.sa_flags = 0;
++
++  sigaction( SIGINT,  &sa_new, &sa_old );
++  sigaction( SIGSEGV, &sa_new, 0 );
++  sigaction( SIGFPE,  &sa_new, 0 );
++  sigaction( SIGTERM, &sa_new, 0 );
++  sigaction( SIGABRT, &sa_new, 0 );
++#endif
++
++  return( 0 );
++}
++
++#endif /* PLATFORM_SIGNAL_H */
+diff --git a/platform_time.h b/platform_time.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..907dadf610b8f2087f4ef080b1cb3d67e1068a31
+--- /dev/null
++++ b/platform_time.h
+@@ -0,0 +1,21 @@
++/* SPDX-License-Identifier: BSD-2-Clause */
++/*
++ * Project-authored maintained portability code.
++ * Original NEC2C source provenance remains documented by this repository.
++ */
++
++#ifndef PLATFORM_TIME_H
++#define PLATFORM_TIME_H 1
++
++/*
++ * MSYS and Cygwin retain the original POSIX timing route even though their
++ * compilers also define _WIN32. Native MinGW/UCRT64 uses GetProcessTimes().
++ */
++#if defined(_WIN32) && !defined(__CYGWIN__) && !defined(__MSYS__)
++#define NEC2C_PROCESS_TIME_NATIVE_WINDOWS 1
++#include <windows.h>
++#else
++#include <sys/times.h>
++#endif
++
++#endif /* PLATFORM_TIME_H */

@@ -49,9 +49,20 @@ The package, installer, compiler, build-route, and normalized-diagnostic identit
 
 A2b local evidence uses the same ignored `.build-temp/` and `.build-output/` roots. Attempt
 identifiers are single-use. Do not delete evidence during a run; if later removal is explicitly
-authorized, validate the exact task-created child path first. A future portability change must be
-independently authored in a separately reviewed project-authored layer and must not mutate
-`upstream/` or silently borrow maintained v1.3.3 code.
+authorized, validate the exact task-created child path first.
+
+## Maintained source v1
+
+`src/nec2c/` is the independent `HF_NEC2C_MAINTAINED_SOURCE_V1` candidate. It is reconstructed
+from the authenticated original archive by the combined maintained patch recorded in
+`manifests/maintained-source-v1.json`; it never replaces or mutates `upstream/`. Any maintained
+source change must update the combined patch and manifest, re-prove fresh reconstruction, and
+retain the mixed-provenance license boundary.
+
+Builds stay out of tree under ignored task directories. Executables, objects, dependency files,
+generated Makefiles, configuration logs, and smoke reports are never tracked. The v1 candidate is
+unqualified, unreleased, and unapplied. Its next milestone is the separately reviewed
+`v0.0.5f-B` nec2dx numerical baseline and comparison corpus, not distribution or integration.
 
 ## Post-review replication procedures
 

@@ -8,8 +8,10 @@ could imply one blanket license over every stored artifact.
 [BSD-2-Clause.txt](BSD-2-Clause.txt) applies only to copyrightable project-authored additions
 and modifications that identify that license or are documented as project-authored work. This
 includes the preservation documentation and verification tooling added outside the immutable
-upstream tree, and future eligible project-authored portability, hardening, structured-output,
-wrapper, test, and maintenance work.
+upstream tree. It also covers the exact project-authored portability additions and modifications
+identified by `../manifests/maintained-source-v1.json` and the combined maintained patch.
+`../src/nec2c/platform_time.h` and `../src/nec2c/platform_signal.h` are wholly project-authored
+BSD-2-Clause files. Original material retained in modified source files is not relabeled as BSD.
 
 An SPDX header is used on project-authored scripts and source files where appropriate:
 
