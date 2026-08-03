@@ -174,6 +174,10 @@ agree with each other; internal NEC2DX agrees with the published side as seconda
 first implicated boundary is the circular-wire `zint()` translation, and maintained source was
 left unchanged.
 
+The bounded [`zint()` translation investigation](docs/ZINT_TRANSLATION_INVESTIGATION.md) confirms
+the lost branch transfers and two separate medium-regime mistranslations, proposes but does not
+apply a source correction, and leaves numerical qualification blocked.
+
 See the [qualification record](docs/NUMERICAL_QUALIFICATION_V0_0_5F_B.md),
 [suite manifest](manifests/numerical-qualification-v0.0.5f-b.json), and
 [normalized result summary](manifests/numerical-qualification-v0.0.5f-b-results.json). This result
