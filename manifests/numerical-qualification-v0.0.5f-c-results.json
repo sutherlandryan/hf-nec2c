@@ -1,0 +1,208 @@
+{
+  "schema": "hf-nec2c.numerical-qualification-rerun-summary",
+  "schema_version": 1,
+  "milestone": {
+    "id": "v0.0.5f-C",
+    "status": "QUALIFICATION_REMAINS_BLOCKED_BY_FROZEN_REFERENCE_MISMATCH",
+    "disposition": "B. V2 SOURCE FIX VALIDATED; QUALIFICATION REMAINS BLOCKED BY THE FROZEN REFERENCE MISMATCH"
+  },
+  "maintained_source_v2": {
+    "identity": "HF_NEC2C_MAINTAINED_SOURCE_V2",
+    "manifest": {
+      "path": "manifests/maintained-source-v2.json",
+      "bytes": 7809,
+      "sha256": "6d3899ede74d77832732b196e5e64636578c03e667d5e6feb43270ab8e39f37a"
+    },
+    "combined_patch": {
+      "path": "patches/maintained/nec2c-1.3.1-hf-portability-zint-v2.patch",
+      "bytes": 7624,
+      "sha256": "9b165d93e4e3335f4c2762c70950a7086d1f6c7ee0559a1f3f3f5c08f6219e52"
+    },
+    "source_regular_file_count": 36,
+    "source_total_bytes": 788941
+  },
+  "frozen_corpus": {
+    "case_count": 8,
+    "case_definitions_expected_values_tolerances_and_policy_changed": false,
+    "manifest": {
+      "path": "manifests/numerical-qualification-v0.0.5f-b.json",
+      "bytes": 45630,
+      "sha256": "7df54bd3b5c44b2f9b588b42534d201ddd3a2fffbbb8a8d8fb663fd51262c817"
+    },
+    "prior_result": {
+      "path": "manifests/numerical-qualification-v0.0.5f-b-results.json",
+      "bytes": 39413,
+      "sha256": "dfa0fff497cd8fb1b51894e3975cf75031a65a7c18ef89e58403efa318f297b2"
+    }
+  },
+  "direct_zint_validation": {
+    "status": "PASS",
+    "toolchains": ["msys_gcc", "ucrt64_gcc"],
+    "sample_x": [0.1, 1.0, 2.97, 7.999, 8.0, 8.001, 20.0, 50.0, 109.999, 110.0, 110.001, 200.0],
+    "boundary_selection": {"8.0": "small", "110.0": "medium", "110.001": "large"},
+    "cross_toolchain_numeric_values_equal": true
+  },
+  "maintained_builds": {
+    "msys_gcc": {
+      "status": "PASS",
+      "runtime": "MSYS POSIX",
+      "compiler_version": "gcc (GCC) 15.3.0",
+      "compiler_bytes": 2007036,
+      "compiler_sha256": "4bd76635b6053a7926f4579a30f9c800a673632fd10b4d6adf8083d3eda1b80c",
+      "build_commands": ["CC=/usr/bin/gcc /usr/bin/bash /c/hf-nec2c/src/nec2c/configure", "/usr/bin/make -j1 V=1"],
+      "executable_architecture": "PE32+ x86-64",
+      "executable_bytes": 335509,
+      "executable_sha256": "ef0dac79e1416a066f7e7ccb1416ddc8124a85beae205b89af319e3fe6877adc",
+      "imported_dlls": ["msys-2.0.dll", "msys-gcc_s-seh-1.dll", "KERNEL32.dll"]
+    },
+    "ucrt64_gcc": {
+      "status": "PASS",
+      "runtime": "native UCRT64",
+      "compiler_version": "gcc.exe (Rev5, Built by MSYS2 project) 16.1.0",
+      "compiler_bytes": 3306749,
+      "compiler_sha256": "f96a3bdb1d3a3967b309d75c7413399391e857b5be4cb17162572ed66f6772a0",
+      "build_commands": ["CC=/ucrt64/bin/gcc /usr/bin/bash /c/hf-nec2c/src/nec2c/configure", "/usr/bin/make -j1 V=1"],
+      "executable_architecture": "PE32+ x86-64",
+      "executable_bytes": 439729,
+      "executable_sha256": "c96228b4aa301408f5b47647fe5951f951dc42da2256787cf1ae2af2645e97fc",
+      "imported_dlls": ["KERNEL32.dll", "api-ms-win-crt-convert-l1-1-0.dll", "api-ms-win-crt-environment-l1-1-0.dll", "api-ms-win-crt-heap-l1-1-0.dll", "api-ms-win-crt-locale-l1-1-0.dll", "api-ms-win-crt-math-l1-1-0.dll", "api-ms-win-crt-private-l1-1-0.dll", "api-ms-win-crt-runtime-l1-1-0.dll", "api-ms-win-crt-stdio-l1-1-0.dll", "api-ms-win-crt-string-l1-1-0.dll"],
+      "imports_msys_2_0_dll": false
+    }
+  },
+  "secondary_reference_build": {
+    "role": "SECONDARY_DIAGNOSTIC_ONLY",
+    "internal_only": true,
+    "status": "PASS",
+    "archive": {"bytes": 262656, "regular_member_count": 4, "sha256": "ad20c15a8cb594b19928595c853eca2b576c875c45c39a45eeaf26ee1be79774"},
+    "original_source": {"bytes": 257436, "sha256": "ca2ffebef9fb928d17e1eedcaa6f87b7bd61125a5f1abe19227d3f8251d9b293"},
+    "declaration_only_internal_source": {
+      "bytes": 257480,
+      "sha256": "bf894ae10325ff8534a45960e901f1a88d98485ce5f97569cea137f125d0e15c",
+      "declarations_added": ["EXTERNAL SECOND in main program", "EXTERNAL SECOND in FACIO"]
+    },
+    "compiler_version": "GNU Fortran (Rev5, Built by MSYS2 project) 16.1.0",
+    "compiler_bytes": 3309309,
+    "compiler_sha256": "f1f086d81f4c6701281df5543ca232cd741857f7c4611c43904d0e88e58718ce",
+    "executable_architecture": "PE32+ x86-64",
+    "executable_bytes": 587405,
+    "executable_sha256": "b932c7b3ae4de09f69378c9f326d7520ea49ae7494f7db50ee81f1e4399e315e",
+    "report_count": 8,
+    "reports_complete_and_diagnostic_free": true,
+    "secondary_disagreement_count": 0
+  },
+  "v1_baseline_reproduction": {
+    "status": "PASS",
+    "maintained_source_identity": "HF_NEC2C_MAINTAINED_SOURCE_V1",
+    "tag_object": "1ca11974e247407b41f47d0a9d2a6288d172dd86",
+    "tag_target": "05f9a4f7ad9a089e45459db9099e47e0bf4533c2",
+    "classification_counts": {"FAIL": 8, "NOT_APPLICABLE": 334, "PASS": 5981, "PASS_WITH_REFERENCE_PRECISION_LIMIT": 26, "SECONDARY_DISAGREEMENT": 43},
+    "classification_counts_match_frozen_result": true,
+    "raw_report_identity_total": 24,
+    "raw_report_identity_match_count": 19,
+    "raw_report_identity_difference_count": 5,
+    "raw_report_identity_is_not_a_semantic_pass_criterion": true,
+    "summary_equal_after_rebinding_only_case_report_evidence": true
+  },
+  "parsed_regression": {
+    "status": "PASS",
+    "capture": {"bytes": 24228, "sha256": "e041719c8ef0c56212d4d905aecd2681a069546fa920e324fbd1e4660c585d65"},
+    "unaffected_case_ids": [
+      "minimal-free-space-dipole",
+      "nec2-part3-example1-lumped-load",
+      "nec2-part3-example3-perfect-ground",
+      "nec2-part3-example3-reflection-ground",
+      "connected-scaled-inverted-v",
+      "minimal-dipole-21-segment",
+      "minimal-dipole-41-segment"
+    ],
+    "solvers": {
+      "msys_nec2c": {
+        "unaffected_complete_parsed_reports_equal": 7,
+        "example2_v1_parsed_sha256": "9b1184be68986c0ebdd00c4a2238ecbc6b5cfc7367494fd1e3ab5add7b5ab0f5",
+        "example2_v2_parsed_sha256": "12dc2b2fe3bb6794ffe21e48adca5d584115e79dbd530218b6382f671c0f4f53",
+        "example2_changed_snapshot_indices": [3]
+      },
+      "ucrt64_nec2c": {
+        "unaffected_complete_parsed_reports_equal": 7,
+        "example2_v1_parsed_sha256": "d2f4795c77b1bb2259272236b304cb17ffcd409b1ff730456c2d27bffcf3b717",
+        "example2_v2_parsed_sha256": "03d63228e512d9fe05b8d05131f20262e954276bd62ae267befb861ba20a5498",
+        "example2_changed_snapshot_indices": [3]
+      }
+    },
+    "example2_snapshot_sha256": [
+      {"index": 0, "equal": true, "v1": "094a008b816e3604ed10a6a66d912c3cee9a4c6ff380c68a3f89713e170d5d75", "v2": "094a008b816e3604ed10a6a66d912c3cee9a4c6ff380c68a3f89713e170d5d75"},
+      {"index": 1, "equal": true, "v1": "6e30cc1dcb1f571523dcba76f673fb1dee32940caf26d606409b48d2cdf8f421", "v2": "6e30cc1dcb1f571523dcba76f673fb1dee32940caf26d606409b48d2cdf8f421"},
+      {"index": 2, "equal": true, "v1": "88e3000d546afdc93acd0d95f0f6c803046efa9724f4cd5658e863f3ce06a651", "v2": "88e3000d546afdc93acd0d95f0f6c803046efa9724f4cd5658e863f3ce06a651"},
+      {"index": 3, "equal": false, "v1": "c74df4072a2d0373b5dd921ec573a9bcaf8e3358a1843130bf2456e044aa3a00", "v2": "e3fcef1cfa78dc6750bd5aea3071817624841c2bf7ef75768b08bbfe67b7538e"}
+    ],
+    "example2_loaded_values": {
+      "v1": {"feed_resistance_ohms": 106.58, "feed_reactance_ohms": 68.538, "feed_current_real_amperes": 0.0066377, "feed_current_imaginary_amperes": -0.0042683, "input_power_watts": 0.0033188, "radiated_power_watts": 0.0025716, "structure_loss_watts": 0.00074727, "efficiency_percent": 77.48},
+      "v2": {"feed_resistance_ohms": 112.43, "feed_reactance_ohms": 65.428, "feed_current_real_amperes": 0.0066443, "feed_current_imaginary_amperes": -0.0038666, "input_power_watts": 0.0033222, "radiated_power_watts": 0.0024402, "structure_loss_watts": 0.00088199, "efficiency_percent": 73.45}
+    }
+  },
+  "qualification": {
+    "overall_status": "NUMERICAL_QUALIFICATION_BLOCKED",
+    "case_count": 8,
+    "classification_counts": {"FAIL": 1, "NOT_APPLICABLE": 334, "PASS": 6028, "PASS_WITH_REFERENCE_PRECISION_LIMIT": 29},
+    "section_classification_counts": {
+      "authoritative": {"FAIL": 1, "PASS": 46, "PASS_WITH_REFERENCE_PRECISION_LIMIT": 29},
+      "cross_platform": {"NOT_APPLICABLE": 167, "PASS": 2706},
+      "invariants": {"PASS": 542},
+      "report_integrity": {"PASS": 24},
+      "secondary_diagnostic": {"NOT_APPLICABLE": 167, "PASS": 2706},
+      "suite_invariants": {"PASS": 4}
+    },
+    "case_outcomes": [
+      {"case_id": "minimal-free-space-dipole", "status": "QUALIFIED_WITH_DOCUMENTED_GAP"},
+      {"case_id": "nec2-part3-example1-lumped-load", "status": "QUALIFIED_FOR_INTENDED_SUBSET"},
+      {"case_id": "nec2-part3-example2-conductivity-sweep", "status": "BLOCKED_BY_NUMERICAL_DISCREPANCY"},
+      {"case_id": "nec2-part3-example3-perfect-ground", "status": "QUALIFIED_FOR_INTENDED_SUBSET"},
+      {"case_id": "nec2-part3-example3-reflection-ground", "status": "QUALIFIED_FOR_INTENDED_SUBSET"},
+      {"case_id": "connected-scaled-inverted-v", "status": "QUALIFIED_WITH_DOCUMENTED_GAP"},
+      {"case_id": "minimal-dipole-21-segment", "status": "QUALIFIED_WITH_DOCUMENTED_GAP"},
+      {"case_id": "minimal-dipole-41-segment", "status": "QUALIFIED_WITH_DOCUMENTED_GAP"}
+    ],
+    "authoritative_failures": [
+      {
+        "id": "ex2.300-loaded.feed.current-imaginary",
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_class": "feed_current",
+        "source_locator": "Section IV Example 2, printed page 105, PDF page 651",
+        "reference_literal": "-3.86680E-03",
+        "candidate_literal": "-3.8666E-03",
+        "candidate_value": -0.0038666,
+        "absolute_center_error": 2e-07,
+        "classification": "FAIL",
+        "candidate_solvers": ["msys_nec2c", "ucrt64_nec2c"]
+      }
+    ],
+    "secondary_disagreements": [],
+    "suite_invariants": [
+      {"id": "minimal-dipole.segmentation-convergence.msys_nec2c.impedance_delta[1]", "classification": "PASS", "coarser_delta_ohms": 0.6312162862284217, "finer_delta_ohms": 0.3519673280291743},
+      {"id": "minimal-dipole.segmentation-convergence.msys_nec2c.gain_delta[1]", "classification": "PASS", "coarser_delta_db": 0.010000000000000231, "finer_delta_db": 0.0},
+      {"id": "minimal-dipole.segmentation-convergence.ucrt64_nec2c.impedance_delta[1]", "classification": "PASS", "coarser_delta_ohms": 0.6312162862284217, "finer_delta_ohms": 0.3519673280291743},
+      {"id": "minimal-dipole.segmentation-convergence.ucrt64_nec2c.gain_delta[1]", "classification": "PASS", "coarser_delta_db": 0.010000000000000231, "finer_delta_db": 0.0}
+    ],
+    "gates": {
+      "all_24_solver_reports_complete_and_diagnostic_free": true,
+      "all_cross_platform_records_pass": true,
+      "all_invariants_and_power_conservation_checks_pass": true,
+      "all_unaffected_cases_preserve_complete_parsed_values": true,
+      "example2_snapshots_0_through_2_unchanged": true,
+      "example2_loaded_snapshot_changed_to_corrected_branch": true,
+      "all_previously_resolved_authoritative_failures_remain_resolved": true,
+      "only_remaining_authoritative_failure_id": "ex2.300-loaded.feed.current-imaginary"
+    }
+  },
+  "runner_capture": {
+    "expected_exit_code": 1,
+    "compact_summary": {"bytes": 30316, "sha256": "b85745334018faaacc199c1b3371bb7633ccf4f985b134c259a01e50d2f829be"},
+    "full_output": {"bytes": 2335980, "sha256": "f7772659273b909280a81e74c3fbe04dbca36e75ce7e31450231696bb0ef3ccf"}
+  },
+  "authorization_boundaries": {
+    "release_authorized": false,
+    "product_integration_approved": false,
+    "maintained_source_v2_tag_created": false,
+    "distribution_status": "UNRELEASED"
+  }
+}

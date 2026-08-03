@@ -32,11 +32,17 @@ in this repository.
 
 The maintained `src/nec2c/` tree is mixed-provenance work. Original NEC2C 1.3.1 material remains
 handled under the preserved original-author public-domain statement. Project-authored portability
-additions and modifications are BSD-2-Clause and are identified exactly by
-`manifests/maintained-source-v1.json` and
-`patches/maintained/nec2c-1.3.1-hf-portability-v1.patch`. The two platform headers are wholly
-project-authored BSD-2-Clause files. The maintained source is independent, not official NEC2C,
-and remains unqualified, unreleased, and unapplied.
+additions and modifications are BSD-2-Clause and are identified exactly by the
+[v1 manifest](manifests/maintained-source-v1.json),
+[v1 combined patch](patches/maintained/nec2c-1.3.1-hf-portability-v1.patch),
+[v2 manifest](manifests/maintained-source-v2.json), and
+[v2 combined patch](patches/maintained/nec2c-1.3.1-hf-portability-zint-v2.patch). In v2,
+`calculations.c` is an additional original file containing the project-authored four-line
+`zint()` source-fidelity modification; `main.c`, `misc.c`, and `nec2c.h` retain their earlier
+identified portability modifications. Original material retained in those files is not relabeled
+as BSD-2-Clause. The two platform headers are wholly project-authored BSD-2-Clause files. The
+maintained source is independent, not official NEC2C, and remains unqualified, unreleased, and
+unapplied.
 
 ## Excluded maintained-tree code
 
