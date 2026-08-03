@@ -63,8 +63,23 @@ Builds stay out of tree under ignored task directories. Executables, objects, de
 generated Makefiles, configuration logs, and smoke reports are never tracked. The v1 candidate is
 unqualified, unreleased, and unapplied. The
 [NEC2DX oracle decision](docs/NEC2DX_ORACLE_DECISION.md) allows only internal secondary-cross-check
-use and requires a separately authorized native UCRT64 untouched build probe before any numerical
-comparison work. It does not authorize distribution or integration.
+use. The later internal build and reproducibility prerequisites did not alter its
+non-redistribution boundary or authorize integration.
+
+## Numerical qualification v0.0.5f-B
+
+The frozen eight-case seed corpus has disposition **NUMERICAL QUALIFICATION BLOCKED**. The
+authoritative NEC-2 Part III Example 2 `LD` type 5 conductivity stage disagrees with both fresh
+maintained builds; the first implicated boundary is `zint()` in the circular-wire
+internal-impedance path. Maintained source was deliberately left unchanged. See the
+[qualification record](docs/NUMERICAL_QUALIFICATION_V0_0_5F_B.md),
+[suite manifest](manifests/numerical-qualification-v0.0.5f-b.json), and
+[normalized result summary](manifests/numerical-qualification-v0.0.5f-b-results.json).
+
+Keep rerun builds, executables, raw reports, official-manual files, and all NEC2DX material in
+ignored task storage. Do not widen tolerances or expand the corpus to route around the failure.
+Any `LD` type 5 / `zint()` investigation, source correction, requalification, binary release, or
+HF Propagation Control integration requires its own authorization and reviewed milestone.
 
 ## Post-review replication procedures
 

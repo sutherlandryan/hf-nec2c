@@ -1,0 +1,12 @@
+CM SPDX-License-Identifier: BSD-2-Clause
+CM Project-authored connected scaled symmetric inverted-V
+CE
+GW 1 5 0 0 200 0 0 250 0.1
+GW 2 10 0 0 250 -500 0 0 0.1
+GW 3 10 0 0 250 500 0 0 0.1
+GS 0 0 0.01
+GE 0
+FR 0 1 0 0 14.2 0
+EX 0 1 3 0 1 0
+RP 0 19 2 1000 0 0 10 90 0 0
+EN

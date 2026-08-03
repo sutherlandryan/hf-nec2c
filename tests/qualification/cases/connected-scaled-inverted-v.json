@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "case_id": "connected-scaled-inverted-v",
+    "title": "Connected, GS-scaled, symmetric inverted-V"
+  },
+  "purpose": "Exercise a three-wire connected junction, geometry scaling, mirrored-arm currents, feed behavior, power conservation, and a two-plane pattern grid.",
+  "origin": {
+    "kind": "project-authored",
+    "parameterization": "Coordinates and radius are entered in centimetres and transformed to metres by GS factor 0.01."
+  },
+  "citation": {
+    "kind": "repository",
+    "path": "tests/qualification/cases/connected-scaled-inverted-v.nec",
+    "note": "The deck definition is the primary case specification; no external numeric reference is asserted."
+  },
+  "deck": {
+    "path": "tests/qualification/cases/connected-scaled-inverted-v.nec",
+    "sha256": "2219ab61aa88a5c4443b46cbb155b86adfa24c70eb531554573be20c34d58582"
+  },
+  "expected_observables": [
+    "feed impedance at 14.2 MHz",
+    "complex currents on the feed stem and both arms",
+    "input, radiated, structure-loss, and network-loss power",
+    "radiation efficiency",
+    "total-gain pattern cuts at phi 0 and phi 90 degrees from theta 0 through 180 degrees"
+  ],
+  "invariants": [
+    "corresponding segments of tags 2 and 3 have equal current magnitude and wrapped phase",
+    "the GS-transformed geometry is identical to explicit metre coordinates",
+    "input power equals radiated plus structure-loss plus network-loss power",
+    "a perfect conductor has zero structure loss and 100 percent structure efficiency"
+  ],
+  "units": {
+    "frequency": "MHz",
+    "geometry_after_scale": "m",
+    "impedance": "ohm",
+    "current": "A",
+    "power": "W",
+    "angle": "degree",
+    "gain": "dB",
+    "efficiency": "percent"
+  },
+  "reference_precision": {
+    "kind": "computed-only",
+    "policy": "No external numeric literal is asserted; comparisons use the frozen qualification tolerance policy and emitted report precision."
+  },
+  "solver_applicability": {
+    "maintained_nec2c": [
+      "msys-posix",
+      "ucrt64"
+    ],
+    "internal_nec2dx": "secondary-diagnostic-only"
+  },
+  "permitted_evidence_sources": [
+    "authenticated deck bytes",
+    "fresh maintained NEC2C reports",
+    "fresh internal NEC2DX report as secondary evidence only",
+    "declared geometric, physical, and algebraic invariants"
+  ]
+}

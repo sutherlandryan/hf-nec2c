@@ -1,0 +1,1159 @@
+{
+  "authoritative_failures": [
+    {
+      "candidates": {
+        "msys_nec2c": {
+          "absolute_center_error": 6.61e-06,
+          "classification": "FAIL",
+          "literal": "6.6377E-03",
+          "value": 0.0066377
+        },
+        "ucrt64_nec2c": {
+          "absolute_center_error": 6.61e-06,
+          "classification": "FAIL",
+          "literal": "6.6377E-03",
+          "value": 0.0066377
+        }
+      },
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "FAIL",
+      "id": "ex2.300-loaded.feed.current-real",
+      "observable_class": "feed_current",
+      "reference_literal": "6.64431E-03",
+      "source_locator": "Section IV Example 2, printed page 105, PDF page 651"
+    },
+    {
+      "candidates": {
+        "msys_nec2c": {
+          "absolute_center_error": 0.0004015,
+          "classification": "FAIL",
+          "literal": "-4.2683E-03",
+          "value": -0.0042683
+        },
+        "ucrt64_nec2c": {
+          "absolute_center_error": 0.0004015,
+          "classification": "FAIL",
+          "literal": "-4.2683E-03",
+          "value": -0.0042683
+        }
+      },
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "FAIL",
+      "id": "ex2.300-loaded.feed.current-imaginary",
+      "observable_class": "feed_current",
+      "reference_literal": "-3.86680E-03",
+      "source_locator": "Section IV Example 2, printed page 105, PDF page 651"
+    },
+    {
+      "candidates": {
+        "msys_nec2c": {
+          "absolute_center_error": 5.85,
+          "classification": "FAIL",
+          "literal": "1.0658E+02",
+          "value": 106.58
+        },
+        "ucrt64_nec2c": {
+          "absolute_center_error": 5.85,
+          "classification": "FAIL",
+          "literal": "1.0658E+02",
+          "value": 106.58
+        }
+      },
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "FAIL",
+      "id": "ex2.300-loaded.feed.resistance",
+      "observable_class": "feed_impedance",
+      "reference_literal": "112.430",
+      "source_locator": "Section IV Example 2, printed page 105, PDF page 651"
+    },
+    {
+      "candidates": {
+        "msys_nec2c": {
+          "absolute_center_error": 3.1104,
+          "classification": "FAIL",
+          "literal": "6.8538E+01",
+          "value": 68.538
+        },
+        "ucrt64_nec2c": {
+          "absolute_center_error": 3.1104,
+          "classification": "FAIL",
+          "literal": "6.8538E+01",
+          "value": 68.538
+        }
+      },
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "FAIL",
+      "id": "ex2.300-loaded.feed.reactance",
+      "observable_class": "feed_impedance",
+      "reference_literal": "65.4276",
+      "source_locator": "Section IV Example 2, printed page 105, PDF page 651"
+    },
+    {
+      "candidates": {
+        "msys_nec2c": {
+          "absolute_center_error": 3.35e-06,
+          "classification": "FAIL",
+          "literal": "3.3188E-03",
+          "value": 0.0033188
+        },
+        "ucrt64_nec2c": {
+          "absolute_center_error": 3.35e-06,
+          "classification": "FAIL",
+          "literal": "3.3188E-03",
+          "value": 0.0033188
+        }
+      },
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "FAIL",
+      "id": "ex2.300-loaded.power.input",
+      "observable_class": "input_power",
+      "reference_literal": "3.32215E-03",
+      "source_locator": "Section IV Example 2, printed page 105, PDF page 651"
+    },
+    {
+      "candidates": {
+        "msys_nec2c": {
+          "absolute_center_error": 0.0001314,
+          "classification": "FAIL",
+          "literal": "2.5716E-03",
+          "value": 0.0025716
+        },
+        "ucrt64_nec2c": {
+          "absolute_center_error": 0.0001314,
+          "classification": "FAIL",
+          "literal": "2.5716E-03",
+          "value": 0.0025716
+        }
+      },
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "FAIL",
+      "id": "ex2.300-loaded.power.radiated",
+      "observable_class": "radiated_power",
+      "reference_literal": "2.4402E-03",
+      "source_locator": "Section IV Example 2, printed page 105, PDF page 651"
+    },
+    {
+      "candidates": {
+        "msys_nec2c": {
+          "absolute_center_error": 0.00013472,
+          "classification": "FAIL",
+          "literal": "7.4727E-04",
+          "value": 0.00074727
+        },
+        "ucrt64_nec2c": {
+          "absolute_center_error": 0.00013472,
+          "classification": "FAIL",
+          "literal": "7.4727E-04",
+          "value": 0.00074727
+        }
+      },
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "FAIL",
+      "id": "ex2.300-loaded.power.structure-loss",
+      "observable_class": "structure_loss",
+      "reference_literal": "8.8199E-04",
+      "source_locator": "Section IV Example 2, printed page 105, PDF page 651"
+    },
+    {
+      "candidates": {
+        "msys_nec2c": {
+          "absolute_center_error": 4.03,
+          "classification": "FAIL",
+          "literal": "77.48",
+          "value": 77.48
+        },
+        "ucrt64_nec2c": {
+          "absolute_center_error": 4.03,
+          "classification": "FAIL",
+          "literal": "77.48",
+          "value": 77.48
+        }
+      },
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "FAIL",
+      "id": "ex2.300-loaded.efficiency",
+      "observable_class": "efficiency",
+      "reference_literal": "73.45",
+      "source_locator": "Section IV Example 2, printed page 105, PDF page 651"
+    }
+  ],
+  "case_count": 8,
+  "cases": [
+    {
+      "case_id": "minimal-free-space-dipole",
+      "case_status": "QUALIFIED_WITH_DOCUMENTED_GAP",
+      "deck": {
+        "path": "tests/smoke/minimal-dipole.nec",
+        "sha256": "395603f62e0e0682215d9985443e4e13ff73f583646427b8dc9785ca76571520"
+      },
+      "reports": {
+        "msys_nec2c": {
+          "bytes": 6825,
+          "filename": "minimal-free-space-dipole.out",
+          "sha256": "396b90cfb8e49fcf1938e01d291638163f74e3b065e29b8456ece3b3ca482567"
+        },
+        "nec2dx": {
+          "bytes": 7155,
+          "filename": "minimal-free-space-dipole.out",
+          "sha256": "6a89e9433d2cf19b7a6813fb5d9f2f5e33e66b92f78a6417ea3addee1eee16a1"
+        },
+        "ucrt64_nec2c": {
+          "bytes": 6943,
+          "filename": "minimal-free-space-dipole.out",
+          "sha256": "1a9baf6a9a2954f77ccd543d1739ff97caf6b748a255b00bf149fbb2c3fd671c"
+        }
+      },
+      "section_classification_counts": {
+        "authoritative": {},
+        "cross_platform": {
+          "NOT_APPLICABLE": 1,
+          "PASS": 111
+        },
+        "invariants": {
+          "PASS": 30
+        },
+        "report_integrity": {
+          "PASS": 3
+        },
+        "secondary_diagnostic": {
+          "NOT_APPLICABLE": 1,
+          "PASS": 111
+        }
+      }
+    },
+    {
+      "case_id": "nec2-part3-example1-lumped-load",
+      "case_status": "QUALIFIED_FOR_INTENDED_SUBSET",
+      "deck": {
+        "path": "tests/qualification/cases/nec2-part3-example1-lumped-load.nec",
+        "sha256": "8a5133e22794fd726c76e554ad8f578f98d1e53bf2c54246b4335c57a6a23c30"
+      },
+      "reports": {
+        "msys_nec2c": {
+          "bytes": 10909,
+          "filename": "nec2-part3-example1-lumped-load.out",
+          "sha256": "36fcd1fc4082dced0aab8568b0c26fc68734eb0cc0dab05b5dc2b59e663400ff"
+        },
+        "nec2dx": {
+          "bytes": 11608,
+          "filename": "nec2-part3-example1-lumped-load.out",
+          "sha256": "8b23c0250ecc6b307bd28b5c00c7c583a8ed4ffec31b7752e0468a1166e84b99"
+        },
+        "ucrt64_nec2c": {
+          "bytes": 11092,
+          "filename": "nec2-part3-example1-lumped-load.out",
+          "sha256": "e8e37910018a31c93e21bc2b562389c678253464ef2e9082e4d04902794d8979"
+        }
+      },
+      "section_classification_counts": {
+        "authoritative": {
+          "PASS": 11,
+          "PASS_WITH_REFERENCE_PRECISION_LIMIT": 7
+        },
+        "cross_platform": {
+          "PASS": 142
+        },
+        "invariants": {
+          "PASS": 36
+        },
+        "report_integrity": {
+          "PASS": 3
+        },
+        "secondary_diagnostic": {
+          "PASS": 142
+        }
+      }
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "case_status": "BLOCKED_BY_NUMERICAL_DISCREPANCY",
+      "deck": {
+        "path": "tests/qualification/cases/nec2-part3-example2-conductivity-sweep.nec",
+        "sha256": "39121efd2346da4b136e07901fb9e76b3b54494c47abf91277a3545fd95d95bc"
+      },
+      "reports": {
+        "msys_nec2c": {
+          "bytes": 15061,
+          "filename": "nec2-part3-example2-conductivity-sweep.out",
+          "sha256": "603adecfb79b57f2974a20fa8931e1303bbef933caa7f303e6613650ecf56958"
+        },
+        "nec2dx": {
+          "bytes": 15869,
+          "filename": "nec2-part3-example2-conductivity-sweep.out",
+          "sha256": "3c864bcf04ebdcf610b79c34e2db286175ce7ae5d47f71ba1d6a051774d00218"
+        },
+        "ucrt64_nec2c": {
+          "bytes": 15334,
+          "filename": "nec2-part3-example2-conductivity-sweep.out",
+          "sha256": "324ee4fe43f8f7fec53b8407bf6d4cb5b882d557ac6efbe88b6a7935246b90b6"
+        }
+      },
+      "section_classification_counts": {
+        "authoritative": {
+          "FAIL": 8,
+          "PASS": 2,
+          "PASS_WITH_REFERENCE_PRECISION_LIMIT": 8
+        },
+        "cross_platform": {
+          "PASS": 316
+        },
+        "invariants": {
+          "PASS": 88
+        },
+        "report_integrity": {
+          "PASS": 3
+        },
+        "secondary_diagnostic": {
+          "PASS": 273,
+          "SECONDARY_DISAGREEMENT": 43
+        }
+      }
+    },
+    {
+      "case_id": "nec2-part3-example3-perfect-ground",
+      "case_status": "QUALIFIED_FOR_INTENDED_SUBSET",
+      "deck": {
+        "path": "tests/qualification/cases/nec2-part3-example3-perfect-ground.nec",
+        "sha256": "a81b99a75df45d5ddb27f0d8ae4ec6ef7102037fb0442e7d2041489c3f5c1606"
+      },
+      "reports": {
+        "msys_nec2c": {
+          "bytes": 10363,
+          "filename": "nec2-part3-example3-perfect-ground.out",
+          "sha256": "57dbbce75b9ab0f75c49923f25dee70517e65f7b9537241379b1042304abafb8"
+        },
+        "nec2dx": {
+          "bytes": 10804,
+          "filename": "nec2-part3-example3-perfect-ground.out",
+          "sha256": "138e7bbdd6deaf5138df2fe7765fe3c674a28acf7614928ec5a659272bd149c7"
+        },
+        "ucrt64_nec2c": {
+          "bytes": 10522,
+          "filename": "nec2-part3-example3-perfect-ground.out",
+          "sha256": "8910a6e80a6f9d8f4050de7d2c1ae675d474a74adf246edbafd4c32d158bc665"
+        }
+      },
+      "section_classification_counts": {
+        "authoritative": {
+          "PASS": 14,
+          "PASS_WITH_REFERENCE_PRECISION_LIMIT": 6
+        },
+        "cross_platform": {
+          "NOT_APPLICABLE": 22,
+          "PASS": 246
+        },
+        "invariants": {
+          "PASS": 34
+        },
+        "report_integrity": {
+          "PASS": 3
+        },
+        "secondary_diagnostic": {
+          "NOT_APPLICABLE": 22,
+          "PASS": 246
+        }
+      }
+    },
+    {
+      "case_id": "nec2-part3-example3-reflection-ground",
+      "case_status": "QUALIFIED_FOR_INTENDED_SUBSET",
+      "deck": {
+        "path": "tests/qualification/cases/nec2-part3-example3-reflection-ground.nec",
+        "sha256": "c0e58690e47a1bf7d17cb79475533a302f058a37d049789b555297cbe327ab2d"
+      },
+      "reports": {
+        "msys_nec2c": {
+          "bytes": 10610,
+          "filename": "nec2-part3-example3-reflection-ground.out",
+          "sha256": "0c08b2d53ad94684a38199a5a7af6d2b8360af6d1aed944e6d6c693717a97545"
+        },
+        "nec2dx": {
+          "bytes": 11086,
+          "filename": "nec2-part3-example3-reflection-ground.out",
+          "sha256": "39338171ce5f7dc04fef3e3805ea02415dcf7597da182eb80516b7e06342201e"
+        },
+        "ucrt64_nec2c": {
+          "bytes": 10772,
+          "filename": "nec2-part3-example3-reflection-ground.out",
+          "sha256": "265f918c9ff2df996d5a1d8106e5514a5c350248285d7e529536bc12a9f2e420"
+        }
+      },
+      "section_classification_counts": {
+        "authoritative": {
+          "PASS": 15,
+          "PASS_WITH_REFERENCE_PRECISION_LIMIT": 5
+        },
+        "cross_platform": {
+          "NOT_APPLICABLE": 22,
+          "PASS": 246
+        },
+        "invariants": {
+          "PASS": 34
+        },
+        "report_integrity": {
+          "PASS": 3
+        },
+        "secondary_diagnostic": {
+          "NOT_APPLICABLE": 22,
+          "PASS": 246
+        }
+      }
+    },
+    {
+      "case_id": "connected-scaled-inverted-v",
+      "case_status": "QUALIFIED_WITH_DOCUMENTED_GAP",
+      "deck": {
+        "path": "tests/qualification/cases/connected-scaled-inverted-v.nec",
+        "sha256": "2219ab61aa88a5c4443b46cbb155b86adfa24c70eb531554573be20c34d58582"
+      },
+      "reports": {
+        "msys_nec2c": {
+          "bytes": 14426,
+          "filename": "connected-scaled-inverted-v.out",
+          "sha256": "4097f5d1383bf8b6212d51f95eda6dad7bac6e1c4aab929308aee88e641b10b1"
+        },
+        "nec2dx": {
+          "bytes": 14723,
+          "filename": "connected-scaled-inverted-v.out",
+          "sha256": "25280b6002f1e4b391d360308495745abc2e88b07aebc300d3600be3fd2cfa0a"
+        },
+        "ucrt64_nec2c": {
+          "bytes": 14616,
+          "filename": "connected-scaled-inverted-v.out",
+          "sha256": "740ffa860b9ecc7cfc553069ef9422d01fe5f026d83c67a2953cb0722f83656d"
+        }
+      },
+      "section_classification_counts": {
+        "authoritative": {},
+        "cross_platform": {
+          "NOT_APPLICABLE": 42,
+          "PASS": 515
+        },
+        "invariants": {
+          "PASS": 100
+        },
+        "report_integrity": {
+          "PASS": 3
+        },
+        "secondary_diagnostic": {
+          "NOT_APPLICABLE": 42,
+          "PASS": 515
+        }
+      }
+    },
+    {
+      "case_id": "minimal-dipole-21-segment",
+      "case_status": "QUALIFIED_WITH_DOCUMENTED_GAP",
+      "deck": {
+        "path": "tests/qualification/cases/minimal-dipole-21-segment.nec",
+        "sha256": "8b9ec2efd309bbd29f3c9234788b40552ffc5ada3e7b7f3d95f2ccf88230c9af"
+      },
+      "reports": {
+        "msys_nec2c": {
+          "bytes": 13249,
+          "filename": "minimal-dipole-21-segment.out",
+          "sha256": "d5ed86450a48cb8e2d210ffb363ff29d77b566c6406d66929cc9e864ce8415ba"
+        },
+        "nec2dx": {
+          "bytes": 13639,
+          "filename": "minimal-dipole-21-segment.out",
+          "sha256": "79e040ceaffb2d1f75c340d295b4f55ac8069e3f94758f2ea29fd6b1b3d18f6e"
+        },
+        "ucrt64_nec2c": {
+          "bytes": 13424,
+          "filename": "minimal-dipole-21-segment.out",
+          "sha256": "d6b7a631ce70b7831a0a5cc884c18b106189f46d9e3696f64889c6f31bb54626"
+        }
+      },
+      "section_classification_counts": {
+        "authoritative": {},
+        "cross_platform": {
+          "NOT_APPLICABLE": 40,
+          "PASS": 485
+        },
+        "invariants": {
+          "PASS": 90
+        },
+        "report_integrity": {
+          "PASS": 3
+        },
+        "secondary_diagnostic": {
+          "NOT_APPLICABLE": 40,
+          "PASS": 485
+        }
+      }
+    },
+    {
+      "case_id": "minimal-dipole-41-segment",
+      "case_status": "QUALIFIED_WITH_DOCUMENTED_GAP",
+      "deck": {
+        "path": "tests/qualification/cases/minimal-dipole-41-segment.nec",
+        "sha256": "51a8c79cfa4f76e5eeff713db692dc0971892731b539b524584f3d62f45b2ad5"
+      },
+      "reports": {
+        "msys_nec2c": {
+          "bytes": 17210,
+          "filename": "minimal-dipole-41-segment.out",
+          "sha256": "9436d5daac3405f68cb62a52e9b46fc24d9b4e9dc1bdbc1c3ed37a19af2d35f3"
+        },
+        "nec2dx": {
+          "bytes": 17579,
+          "filename": "minimal-dipole-41-segment.out",
+          "sha256": "b3ced5df69cf84711fdccdd0e75a1bd9b9c013d7c1f99b7eab11f68d05489405"
+        },
+        "ucrt64_nec2c": {
+          "bytes": 17424,
+          "filename": "minimal-dipole-41-segment.out",
+          "sha256": "621f51fce6d3b89a4808ca995d024394c342b45fb11573e28790712a9718f4aa"
+        }
+      },
+      "section_classification_counts": {
+        "authoritative": {},
+        "cross_platform": {
+          "NOT_APPLICABLE": 40,
+          "PASS": 645
+        },
+        "invariants": {
+          "PASS": 130
+        },
+        "report_integrity": {
+          "PASS": 3
+        },
+        "secondary_diagnostic": {
+          "NOT_APPLICABLE": 40,
+          "PASS": 645
+        }
+      }
+    }
+  ],
+  "classification_counts": {
+    "FAIL": 8,
+    "NOT_APPLICABLE": 334,
+    "PASS": 5981,
+    "PASS_WITH_REFERENCE_PRECISION_LIMIT": 26,
+    "SECONDARY_DISAGREEMENT": 43
+  },
+  "evidence_policies": {
+    "authoritative": "Candidate and reference displayed half-LSD intervals must intersect; non-identical intersecting centers retain a precision-limit label.",
+    "cross_platform": "All applicable maintained-build numeric observables use the frozen absolute-plus-relative tolerance.",
+    "invariants": "Only typed manifest invariants with their frozen class-specific tolerances may establish analytic or physical evidence.",
+    "secondary_diagnostic": "NEC2DX is shared-lineage secondary evidence only; disagreement does not independently fail and agreement does not establish qualification.",
+    "undefined_phase": "A field-component phase is NOT_APPLICABLE only when both associated magnitudes are at or below the frozen numerical-null threshold."
+  },
+  "manifest": {
+    "path": "manifests/numerical-qualification-v0.0.5f-b.json",
+    "sha256": "7df54bd3b5c44b2f9b588b42534d201ddd3a2fffbbb8a8d8fb663fd51262c817"
+  },
+  "maximum_discrepancies_by_observable_class": {
+    "authoritative": {
+      "average_power_gain": {
+        "absolute_error": 4e-05,
+        "case_id": "nec2-part3-example3-perfect-ground",
+        "observable_id": "ex3-perfect.average-power-gain"
+      },
+      "efficiency": {
+        "absolute_error": 4.03,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "ex2.300-loaded.efficiency"
+      },
+      "far_field_gain": {
+        "absolute_error": 0.01,
+        "case_id": "nec2-part3-example3-perfect-ground",
+        "observable_id": "ex3-perfect.pattern.theta-20"
+      },
+      "feed_current": {
+        "absolute_error": 0.0004015,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "ex2.300-loaded.feed.current-imaginary"
+      },
+      "feed_impedance": {
+        "absolute_error": 5.85,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "ex2.300-loaded.feed.resistance"
+      },
+      "input_power": {
+        "absolute_error": 3.35e-06,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "ex2.300-loaded.power.input"
+      },
+      "network_loss": {
+        "absolute_error": 0.0,
+        "case_id": "nec2-part3-example1-lumped-load",
+        "observable_id": "ex1.unloaded.power.network-loss"
+      },
+      "radiated_power": {
+        "absolute_error": 0.0001314,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "ex2.300-loaded.power.radiated"
+      },
+      "structure_loss": {
+        "absolute_error": 0.00013472,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "ex2.300-loaded.power.structure-loss"
+      }
+    },
+    "cross_platform": {
+      "average_power_gain": {
+        "absolute_error": 0.0,
+        "case_id": "nec2-part3-example3-perfect-ground",
+        "observable_id": "snapshot[0].average_power_gain"
+      },
+      "current_magnitude": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].current[tag=1,segment=10].magnitude_amperes"
+      },
+      "current_phase": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].current[tag=1,segment=10].phase_degrees"
+      },
+      "current_position": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].current[tag=1,segment=10].x_wavelengths"
+      },
+      "efficiency": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].power.efficiency_percent"
+      },
+      "far_field_axial_ratio": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].far_field[theta=90,phi=0].axial_ratio"
+      },
+      "far_field_gain": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].far_field[theta=90,phi=0].major_gain_db"
+      },
+      "far_field_magnitude": {
+        "absolute_error": 9.230000000000004e-18,
+        "case_id": "connected-scaled-inverted-v",
+        "observable_id": "snapshot[0].far_field[theta=0,phi=0].e_theta_magnitude_volts_per_meter"
+      },
+      "far_field_phase": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].far_field[theta=90,phi=0].e_theta_phase_degrees"
+      },
+      "far_field_tilt": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].far_field[theta=90,phi=0].tilt_degrees"
+      },
+      "feed_admittance": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].feed[tag=1,segment=6].admittance_imaginary_mhos"
+      },
+      "feed_current": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].feed[tag=1,segment=6].current_imaginary"
+      },
+      "feed_impedance": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].feed[tag=1,segment=6].reactance_ohms"
+      },
+      "feed_power": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].feed[tag=1,segment=6].power_watts"
+      },
+      "feed_voltage": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].feed[tag=1,segment=6].voltage_imaginary"
+      },
+      "frequency": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].frequency_mhz"
+      },
+      "input_power": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].power.input_power_watts"
+      },
+      "network_loss": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].power.network_loss_watts"
+      },
+      "radiated_power": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].power.radiated_power_watts"
+      },
+      "segment_current": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].current[tag=1,segment=10].imaginary_amperes"
+      },
+      "segment_length": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].current[tag=1,segment=10].length_wavelengths"
+      },
+      "structure_loss": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].power.structure_loss_watts"
+      }
+    },
+    "invariants": {
+      "average_power_gain": {
+        "absolute_error": 0.027899999999999814,
+        "case_id": "nec2-part3-example3-perfect-ground",
+        "observable_id": "ex3-perfect.image-theory-average-gain.msys_nec2c"
+      },
+      "broadside_gain_convergence": {
+        "absolute_error": 0.0,
+        "case_id": "suite",
+        "observable_id": "minimal-dipole.segmentation-convergence.msys_nec2c.gain_delta[1]"
+      },
+      "current_magnitude_symmetry": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "minimal.current-mirror.msys_nec2c.pair[0].magnitude"
+      },
+      "current_phase_symmetry": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "minimal.current-mirror.msys_nec2c.pair[0].phase"
+      },
+      "current_position": {
+        "absolute_error": 0.0,
+        "case_id": "connected-scaled-inverted-v",
+        "observable_id": "inverted-v.scaled-stem-first.msys_nec2c.x_wavelengths"
+      },
+      "far_field_null_sentinel": {
+        "absolute_error": 0.0,
+        "case_id": "nec2-part3-example3-perfect-ground",
+        "observable_id": "ex3-perfect.zenith-null.msys_nec2c"
+      },
+      "feed_impedance_convergence": {
+        "absolute_error": 0.0,
+        "case_id": "suite",
+        "observable_id": "minimal-dipole.segmentation-convergence.msys_nec2c.impedance_delta[1]"
+      },
+      "network_loss": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "minimal.zero-loss.msys_nec2c.snapshot[0].network_loss_watts"
+      },
+      "pattern_maximum_direction": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "minimal.broadside-maximum.msys_nec2c.direction"
+      },
+      "pattern_symmetry": {
+        "absolute_error": 0.0,
+        "case_id": "nec2-part3-example3-perfect-ground",
+        "observable_id": "ex3-perfect.rotational-symmetry.msys_nec2c.theta[0].total_gain_db"
+      },
+      "power_conservation": {
+        "absolute_error": 7.000000000001796e-08,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "ex2.power-conservation.msys_nec2c.snapshot[3]"
+      },
+      "segment_length": {
+        "absolute_error": 0.0,
+        "case_id": "connected-scaled-inverted-v",
+        "observable_id": "inverted-v.scaled-stem-first.msys_nec2c.length_wavelengths"
+      },
+      "snapshot_count": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "minimal.snapshot-count.msys_nec2c"
+      },
+      "structure_loss": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "minimal.zero-loss.msys_nec2c.snapshot[0].structure_loss_watts"
+      }
+    },
+    "secondary_diagnostic": {
+      "average_power_gain": {
+        "absolute_error": 4.000000000026205e-05,
+        "case_id": "nec2-part3-example3-perfect-ground",
+        "observable_id": "snapshot[0].average_power_gain"
+      },
+      "current_magnitude": {
+        "absolute_error": 0.00020710000000000086,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].current[tag=0,segment=4].magnitude_amperes"
+      },
+      "current_phase": {
+        "absolute_error": 2.484000000000009,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].current[tag=0,segment=4].phase_degrees"
+      },
+      "current_position": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].current[tag=1,segment=10].x_wavelengths"
+      },
+      "efficiency": {
+        "absolute_error": 4.030000000000001,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].power.efficiency_percent"
+      },
+      "far_field_axial_ratio": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].far_field[theta=90,phi=0].axial_ratio"
+      },
+      "far_field_gain": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].far_field[theta=90,phi=0].major_gain_db"
+      },
+      "far_field_magnitude": {
+        "absolute_error": 2.999999999997449e-05,
+        "case_id": "nec2-part3-example3-perfect-ground",
+        "observable_id": "snapshot[0].far_field[theta=90,phi=0].e_theta_magnitude_volts_per_meter"
+      },
+      "far_field_phase": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].far_field[theta=90,phi=0].e_theta_phase_degrees"
+      },
+      "far_field_tilt": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].far_field[theta=90,phi=0].tilt_degrees"
+      },
+      "feed_admittance": {
+        "absolute_error": 0.00040170000000000006,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].feed[tag=0,segment=5].admittance_imaginary_mhos"
+      },
+      "feed_current": {
+        "absolute_error": 0.00040170000000000006,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].feed[tag=0,segment=5].current_imaginary"
+      },
+      "feed_impedance": {
+        "absolute_error": 5.8500000000000085,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].feed[tag=0,segment=5].resistance_ohms"
+      },
+      "feed_power": {
+        "absolute_error": 3.3500000000000543e-06,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].feed[tag=0,segment=5].power_watts"
+      },
+      "feed_voltage": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].feed[tag=1,segment=6].voltage_imaginary"
+      },
+      "frequency": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].frequency_mhz"
+      },
+      "input_power": {
+        "absolute_error": 3.400000000000191e-06,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].power.input_power_watts"
+      },
+      "network_loss": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].power.network_loss_watts"
+      },
+      "radiated_power": {
+        "absolute_error": 0.00013139999999999983,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].power.radiated_power_watts"
+      },
+      "segment_current": {
+        "absolute_error": 0.0003943999999999996,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].current[tag=0,segment=4].imaginary_amperes"
+      },
+      "segment_length": {
+        "absolute_error": 0.0,
+        "case_id": "minimal-free-space-dipole",
+        "observable_id": "snapshot[0].current[tag=1,segment=10].length_wavelengths"
+      },
+      "structure_loss": {
+        "absolute_error": 0.00013472000000000007,
+        "case_id": "nec2-part3-example2-conductivity-sweep",
+        "observable_id": "snapshot[3].power.structure_loss_watts"
+      }
+    }
+  },
+  "overall_status": "NUMERICAL_QUALIFICATION_BLOCKED",
+  "qualification_result_schema_version": 1,
+  "schema": "hf-nec2c.numerical-qualification-summary",
+  "schema_version": 1,
+  "secondary_disagreements": [
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 8,
+      "maximum_absolute_error": 0.00020710000000000086,
+      "maximum_error_observable_id": "snapshot[3].current[tag=0,segment=4].magnitude_amperes",
+      "observable_class": "current_magnitude",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 8,
+      "maximum_absolute_error": 2.484000000000009,
+      "maximum_error_observable_id": "snapshot[3].current[tag=0,segment=4].phase_degrees",
+      "observable_class": "current_phase",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 1,
+      "maximum_absolute_error": 4.030000000000001,
+      "maximum_error_observable_id": "snapshot[3].power.efficiency_percent",
+      "observable_class": "efficiency",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 2,
+      "maximum_absolute_error": 0.00040170000000000006,
+      "maximum_error_observable_id": "snapshot[3].feed[tag=0,segment=5].admittance_imaginary_mhos",
+      "observable_class": "feed_admittance",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 2,
+      "maximum_absolute_error": 0.00040170000000000006,
+      "maximum_error_observable_id": "snapshot[3].feed[tag=0,segment=5].current_imaginary",
+      "observable_class": "feed_current",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 2,
+      "maximum_absolute_error": 5.8500000000000085,
+      "maximum_error_observable_id": "snapshot[3].feed[tag=0,segment=5].resistance_ohms",
+      "observable_class": "feed_impedance",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 1,
+      "maximum_absolute_error": 3.3500000000000543e-06,
+      "maximum_error_observable_id": "snapshot[3].feed[tag=0,segment=5].power_watts",
+      "observable_class": "feed_power",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 1,
+      "maximum_absolute_error": 3.400000000000191e-06,
+      "maximum_error_observable_id": "snapshot[3].power.input_power_watts",
+      "observable_class": "input_power",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 1,
+      "maximum_absolute_error": 0.00013139999999999983,
+      "maximum_error_observable_id": "snapshot[3].power.radiated_power_watts",
+      "observable_class": "radiated_power",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 16,
+      "maximum_absolute_error": 0.0003943999999999996,
+      "maximum_error_observable_id": "snapshot[3].current[tag=0,segment=4].imaginary_amperes",
+      "observable_class": "segment_current",
+      "snapshot_index": 3
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "classification": "SECONDARY_DISAGREEMENT",
+      "count": 1,
+      "maximum_absolute_error": 0.00013472000000000007,
+      "maximum_error_observable_id": "snapshot[3].power.structure_loss_watts",
+      "observable_class": "structure_loss",
+      "snapshot_index": 3
+    }
+  ],
+  "suite_invariants": [
+    {
+      "absolute_error": 0.0,
+      "classification": "PASS",
+      "coarser_delta_ohms": 0.6312162862284217,
+      "finer_delta_ohms": 0.3519673280291743,
+      "id": "minimal-dipole.segmentation-convergence.msys_nec2c.impedance_delta[1]",
+      "observable_class": "feed_impedance_convergence",
+      "solver": "msys_nec2c",
+      "type": "convergence_series"
+    },
+    {
+      "absolute_error": 0.0,
+      "classification": "PASS",
+      "coarser_delta_db": 0.010000000000000231,
+      "finer_delta_db": 0.0,
+      "id": "minimal-dipole.segmentation-convergence.msys_nec2c.gain_delta[1]",
+      "observable_class": "broadside_gain_convergence",
+      "solver": "msys_nec2c",
+      "type": "convergence_series"
+    },
+    {
+      "absolute_error": 0.0,
+      "classification": "PASS",
+      "coarser_delta_ohms": 0.6312162862284217,
+      "finer_delta_ohms": 0.3519673280291743,
+      "id": "minimal-dipole.segmentation-convergence.ucrt64_nec2c.impedance_delta[1]",
+      "observable_class": "feed_impedance_convergence",
+      "solver": "ucrt64_nec2c",
+      "type": "convergence_series"
+    },
+    {
+      "absolute_error": 0.0,
+      "classification": "PASS",
+      "coarser_delta_db": 0.010000000000000231,
+      "finer_delta_db": 0.0,
+      "id": "minimal-dipole.segmentation-convergence.ucrt64_nec2c.gain_delta[1]",
+      "observable_class": "broadside_gain_convergence",
+      "solver": "ucrt64_nec2c",
+      "type": "convergence_series"
+    }
+  ],
+  "tolerances": {
+    "average_gain": {
+      "absolute": 0.05,
+      "relative": 0.0
+    },
+    "cross_platform": {
+      "absolute": 1e-12,
+      "relative": 1e-12
+    },
+    "current_magnitude_symmetry": {
+      "absolute": 5e-08,
+      "relative": 5e-05
+    },
+    "current_phase_symmetry_degrees": 0.02,
+    "current_position": {
+      "absolute": 5e-05,
+      "relative": 0.0
+    },
+    "direction_degrees": 0.005,
+    "near_zero_loss": {
+      "absolute": 5e-08,
+      "relative": 0.0
+    },
+    "pattern_symmetry_db": 0.02,
+    "power_conservation": {
+      "absolute": 5e-08,
+      "relative": 0.0005
+    },
+    "secondary_diagnostic": {
+      "absolute": 1e-06,
+      "relative": 5e-05
+    },
+    "secondary_diagnostic_by_observable_class": {
+      "average_power_gain": {
+        "absolute": 5e-05,
+        "relative": 5e-05
+      },
+      "current_magnitude": {
+        "absolute": 5e-08,
+        "relative": 5e-05
+      },
+      "current_phase": {
+        "absolute": 0.02,
+        "relative": 0.0
+      },
+      "current_position": {
+        "absolute": 5e-05,
+        "relative": 5e-05
+      },
+      "efficiency": {
+        "absolute": 0.01,
+        "relative": 5e-05
+      },
+      "far_field_gain": {
+        "absolute": 0.02,
+        "relative": 0.0
+      },
+      "far_field_magnitude": {
+        "absolute": 5e-05,
+        "relative": 5e-05
+      },
+      "far_field_phase": {
+        "absolute": 0.02,
+        "relative": 0.0
+      },
+      "far_field_tilt": {
+        "absolute": 0.02,
+        "relative": 0.0
+      },
+      "feed_admittance": {
+        "absolute": 5e-08,
+        "relative": 5e-05
+      },
+      "feed_current": {
+        "absolute": 5e-08,
+        "relative": 5e-05
+      },
+      "feed_impedance": {
+        "absolute": 0.006,
+        "relative": 5e-05
+      },
+      "feed_power": {
+        "absolute": 5e-08,
+        "relative": 5e-05
+      },
+      "feed_voltage": {
+        "absolute": 5e-06,
+        "relative": 5e-05
+      },
+      "frequency": {
+        "absolute": 5e-06,
+        "relative": 5e-05
+      },
+      "input_power": {
+        "absolute": 5e-08,
+        "relative": 5e-05
+      },
+      "network_loss": {
+        "absolute": 5e-08,
+        "relative": 5e-05
+      },
+      "radiated_power": {
+        "absolute": 5e-08,
+        "relative": 5e-05
+      },
+      "segment_current": {
+        "absolute": 5e-08,
+        "relative": 5e-05
+      },
+      "segment_length": {
+        "absolute": 5e-05,
+        "relative": 5e-05
+      },
+      "structure_loss": {
+        "absolute": 5e-08,
+        "relative": 5e-05
+      }
+    },
+    "undefined_phase_magnitude_v_per_m": 5e-12
+  }
+}

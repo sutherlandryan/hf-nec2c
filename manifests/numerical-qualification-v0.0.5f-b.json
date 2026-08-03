@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "manifest_id": "HF_NEC2C_NUMERICAL_QUALIFICATION_V0_0_5F_B",
+  "milestone": "v0.0.5f-B — NEC2 numerical qualification seed corpus",
+  "repository_root": "..",
+  "candidate": {
+    "identity": "HF_NEC2C_MAINTAINED_SOURCE_V1",
+    "manifest_path": "manifests/maintained-source-v1.json",
+    "manifest_sha256": "627bc5a6fe9b5214d6ce6d49fca29d0c8a5f7fd1e4bd727587a29b390084ea07",
+    "tag": "maintained/nec2c-1.3.1-hf-portability-v1",
+    "tag_object": "1ca11974e247407b41f47d0a9d2a6288d172dd86",
+    "tag_target": "05f9a4f7ad9a089e45459db9099e47e0bf4533c2",
+    "source_tree": "src/nec2c",
+    "source_modified_for_qualification": false
+  },
+  "scope": {
+    "included": [
+      "thin straight and connected wires",
+      "voltage-source excitation for the intended subset; Example 2 applied-field excitation only as an incidental authoritative benchmark stimulus",
+      "free space, perfect ground, and reflection-coefficient ground",
+      "lumped and wire-conductivity loading",
+      "geometry scaling and symmetric structures",
+      "feed impedance, segment currents, power, efficiency, and far fields"
+    ],
+    "excluded": [
+      "surface patches and scattering models",
+      "numerical Green-function files and out-of-core operation",
+      "unexercised historical NEC cards",
+      "Sommerfeld/Norton ground without an authenticated compatible reference and SOM2D.NEC",
+      "solver-source modification, structured output, application integration, and binary release"
+    ]
+  },
+  "evidence_hierarchy": [
+    "authoritative NEC-2 Part III published reference values",
+    "analytic and physical invariants",
+    "fresh maintained NEC2C MSYS-versus-UCRT64 agreement",
+    "fresh internal NEC2DX secondary diagnostics"
+  ],
+  "authoritative_reference": {
+    "title": "Numerical Electromagnetics Code (NEC) - Method of Moments, Part III: User's Guide",
+    "authors": [
+      "G. J. Burke",
+      "A. J. Poggio"
+    ],
+    "year": 1981,
+    "record_id": "ADA956129",
+    "publisher_record": "https://ntrl.ntis.gov/NTRL/dashboard/searchResults/titleDetail/ADA956129.xhtml",
+    "authenticated_pdf": {
+      "bytes": 17527148,
+      "page_count": 730,
+      "sha256": "0bb280883b2b17fafb1bbd6a1504dcbf645e49cd8a7c8bd02424b5cea8a3d9e6",
+      "committed": false
+    },
+    "examples_input_locator": "Section IV, Examples 1-4 Input, printed page 97, PDF page 643",
+    "acceptance_value_source": "official_ntis_scan",
+    "transcription_policy": "The NEC2.org and FUNET PDFs are a byte-identical OCR transcription used only for research; every accepted literal below was checked directly against the official NTIS scan."
+  },
+  "build_identities": {
+    "shared_build_tools": {
+      "bash": {
+        "version": "GNU bash 5.3.15(1)-release, x86_64-pc-cygwin",
+        "sha256": "41b09f0a9c1c68fd65253a7e8087b3775f0af245b729ade74ca4425d14392c2d"
+      },
+      "make": {
+        "version": "GNU Make 4.4.1",
+        "sha256": "91b7e155590d59db22e5eb0a3ffeec6350149f70f9ed2c242d133e584eb72fee"
+      },
+      "shell_invocation": "/usr/bin/bash --noprofile --norc",
+      "temporary_environment": {
+        "TEMP": "/tmp",
+        "TMP": "/tmp",
+        "TMPDIR": "/tmp"
+      }
+    },
+    "maintained_nec2c_msys_posix": {
+      "compiler": "gcc (GCC) 15.3.0, target x86_64-pc-cygwin",
+      "compiler_sha256": "4bd76635b6053a7926f4579a30f9c800a673632fd10b4d6adf8083d3eda1b80c",
+      "build_commands": [
+        "CC=/usr/bin/gcc /usr/bin/bash $REPO/src/nec2c/configure",
+        "/usr/bin/make -j1 V=1"
+      ],
+      "build_location": "fresh ignored out-of-tree directory",
+      "architecture": "PE32+ x86-64, i386:x86-64",
+      "executable_bytes": 332949,
+      "executable_sha256": "c5c28af40d86ac787d03e9aade3d49350517eef514a910ed0fa65d263aed252f",
+      "runtime_dependencies": [
+        "msys-2.0.dll",
+        "msys-gcc_s-seh-1.dll",
+        "KERNEL32.dll"
+      ]
+    },
+    "maintained_nec2c_ucrt64": {
+      "compiler": "gcc.exe (Rev5, Built by MSYS2 project) 16.1.0, target x86_64-w64-mingw32",
+      "compiler_sha256": "f96a3bdb1d3a3967b309d75c7413399391e857b5be4cb17162572ed66f6772a0",
+      "build_commands": [
+        "CC=/ucrt64/bin/gcc /usr/bin/bash $REPO/src/nec2c/configure",
+        "/usr/bin/make -j1 V=1"
+      ],
+      "build_location": "fresh ignored out-of-tree directory",
+      "architecture": "PE32+ x86-64, i386:x86-64",
+      "executable_bytes": 436657,
+      "executable_sha256": "028206530fc9d5f06e73697cbfef5e7f5a3f4f511b1b51326e7fa38959c99e41",
+      "runtime_dependencies": [
+        "KERNEL32.dll",
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-private-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll"
+      ]
+    }
+  },
+  "internal_nec2dx": {
+    "evidence_role": "secondary_diagnostic_only",
+    "redistribution": "prohibited",
+    "archive_bytes": 262656,
+    "archive_sha256": "ad20c15a8cb594b19928595c853eca2b576c875c45c39a45eeaf26ee1be79774",
+    "source_sha256": "ca2ffebef9fb928d17e1eedcaa6f87b7bd61125a5f1abe19227d3f8251d9b293",
+    "edited_source_sha256": "bf894ae10325ff8534a45960e901f1a88d98485ce5f97569cea137f125d0e15c",
+    "edit_recipe": "Insert exactly two EXTERNAL SECOND declarations by the documented compatibility recipe.",
+    "compiler": "GNU Fortran (Rev5, Built by MSYS2 project) 16.1.0, target x86_64-w64-mingw32",
+    "compiler_sha256": "f1f086d81f4c6701281df5543ca232cd741857f7c4611c43904d0e88e58718ce",
+    "build_command": "gfortran -O0 -std=legacy -ffixed-line-length-none -o nec2dx.exe nec2dx.f",
+    "execution_environment": {
+      "PARALLEL": "1",
+      "OMP_NUM_THREADS": "1",
+      "TEMP": "/tmp",
+      "TMP": "/tmp",
+      "TMPDIR": "/tmp",
+      "toolchain_path": "UCRT64 first"
+    },
+    "architecture": "PE32+ x86-64, i386:x86-64",
+    "executable_bytes": 587405,
+    "executable_sha256": "a29c65e22838d7788ee2ae367f4add2e8591465b2b1c8ad6d62d71e2ebe7a343",
+    "runtime_dependencies": [
+      "libgcc_s_seh-1.dll",
+      "libgfortran-5.dll",
+      "KERNEL32.dll",
+      "Universal CRT API-set DLLs"
+    ],
+    "committed_artifacts": false
+  },
+  "tolerances": {
+    "authoritative_published_values": {
+      "rule": "Compare the inclusive half-unit-in-the-last-displayed-digit intervals of the candidate literal and the official-scan literal. Equal centers are PASS; intersecting intervals are PASS_WITH_REFERENCE_PRECISION_LIMIT; disjoint intervals are FAIL.",
+      "near_zero": "A published zero is bounded only by its displayed absolute precision.",
+      "null_sentinel": "-999.99 is a report sentinel and is compared as a sentinel literal, not treated as physical negative-infinite gain."
+    },
+    "cross_platform": {
+      "absolute": 1e-12,
+      "relative": 1e-12
+    },
+    "power_conservation": {
+      "absolute": 5e-8,
+      "relative": 0.0005
+    },
+    "near_zero_loss": {
+      "absolute": 5e-8,
+      "relative": 0.0
+    },
+    "current_magnitude_symmetry": {
+      "absolute": 5e-8,
+      "relative": 5e-5
+    },
+    "current_phase_symmetry_degrees": 0.02,
+    "pattern_symmetry_db": 0.02,
+    "direction_degrees": 0.005,
+    "undefined_phase_magnitude_v_per_m": 5e-12,
+    "average_gain": {
+      "absolute": 0.05,
+      "relative": 0.0
+    },
+    "secondary_diagnostic": {
+      "absolute": 1e-6,
+      "relative": 5e-5
+    },
+    "secondary_diagnostic_by_observable_class": {
+      "average_power_gain": {"absolute": 5e-5, "relative": 5e-5},
+      "current_magnitude": {"absolute": 5e-8, "relative": 5e-5},
+      "current_phase": {"absolute": 0.02, "relative": 0.0},
+      "current_position": {"absolute": 5e-5, "relative": 5e-5},
+      "efficiency": {"absolute": 0.01, "relative": 5e-5},
+      "far_field_gain": {"absolute": 0.02, "relative": 0.0},
+      "far_field_magnitude": {"absolute": 5e-5, "relative": 5e-5},
+      "far_field_phase": {"absolute": 0.02, "relative": 0.0},
+      "far_field_tilt": {"absolute": 0.02, "relative": 0.0},
+      "feed_admittance": {"absolute": 5e-8, "relative": 5e-5},
+      "feed_current": {"absolute": 5e-8, "relative": 5e-5},
+      "feed_impedance": {"absolute": 0.006, "relative": 5e-5},
+      "feed_power": {"absolute": 5e-8, "relative": 5e-5},
+      "feed_voltage": {"absolute": 5e-6, "relative": 5e-5},
+      "frequency": {"absolute": 5e-6, "relative": 5e-5},
+      "input_power": {"absolute": 5e-8, "relative": 5e-5},
+      "network_loss": {"absolute": 5e-8, "relative": 5e-5},
+      "radiated_power": {"absolute": 5e-8, "relative": 5e-5},
+      "segment_current": {"absolute": 5e-8, "relative": 5e-5},
+      "segment_length": {"absolute": 5e-5, "relative": 5e-5},
+      "structure_loss": {"absolute": 5e-8, "relative": 5e-5}
+    },
+    "post_initial_adjustments": [
+      {
+        "scope": "authoritative published-value comparison",
+        "change": "Compare candidate and reference display intervals instead of treating the lower-precision candidate center as exact.",
+        "reason": "Maintained NEC2C emits fewer displayed digits than the manual for several observables. Intersecting both half-LSD intervals avoids inventing unavailable candidate digits; it does not widen either source's printed precision and does not rescue the disjoint Example 2 LD 5 results."
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "minimal-free-space-dipole",
+      "metadata_path": "tests/qualification/cases/minimal-free-space-dipole.json",
+      "metadata_sha256": "fb7cdd4a494b81eb0cf2a49d1b7905994f449c1d7b97e211ff413f83a231c983",
+      "deck_path": "tests/smoke/minimal-dipole.nec",
+      "deck_sha256": "395603f62e0e0682215d9985443e4e13ff73f583646427b8dc9785ca76571520",
+      "authoritative_checks": [],
+      "invariants": [
+        {"id": "minimal.snapshot-count", "type": "snapshot_count", "expected": 1},
+        {"id": "minimal.power-conservation", "type": "power_conservation", "snapshot": 0},
+        {"id": "minimal.zero-loss", "type": "near_zero_loss", "snapshot": 0, "fields": ["structure_loss_watts", "network_loss_watts"]},
+        {"id": "minimal.current-mirror", "type": "current_mirror", "snapshot": 0, "tag": 1, "segment_range": [1, 11]},
+        {"id": "minimal.broadside-maximum", "type": "maximum_direction", "snapshot": 0, "theta_degrees": 90.0}
+      ]
+    },
+    {
+      "case_id": "nec2-part3-example1-lumped-load",
+      "metadata_path": "tests/qualification/cases/nec2-part3-example1-lumped-load.json",
+      "metadata_sha256": "56e40d077ca6c3167c7870d930059c69f6b89dea0a30575a5c10818ecc3d2f61",
+      "deck_path": "tests/qualification/cases/nec2-part3-example1-lumped-load.nec",
+      "deck_sha256": "8a5133e22794fd726c76e554ad8f578f98d1e53bf2c54246b4335c57a6a23c30",
+      "authoritative_checks": [
+        {"id": "ex1.unloaded.feed.current-real", "snapshot": 0, "observable": "feed", "identity": [0, 4], "field": "current_real", "reference_literal": "9.20585E-03", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 99, PDF page 645"},
+        {"id": "ex1.unloaded.feed.current-imaginary", "snapshot": 0, "observable": "feed", "identity": [0, 4], "field": "current_imaginary", "reference_literal": "-5.15474E-03", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 99, PDF page 645"},
+        {"id": "ex1.unloaded.feed.resistance", "snapshot": 0, "observable": "feed", "identity": [0, 4], "field": "resistance_ohms", "reference_literal": "82.6979", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 99, PDF page 645"},
+        {"id": "ex1.unloaded.feed.reactance", "snapshot": 0, "observable": "feed", "identity": [0, 4], "field": "reactance_ohms", "reference_literal": "46.3060", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 99, PDF page 645"},
+        {"id": "ex1.unloaded.power.input", "snapshot": 0, "observable": "power", "field": "input_power_watts", "reference_literal": "4.6029E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 99, PDF page 645"},
+        {"id": "ex1.unloaded.power.radiated", "snapshot": 0, "observable": "power", "field": "radiated_power_watts", "reference_literal": "4.6029E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 99, PDF page 645"},
+        {"id": "ex1.unloaded.power.structure-loss", "snapshot": 0, "observable": "power", "field": "structure_loss_watts", "reference_literal": "0.", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 99, PDF page 645"},
+        {"id": "ex1.unloaded.power.network-loss", "snapshot": 0, "observable": "power", "field": "network_loss_watts", "reference_literal": "0.", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 99, PDF page 645"},
+        {"id": "ex1.unloaded.efficiency", "snapshot": 0, "observable": "power", "field": "efficiency_percent", "reference_literal": "100.00", "units": "percent", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 99, PDF page 645"},
+        {"id": "ex1.loaded.feed.current-real", "snapshot": 1, "observable": "feed", "identity": [0, 4], "field": "current_real", "reference_literal": "8.95465E-03", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 100, PDF page 646"},
+        {"id": "ex1.loaded.feed.current-imaginary", "snapshot": 1, "observable": "feed", "identity": [0, 4], "field": "current_imaginary", "reference_literal": "-4.05149E-03", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 100, PDF page 646"},
+        {"id": "ex1.loaded.feed.resistance", "snapshot": 1, "observable": "feed", "identity": [0, 4], "field": "resistance_ohms", "reference_literal": "92.6979", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 100, PDF page 646"},
+        {"id": "ex1.loaded.feed.reactance", "snapshot": 1, "observable": "feed", "identity": [0, 4], "field": "reactance_ohms", "reference_literal": "41.9407", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 100, PDF page 646"},
+        {"id": "ex1.loaded.power.input", "snapshot": 1, "observable": "power", "field": "input_power_watts", "reference_literal": "4.4773E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 100, PDF page 646"},
+        {"id": "ex1.loaded.power.radiated", "snapshot": 1, "observable": "power", "field": "radiated_power_watts", "reference_literal": "3.9943E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 100, PDF page 646"},
+        {"id": "ex1.loaded.power.structure-loss", "snapshot": 1, "observable": "power", "field": "structure_loss_watts", "reference_literal": "4.8300E-04", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 100, PDF page 646"},
+        {"id": "ex1.loaded.power.network-loss", "snapshot": 1, "observable": "power", "field": "network_loss_watts", "reference_literal": "0.", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 100, PDF page 646"},
+        {"id": "ex1.loaded.efficiency", "snapshot": 1, "observable": "power", "field": "efficiency_percent", "reference_literal": "89.21", "units": "percent", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 1, printed page 100, PDF page 646"}
+      ],
+      "invariants": [
+        {"id": "ex1.snapshot-count", "type": "snapshot_count", "expected": 2},
+        {"id": "ex1.power-conservation", "type": "power_conservation", "snapshots": [0, 1]},
+        {"id": "ex1.unloaded-zero-loss", "type": "near_zero_loss", "snapshot": 0, "fields": ["structure_loss_watts", "network_loss_watts"]},
+        {"id": "ex1.loaded-zero-network-loss", "type": "near_zero_loss", "snapshot": 1, "field": "network_loss_watts"},
+        {"id": "ex1.unloaded-current-mirror", "type": "current_mirror", "snapshot": 0, "tag": 0, "segment_range": [1, 7]},
+        {"id": "ex1.loaded-current-mirror", "type": "current_mirror", "snapshot": 1, "tag": 0, "segment_range": [1, 7]}
+      ]
+    },
+    {
+      "case_id": "nec2-part3-example2-conductivity-sweep",
+      "metadata_path": "tests/qualification/cases/nec2-part3-example2-conductivity-sweep.json",
+      "metadata_sha256": "7027df773f8c73dacdfc7ccdf4ed1d50d796ae18da68f580c05a13a67345f2fc",
+      "deck_path": "tests/qualification/cases/nec2-part3-example2-conductivity-sweep.nec",
+      "deck_sha256": "39121efd2346da4b136e07901fb9e76b3b54494c47abf91277a3545fd95d95bc",
+      "authoritative_checks": [
+        {"id": "ex2.200.feed.resistance", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "resistance_ohms", "reference_literal": "26.5762", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 102, PDF page 648"},
+        {"id": "ex2.200.feed.reactance", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "reactance_ohms", "reference_literal": "-632.060", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 102, PDF page 648"},
+        {"id": "ex2.200.power.input", "snapshot": 0, "observable": "power", "field": "input_power_watts", "reference_literal": "3.32031E-05", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 102, PDF page 648"},
+        {"id": "ex2.250.feed.resistance", "snapshot": 1, "observable": "feed", "identity": [0, 5], "field": "resistance_ohms", "reference_literal": "47.1431", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 103, PDF page 649"},
+        {"id": "ex2.250.feed.reactance", "snapshot": 1, "observable": "feed", "identity": [0, 5], "field": "reactance_ohms", "reference_literal": "-272.372", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 103, PDF page 649"},
+        {"id": "ex2.250.power.input", "snapshot": 1, "observable": "power", "field": "input_power_watts", "reference_literal": "3.08492E-04", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 103, PDF page 649"},
+        {"id": "ex2.300-perfect.feed.resistance", "snapshot": 2, "observable": "feed", "identity": [0, 5], "field": "resistance_ohms", "reference_literal": "80.5511", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 103, PDF page 649"},
+        {"id": "ex2.300-perfect.feed.reactance", "snapshot": 2, "observable": "feed", "identity": [0, 5], "field": "reactance_ohms", "reference_literal": "45.7144", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 103, PDF page 649"},
+        {"id": "ex2.300-perfect.power.input", "snapshot": 2, "observable": "power", "field": "input_power_watts", "reference_literal": "4.69506E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 103-104, PDF pages 649-650"},
+        {"id": "ex2.300-loaded.feed.current-real", "snapshot": 3, "observable": "feed", "identity": [0, 5], "field": "current_real", "reference_literal": "6.64431E-03", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 105, PDF page 651"},
+        {"id": "ex2.300-loaded.feed.current-imaginary", "snapshot": 3, "observable": "feed", "identity": [0, 5], "field": "current_imaginary", "reference_literal": "-3.86680E-03", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 105, PDF page 651"},
+        {"id": "ex2.300-loaded.feed.resistance", "snapshot": 3, "observable": "feed", "identity": [0, 5], "field": "resistance_ohms", "reference_literal": "112.430", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 105, PDF page 651"},
+        {"id": "ex2.300-loaded.feed.reactance", "snapshot": 3, "observable": "feed", "identity": [0, 5], "field": "reactance_ohms", "reference_literal": "65.4276", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 105, PDF page 651"},
+        {"id": "ex2.300-loaded.power.input", "snapshot": 3, "observable": "power", "field": "input_power_watts", "reference_literal": "3.32215E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 105, PDF page 651"},
+        {"id": "ex2.300-loaded.power.radiated", "snapshot": 3, "observable": "power", "field": "radiated_power_watts", "reference_literal": "2.4402E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 105, PDF page 651"},
+        {"id": "ex2.300-loaded.power.structure-loss", "snapshot": 3, "observable": "power", "field": "structure_loss_watts", "reference_literal": "8.8199E-04", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 105, PDF page 651"},
+        {"id": "ex2.300-loaded.power.network-loss", "snapshot": 3, "observable": "power", "field": "network_loss_watts", "reference_literal": "0.", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 105, PDF page 651"},
+        {"id": "ex2.300-loaded.efficiency", "snapshot": 3, "observable": "power", "field": "efficiency_percent", "reference_literal": "73.45", "units": "percent", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 2, printed page 105, PDF page 651"}
+      ],
+      "invariants": [
+        {"id": "ex2.snapshot-count", "type": "snapshot_count", "expected": 4},
+        {"id": "ex2.power-conservation", "type": "power_conservation", "snapshots": [0, 1, 2, 3]},
+        {"id": "ex2.perfect-wire-zero-loss", "type": "near_zero_loss", "snapshots": [0, 1, 2], "fields": ["structure_loss_watts", "network_loss_watts"]},
+        {"id": "ex2.loaded-zero-network-loss", "type": "near_zero_loss", "snapshot": 3, "field": "network_loss_watts"},
+        {"id": "ex2.200-current-mirror", "type": "current_mirror", "snapshot": 0, "tag": 0, "segment_range": [1, 8]},
+        {"id": "ex2.250-current-mirror", "type": "current_mirror", "snapshot": 1, "tag": 0, "segment_range": [1, 8]},
+        {"id": "ex2.300-perfect-current-mirror", "type": "current_mirror", "snapshot": 2, "tag": 0, "segment_range": [1, 8]},
+        {"id": "ex2.300-loaded-current-mirror", "type": "current_mirror", "snapshot": 3, "tag": 0, "segment_range": [1, 8]}
+      ]
+    },
+    {
+      "case_id": "nec2-part3-example3-perfect-ground",
+      "metadata_path": "tests/qualification/cases/nec2-part3-example3-perfect-ground.json",
+      "metadata_sha256": "f5644bf51b4cacd16a17680aea2aeadb98059407f6de63349ca65b2437abef00",
+      "deck_path": "tests/qualification/cases/nec2-part3-example3-perfect-ground.nec",
+      "deck_sha256": "a81b99a75df45d5ddb27f0d8ae4ec6ef7102037fb0442e7d2041489c3f5c1606",
+      "authoritative_checks": [
+        {"id": "ex3-perfect.feed.current-real", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "current_real", "reference_literal": "9.31462E-03", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.feed.current-imaginary", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "current_imaginary", "reference_literal": "-8.66863E-04", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.feed.resistance", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "resistance_ohms", "reference_literal": "106.436", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.feed.reactance", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "reactance_ohms", "reference_literal": "9.90546", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.power.input", "snapshot": 0, "observable": "power", "field": "input_power_watts", "reference_literal": "4.6573E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.power.radiated", "snapshot": 0, "observable": "power", "field": "radiated_power_watts", "reference_literal": "4.6573E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.power.structure-loss", "snapshot": 0, "observable": "power", "field": "structure_loss_watts", "reference_literal": "0.", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.power.network-loss", "snapshot": 0, "observable": "power", "field": "network_loss_watts", "reference_literal": "0.", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.efficiency", "snapshot": 0, "observable": "power", "field": "efficiency_percent", "reference_literal": "100.00", "units": "percent", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.average-power-gain", "snapshot": 0, "observable": "average_power_gain", "field": "average_power_gain", "reference_literal": "2.02794", "units": "dimensionless", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 108, PDF page 654"},
+        {"id": "ex3-perfect.pattern.theta-0", "snapshot": 0, "observable": "far_field", "identity": [0.0, 0.0], "field": "total_gain_db", "reference_literal": "-999.99", "units": "dB sentinel", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.pattern.theta-10", "snapshot": 0, "observable": "far_field", "identity": [10.0, 0.0], "field": "total_gain_db", "reference_literal": "-9.87", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.pattern.theta-20", "snapshot": 0, "observable": "far_field", "identity": [20.0, 0.0], "field": "total_gain_db", "reference_literal": "-4.21", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.pattern.theta-30", "snapshot": 0, "observable": "far_field", "identity": [30.0, 0.0], "field": "total_gain_db", "reference_literal": "-1.70", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.pattern.theta-40", "snapshot": 0, "observable": "far_field", "identity": [40.0, 0.0], "field": "total_gain_db", "reference_literal": "-1.74", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.pattern.theta-50", "snapshot": 0, "observable": "far_field", "identity": [50.0, 0.0], "field": "total_gain_db", "reference_literal": "-6.73", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.pattern.theta-60", "snapshot": 0, "observable": "far_field", "identity": [60.0, 0.0], "field": "total_gain_db", "reference_literal": "-10.04", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.pattern.theta-70", "snapshot": 0, "observable": "far_field", "identity": [70.0, 0.0], "field": "total_gain_db", "reference_literal": "2.67", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.pattern.theta-80", "snapshot": 0, "observable": "far_field", "identity": [80.0, 0.0], "field": "total_gain_db", "reference_literal": "7.20", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"},
+        {"id": "ex3-perfect.pattern.theta-90", "snapshot": 0, "observable": "far_field", "identity": [90.0, 0.0], "field": "total_gain_db", "reference_literal": "8.52", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 107, PDF page 653"}
+      ],
+      "invariants": [
+        {"id": "ex3-perfect.snapshot-count", "type": "snapshot_count", "expected": 1},
+        {"id": "ex3-perfect.power-conservation", "type": "power_conservation", "snapshot": 0},
+        {"id": "ex3-perfect.zero-loss", "type": "near_zero_loss", "snapshot": 0, "fields": ["structure_loss_watts", "network_loss_watts"]},
+        {"id": "ex3-perfect.rotational-symmetry", "type": "pattern_phi_symmetry", "snapshot": 0, "phis": [0.0, 90.0], "field": "total_gain_db"},
+        {"id": "ex3-perfect.zenith-null", "type": "null_sentinel", "snapshot": 0, "identity": [0.0, 0.0], "field": "total_gain_db", "expected_literal": "-999.99"},
+        {"id": "ex3-perfect.maximum-direction", "type": "maximum_direction", "snapshot": 0, "theta_degrees": 90.0},
+        {"id": "ex3-perfect.image-theory-average-gain", "type": "average_gain_near_two", "snapshot": 0, "expected": 2.0}
+      ]
+    },
+    {
+      "case_id": "nec2-part3-example3-reflection-ground",
+      "metadata_path": "tests/qualification/cases/nec2-part3-example3-reflection-ground.json",
+      "metadata_sha256": "8f2d6adb637bdc739b9a2ccf926e01f34d8426b7e2072b32e8c0a1973fe2fdf7",
+      "deck_path": "tests/qualification/cases/nec2-part3-example3-reflection-ground.nec",
+      "deck_sha256": "c0e58690e47a1bf7d17cb79475533a302f058a37d049789b555297cbe327ab2d",
+      "authoritative_checks": [
+        {"id": "ex3-reflection.feed.current-real", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "current_real", "reference_literal": "8.91202E-03", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 108, PDF page 654"},
+        {"id": "ex3-reflection.feed.current-imaginary", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "current_imaginary", "reference_literal": "-8.82892E-04", "units": "A", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 108, PDF page 654"},
+        {"id": "ex3-reflection.feed.resistance", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "resistance_ohms", "reference_literal": "111.117", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 108, PDF page 654"},
+        {"id": "ex3-reflection.feed.reactance", "snapshot": 0, "observable": "feed", "identity": [0, 5], "field": "reactance_ohms", "reference_literal": "11.0081", "units": "ohm", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 108, PDF page 654"},
+        {"id": "ex3-reflection.power.input", "snapshot": 0, "observable": "power", "field": "input_power_watts", "reference_literal": "4.4560E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.power.radiated", "snapshot": 0, "observable": "power", "field": "radiated_power_watts", "reference_literal": "4.4560E-03", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.power.structure-loss", "snapshot": 0, "observable": "power", "field": "structure_loss_watts", "reference_literal": "0.", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.power.network-loss", "snapshot": 0, "observable": "power", "field": "network_loss_watts", "reference_literal": "0.", "units": "W", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.efficiency", "snapshot": 0, "observable": "power", "field": "efficiency_percent", "reference_literal": "100.00", "units": "percent", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.average-power-gain", "snapshot": 0, "observable": "average_power_gain", "field": "average_power_gain", "reference_literal": "0.720701", "units": "dimensionless", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-0", "snapshot": 0, "observable": "far_field", "identity": [0.0, 0.0], "field": "total_gain_db", "reference_literal": "-999.99", "units": "dB sentinel", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-10", "snapshot": 0, "observable": "far_field", "identity": [10.0, 0.0], "field": "total_gain_db", "reference_literal": "-12.87", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-20", "snapshot": 0, "observable": "far_field", "identity": [20.0, 0.0], "field": "total_gain_db", "reference_literal": "-7.18", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-30", "snapshot": 0, "observable": "far_field", "identity": [30.0, 0.0], "field": "total_gain_db", "reference_literal": "-4.47", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-40", "snapshot": 0, "observable": "far_field", "identity": [40.0, 0.0], "field": "total_gain_db", "reference_literal": "-3.45", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-50", "snapshot": 0, "observable": "far_field", "identity": [50.0, 0.0], "field": "total_gain_db", "reference_literal": "-2.94", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-60", "snapshot": 0, "observable": "far_field", "identity": [60.0, 0.0], "field": "total_gain_db", "reference_literal": "-0.79", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-70", "snapshot": 0, "observable": "far_field", "identity": [70.0, 0.0], "field": "total_gain_db", "reference_literal": "1.54", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-80", "snapshot": 0, "observable": "far_field", "identity": [80.0, 0.0], "field": "total_gain_db", "reference_literal": "0.64", "units": "dB", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"},
+        {"id": "ex3-reflection.pattern.theta-90", "snapshot": 0, "observable": "far_field", "identity": [90.0, 0.0], "field": "total_gain_db", "reference_literal": "-999.99", "units": "dB sentinel", "source_kind": "official_ntis_scan", "source_locator": "Section IV Example 3, printed page 109, PDF page 655"}
+      ],
+      "invariants": [
+        {"id": "ex3-reflection.snapshot-count", "type": "snapshot_count", "expected": 1},
+        {"id": "ex3-reflection.power-conservation", "type": "power_conservation", "snapshot": 0},
+        {"id": "ex3-reflection.zero-structure-network-loss", "type": "near_zero_loss", "snapshot": 0, "fields": ["structure_loss_watts", "network_loss_watts"]},
+        {"id": "ex3-reflection.rotational-symmetry", "type": "pattern_phi_symmetry", "snapshot": 0, "phis": [0.0, 90.0], "field": "total_gain_db"},
+        {"id": "ex3-reflection.zenith-null", "type": "null_sentinel", "snapshot": 0, "identity": [0.0, 0.0], "field": "total_gain_db", "expected_literal": "-999.99"},
+        {"id": "ex3-reflection.horizon-null", "type": "null_sentinel", "snapshot": 0, "identity": [90.0, 0.0], "field": "total_gain_db", "expected_literal": "-999.99"},
+        {"id": "ex3-reflection.maximum-direction", "type": "maximum_direction", "snapshot": 0, "theta_degrees": 70.0}
+      ]
+    },
+    {
+      "case_id": "connected-scaled-inverted-v",
+      "metadata_path": "tests/qualification/cases/connected-scaled-inverted-v.json",
+      "metadata_sha256": "5b9e474a66708c6ee5c6fa5f03b1d50b47861d29f7b839c53578044607981e81",
+      "deck_path": "tests/qualification/cases/connected-scaled-inverted-v.nec",
+      "deck_sha256": "2219ab61aa88a5c4443b46cbb155b86adfa24c70eb531554573be20c34d58582",
+      "authoritative_checks": [],
+      "invariants": [
+        {"id": "inverted-v.snapshot-count", "type": "snapshot_count", "expected": 1},
+        {"id": "inverted-v.power-conservation", "type": "power_conservation", "snapshot": 0},
+        {"id": "inverted-v.zero-loss", "type": "near_zero_loss", "snapshot": 0, "fields": ["structure_loss_watts", "network_loss_watts"]},
+        {"id": "inverted-v.arm-current-symmetry", "type": "current_mirror", "snapshot": 0, "left": {"tag": 2, "segments": [6, 15]}, "right": {"tag": 3, "segments": [16, 25]}},
+        {"id": "inverted-v.scaled-stem-first", "type": "current_position", "snapshot": 0, "identity": [1, 1], "expected": {"x_wavelengths": 0.0, "y_wavelengths": 0.0, "z_wavelengths": 0.0971, "length_wavelengths": 0.00474}, "absolute_tolerance": 0.00005, "relative_tolerance": 0.0},
+        {"id": "inverted-v.scaled-stem-last", "type": "current_position", "snapshot": 0, "identity": [1, 5], "expected": {"x_wavelengths": 0.0, "y_wavelengths": 0.0, "z_wavelengths": 0.1160, "length_wavelengths": 0.00474}, "absolute_tolerance": 0.00005, "relative_tolerance": 0.0},
+        {"id": "inverted-v.scaled-left-first", "type": "current_position", "snapshot": 0, "identity": [2, 6], "expected": {"x_wavelengths": -0.0118, "y_wavelengths": 0.0, "z_wavelengths": 0.1125, "length_wavelengths": 0.02648}, "absolute_tolerance": 0.00005, "relative_tolerance": 0.0},
+        {"id": "inverted-v.scaled-left-last", "type": "current_position", "snapshot": 0, "identity": [2, 15], "expected": {"x_wavelengths": -0.2250, "y_wavelengths": 0.0, "z_wavelengths": 0.0059, "length_wavelengths": 0.02648}, "absolute_tolerance": 0.00005, "relative_tolerance": 0.0},
+        {"id": "inverted-v.scaled-right-first", "type": "current_position", "snapshot": 0, "identity": [3, 16], "expected": {"x_wavelengths": 0.0118, "y_wavelengths": 0.0, "z_wavelengths": 0.1125, "length_wavelengths": 0.02648}, "absolute_tolerance": 0.00005, "relative_tolerance": 0.0},
+        {"id": "inverted-v.scaled-right-last", "type": "current_position", "snapshot": 0, "identity": [3, 25], "expected": {"x_wavelengths": 0.2250, "y_wavelengths": 0.0, "z_wavelengths": 0.0059, "length_wavelengths": 0.02648}, "absolute_tolerance": 0.00005, "relative_tolerance": 0.0},
+        {"id": "inverted-v.apex-null", "type": "null_sentinel", "snapshot": 0, "identity": [0.0, 0.0], "field": "total_gain_db", "expected_literal": "-999.99"},
+        {"id": "inverted-v.maximum-direction", "type": "maximum_direction", "snapshot": 0, "theta_degrees": 90.0, "phi_degrees": 90.0}
+      ]
+    },
+    {
+      "case_id": "minimal-dipole-21-segment",
+      "metadata_path": "tests/qualification/cases/minimal-dipole-21-segment.json",
+      "metadata_sha256": "74baabdf220d89f151d0017dca3a93761924b2f10d42bf2a3e1aca5dc3e73cbe",
+      "deck_path": "tests/qualification/cases/minimal-dipole-21-segment.nec",
+      "deck_sha256": "8b9ec2efd309bbd29f3c9234788b40552ffc5ada3e7b7f3d95f2ccf88230c9af",
+      "authoritative_checks": [],
+      "invariants": [
+        {"id": "dipole-21.snapshot-count", "type": "snapshot_count", "expected": 1},
+        {"id": "dipole-21.power-conservation", "type": "power_conservation", "snapshot": 0},
+        {"id": "dipole-21.zero-loss", "type": "near_zero_loss", "snapshot": 0, "fields": ["structure_loss_watts", "network_loss_watts"]},
+        {"id": "dipole-21.current-mirror", "type": "current_mirror", "snapshot": 0, "tag": 1, "segment_range": [1, 21]},
+        {"id": "dipole-21.rotational-symmetry", "type": "pattern_phi_symmetry", "snapshot": 0, "phis": [0.0, 90.0], "field": "total_gain_db"},
+        {"id": "dipole-21.endfire-null", "type": "null_sentinel", "snapshot": 0, "identity": [0.0, 0.0], "field": "total_gain_db", "expected_literal": "-999.99"},
+        {"id": "dipole-21.broadside-maximum", "type": "maximum_direction", "snapshot": 0, "theta_degrees": 90.0}
+      ]
+    },
+    {
+      "case_id": "minimal-dipole-41-segment",
+      "metadata_path": "tests/qualification/cases/minimal-dipole-41-segment.json",
+      "metadata_sha256": "07da68fbd6aa0bdb1025bcd9bb128f7047530b445daf74eb1d45756675453a0d",
+      "deck_path": "tests/qualification/cases/minimal-dipole-41-segment.nec",
+      "deck_sha256": "51a8c79cfa4f76e5eeff713db692dc0971892731b539b524584f3d62f45b2ad5",
+      "authoritative_checks": [],
+      "invariants": [
+        {"id": "dipole-41.snapshot-count", "type": "snapshot_count", "expected": 1},
+        {"id": "dipole-41.power-conservation", "type": "power_conservation", "snapshot": 0},
+        {"id": "dipole-41.zero-loss", "type": "near_zero_loss", "snapshot": 0, "fields": ["structure_loss_watts", "network_loss_watts"]},
+        {"id": "dipole-41.current-mirror", "type": "current_mirror", "snapshot": 0, "tag": 1, "segment_range": [1, 41]},
+        {"id": "dipole-41.rotational-symmetry", "type": "pattern_phi_symmetry", "snapshot": 0, "phis": [0.0, 90.0], "field": "total_gain_db"},
+        {"id": "dipole-41.endfire-null", "type": "null_sentinel", "snapshot": 0, "identity": [0.0, 0.0], "field": "total_gain_db", "expected_literal": "-999.99"},
+        {"id": "dipole-41.broadside-maximum", "type": "maximum_direction", "snapshot": 0, "theta_degrees": 90.0}
+      ]
+    }
+  ],
+  "suite_invariants": [
+    {
+      "id": "minimal-dipole.segmentation-convergence",
+      "type": "convergence_series",
+      "series": [
+        {"case_id": "minimal-free-space-dipole", "snapshot": 0, "feed_identity": [1, 6], "pattern_identity": [90.0, 0.0]},
+        {"case_id": "minimal-dipole-21-segment", "snapshot": 0, "feed_identity": [1, 11], "pattern_identity": [90.0, 0.0]},
+        {"case_id": "minimal-dipole-41-segment", "snapshot": 0, "feed_identity": [1, 21], "pattern_identity": [90.0, 0.0]}
+      ]
+    }
+  ],
+  "known_reference_gaps": [
+    {
+      "feature": "Sommerfeld/Norton ground",
+      "classification": "REFERENCE_UNAVAILABLE",
+      "reason": "No redistributable authoritative reference with compatible SOM2D.NEC data was authenticated for this seed milestone; no case or value was invented."
+    },
+    {
+      "feature": "project-authored baseline, connected-junction, and segmentation cases",
+      "classification": "REFERENCE_UNAVAILABLE",
+      "reason": "These cases are supported by invariants, fresh cross-platform agreement, and NEC2DX secondary diagnostics, not by claimed published numeric authority."
+    }
+  ],
+  "defect_policy": {
+    "source_changes_permitted": false,
+    "failing_case": "nec2-part3-example2-conductivity-sweep",
+    "first_implicated_boundary": "LD type 5 circular-wire internal impedance calculation, zint(), in src/nec2c/calculations.c",
+    "observed_translation_boundary": "For this case x is approximately 2.97, so the x <= 8 branch should supply BR1. The maintained C translation then falls through the x <= 110 branch and finally overwrites BR1 with the x > 110 asymptotic value; the NEC2DX control flow branches to one common final assignment instead.",
+    "adjacent_unexercised_anomaly": "The C cc5 imaginary coefficient is -9.765e4 while the NEC2DX source literal is -9.765D-4. This coefficient is not the direct path for the present x <= 8 failure and is recorded only as an adjacent observation for a separately authorized investigation.",
+    "disposition": "Preserve the minimal deck and normalized result summary, stop corpus expansion at eight cases, and do not modify maintained source."
+  }
+}

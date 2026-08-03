@@ -165,6 +165,21 @@ See the [maintained-source record](docs/MAINTAINED_SOURCE_V1.md) and
 [manifest](manifests/maintained-source-v1.json) for construction, provenance, hashes, build
 evidence, and current limitations.
 
+## Numerical qualification seed corpus
+
+The eight-case v0.0.5f-B seed milestone has disposition **NUMERICAL QUALIFICATION BLOCKED**.
+Seven cases met their bounded case criteria, but both maintained builds disagree with the
+authoritative NEC-2 Part III Example 2 `LD` type 5 conductivity result. MSYS and native UCRT64
+agree with each other; internal NEC2DX agrees with the published side as secondary evidence. The
+first implicated boundary is the circular-wire `zint()` translation, and maintained source was
+left unchanged.
+
+See the [qualification record](docs/NUMERICAL_QUALIFICATION_V0_0_5F_B.md),
+[suite manifest](manifests/numerical-qualification-v0.0.5f-b.json), and
+[normalized result summary](manifests/numerical-qualification-v0.0.5f-b-results.json). This result
+does not qualify the solver, authorize a binary release, or approve HF Propagation Control
+integration.
+
 ## Relationship to HF Propagation Control
 
 HF Propagation Control remains a separate application. Its planned integration uses a documented

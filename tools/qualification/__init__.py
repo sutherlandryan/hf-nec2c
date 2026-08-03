@@ -1,0 +1,61 @@
+# SPDX-License-Identifier: BSD-2-Clause
+"""Project-authored primitives for NEC numerical qualification."""
+
+from .report_parser import (
+    CurrentSample,
+    Diagnostic,
+    FarFieldSample,
+    FeedImpedance,
+    PowerBudget,
+    QualificationReport,
+    Snapshot,
+    numeric_tokens,
+    parse_report,
+)
+from .run_qualification import qualification_summary, run_qualification
+from .tolerance import (
+    DisplayedIntervalComparison,
+    NumericClassification,
+    PublishedComparison,
+    PublishedInterval,
+    ToleranceComparison,
+    absolute_relative_limit,
+    circular_phase_distance,
+    compare_published_value,
+    compare_displayed_intervals,
+    compare_with_tolerance,
+    displayed_precision_interval,
+    is_near_zero,
+    published_half_lsd,
+    within_circular_tolerance,
+    within_tolerance,
+)
+
+__all__ = [
+    "CurrentSample",
+    "Diagnostic",
+    "DisplayedIntervalComparison",
+    "FarFieldSample",
+    "FeedImpedance",
+    "NumericClassification",
+    "PowerBudget",
+    "PublishedComparison",
+    "PublishedInterval",
+    "QualificationReport",
+    "Snapshot",
+    "ToleranceComparison",
+    "absolute_relative_limit",
+    "circular_phase_distance",
+    "compare_published_value",
+    "compare_displayed_intervals",
+    "compare_with_tolerance",
+    "displayed_precision_interval",
+    "is_near_zero",
+    "numeric_tokens",
+    "parse_report",
+    "published_half_lsd",
+    "qualification_summary",
+    "run_qualification",
+    "within_circular_tolerance",
+    "within_tolerance",
+]

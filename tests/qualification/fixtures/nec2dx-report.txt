@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: BSD-2-Clause
+SYNTHETIC NEC2DX REPORT FIXTURE -- NOT SOLVER EVIDENCE
+
+                         --------- FREQUENCY --------
+                          FREQUENCY = 2.9980D+02 MHZ
+                          PERFECT GROUND
+
+                 --------- ANTENNA INPUT PARAMETERS ---------
+ TAG SEG VOLTAGE REAL IMAG CURRENT REAL IMAG IMPEDANCE REAL IMAG ADMITTANCE REAL IMAG POWER
+   0   5 1.0000D+00 0.0000D+00 9.3146D-03-8.6688D-04 1.0644D+02 9.9058D+00 9.3146D-03-8.6688D-04 4.6573D-03
+
+                    -------- CURRENTS AND LOCATION --------
+ SEG TAG X Y Z LENGTH CURRENT REAL IMAG MAGN PHASE
+   5   0 0.0000 0.0000 0.1500 0.03336 9.3146D-03-8.6688D-04 9.3548D-03-5.317
+
+                       ---------- POWER BUDGET ---------
+                       INPUT    POWER = 4.6573D-03 WATTS
+                       RADIATED POWER = 4.6573D-03 WATTS
+                       STRUCTURE LOSS = 0.0000D+00 WATTS
+                       NETWORK LOSS = 0.0000D+00 WATTS
+                       EFFICIENCY = 100.00 PERCENT
+
+                     ---------- RADIATION PATTERNS -----------
+ THETA PHI MAJOR MINOR TOTAL AXIAL TILT SENSE E(THETA) MAG PHASE E(PHI) MAG PHASE
+  90.00 0.00 8.52-999.99 8.52 0.0000 0.00 LINEAR 1.0000D+00-179.50 0.0000D+00 0.00
+ ERROR: synthetic error marker for parser coverage

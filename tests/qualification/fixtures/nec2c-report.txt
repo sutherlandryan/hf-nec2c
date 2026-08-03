@@ -1,0 +1,44 @@
+# SPDX-License-Identifier: BSD-2-Clause
+SYNTHETIC NEC2C REPORT FIXTURE -- NOT SOLVER EVIDENCE
+
+                         --------- FREQUENCY --------
+                          FREQUENCY : 1.4200E+01 MHz
+                          THIS STRUCTURE IS NOT LOADED
+
+                 --------- ANTENNA INPUT PARAMETERS ---------
+ TAG SEG VOLTAGE REAL IMAG CURRENT REAL IMAG IMPEDANCE REAL IMAG ADMITTANCE REAL IMAG POWER
+   1   6 1.0000E+00 0.0000E+00 1.1561E-02 6.1794E-03 6.7276E+01-3.5958E+01 1.1561E-02 6.1794E-03 5.7807E-03
+
+                    -------- CURRENTS AND LOCATION --------
+ SEG TAG X Y Z LENGTH CURRENT REAL IMAG MAGN PHASE
+   1   1 0.0000 0.0000-0.2153 0.04306 1.2500E-03-2.5000E-04 1.2748E-03-11.310
+   6   1 0.0000 0.0000 0.0000 0.04306 1.1561E-02 6.1794E-03 1.3108E-02 28.119
+
+                       ---------- POWER BUDGET ---------
+                       INPUT POWER   = 5.7807E-03 Watts
+                       RADIATED POWER= 5.7807E-03 Watts
+                       STRUCTURE LOSS= 0.0000E+00 Watts
+                       NETWORK LOSS  = 0.0000E+00 Watts
+                       EFFICIENCY    = 100.00 Percent
+
+                     ---------- RADIATION PATTERNS -----------
+ THETA PHI MAJOR MINOR TOTAL AXIAL TILT SENSE E(THETA) MAG PHASE E(PHI) MAG PHASE
+  90.00 0.00 2.10-999.99 2.10 0.0000-0.00 LINEAR 7.5039E-01 116.56 0.0000E+00 0.00
+ WARNING: synthetic convergence warning for parser coverage
+
+                    ------ STRUCTURE IMPEDANCE LOADING ------
+                 --------- ANTENNA INPUT PARAMETERS ---------
+ TAG SEG VOLTAGE REAL IMAG CURRENT REAL IMAG IMPEDANCE REAL IMAG ADMITTANCE REAL IMAG POWER
+   1   6 1.0000E+00 0.0000E+00 1.0000E-02 5.0000E-03 8.0000E+01-4.0000E+01 1.0000E-02 5.0000E-03 5.0000E-03
+
+                    -------- CURRENTS AND LOCATION --------
+ SEG TAG X Y Z LENGTH CURRENT REAL IMAG MAGN PHASE
+   6   1 0.0000 0.0000 0.0000 0.04306 1.0000E-02 5.0000E-03 1.1180E-02 26.565
+
+                       ---------- POWER BUDGET ---------
+                       INPUT POWER   = 5.0000E-03 Watts
+                       RADIATED POWER= 4.5000E-03 Watts
+                       STRUCTURE LOSS= 5.0000E-04 Watts
+                       NETWORK LOSS  = 0.0000E+00 Watts
+                       EFFICIENCY    = 90.00 Percent
+ FAILURE: synthetic failure marker for parser coverage

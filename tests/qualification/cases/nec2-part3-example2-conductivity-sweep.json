@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "case_id": "nec2-part3-example2-conductivity-sweep",
+    "title": "NEC-2 Part III Example 2 frequency and conductivity sweep"
+  },
+  "purpose": "Direct published-reference conformance across three frequencies and a finite-conductivity rerun using an applied-field source.",
+  "origin": {
+    "kind": "project-authored-reconstruction",
+    "basis": "Executable parameter facts from NEC-2 Part III Section IV Example 2; no manual prose is reproduced."
+  },
+  "citation": {
+    "title": "Numerical Electromagnetics Code (NEC) - Method of Moments, Part III: User's Guide",
+    "record_id": "ADA956129",
+    "section": "IV, Example 2",
+    "official_record_url": "https://ntrl.ntis.gov/NTRL/dashboard/searchResults/titleDetail/ADA956129.xhtml",
+    "scan_pdf_pages": "643-655",
+    "manual_printed_pages": "97-109",
+    "verification": "Expected values were scan-checked against the official NTIS PDF."
+  },
+  "deck": {
+    "path": "tests/qualification/cases/nec2-part3-example2-conductivity-sweep.nec",
+    "sha256": "39121efd2346da4b136e07901fb9e76b3b54494c47abf91277a3545fd95d95bc"
+  },
+  "expected_observables": [
+    {
+      "state": "perfect_conductor_200_mhz",
+      "frequency_mhz": "200",
+      "feed_impedance_ohm": {
+        "real": "26.5762",
+        "imaginary": "-632.060"
+      },
+      "input_power_w": "3.32031E-05"
+    },
+    {
+      "state": "perfect_conductor_250_mhz",
+      "frequency_mhz": "250",
+      "feed_impedance_ohm": {
+        "real": "47.1431",
+        "imaginary": "-272.372"
+      },
+      "input_power_w": "3.08492E-04"
+    },
+    {
+      "state": "perfect_conductor_300_mhz",
+      "frequency_mhz": "300",
+      "feed_impedance_ohm": {
+        "real": "80.5511",
+        "imaginary": "45.7144"
+      },
+      "input_power_w": "4.69506E-03"
+    },
+    {
+      "state": "conductivity_3.720e7_s_per_m_300_mhz",
+      "frequency_mhz": "300",
+      "feed_impedance_ohm": {
+        "real": "112.430",
+        "imaginary": "65.4276"
+      },
+      "feed_current_a": {
+        "real": "6.64431E-03",
+        "imaginary": "-3.86680E-03"
+      },
+      "power_budget_w": {
+        "input": "3.32215E-03",
+        "radiated": "2.4402E-03",
+        "structure_loss": "8.8199E-04",
+        "network_loss": "0.0000E+00"
+      },
+      "efficiency_percent": "73.45"
+    }
+  ],
+  "units": {
+    "frequency": "MHz",
+    "conductivity": "S/m",
+    "impedance": "ohm",
+    "current": "A",
+    "power": "W",
+    "efficiency": "percent"
+  },
+  "reference_precision": {
+    "kind": "published-decimal",
+    "policy": "Compare candidate and reference half-LSD intervals with the printed exponent honored: equal centers are PASS, distinct intersecting intervals are PASS_WITH_REFERENCE_PRECISION_LIMIT, and disjoint intervals are FAIL."
+  },
+  "solver_applicability": {
+    "maintained_nec2c": [
+      "msys-posix",
+      "ucrt64"
+    ],
+    "internal_nec2dx": "secondary-diagnostic-only"
+  },
+  "permitted_evidence_sources": [
+    "official NTIS ADA956129 scan",
+    "authenticated reconstructed deck bytes",
+    "fresh maintained NEC2C reports",
+    "fresh internal NEC2DX report as secondary evidence only",
+    "declared physical and algebraic invariants"
+  ]
+}
