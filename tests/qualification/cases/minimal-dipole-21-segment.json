@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "case_id": "minimal-dipole-21-segment",
+    "title": "21-segment refinement of the minimal free-space dipole"
+  },
+  "purpose": "Provide the middle point of the 11, 21, and 41 segment convergence series while exercising full current and two-plane pattern output.",
+  "origin": {
+    "kind": "project-authored-derivative",
+    "basis": "The existing minimal smoke geometry with 21 segments and a centered source."
+  },
+  "citation": {
+    "kind": "repository",
+    "path": "tests/smoke/minimal-dipole.nec"
+  },
+  "deck": {
+    "path": "tests/qualification/cases/minimal-dipole-21-segment.nec",
+    "sha256": "8b9ec2efd309bbd29f3c9234788b40552ffc5ada3e7b7f3d95f2ccf88230c9af"
+  },
+  "expected_observables": [
+    "feed impedance at 14.2 MHz",
+    "complex segment-current distribution",
+    "input, radiated, structure-loss, and network-loss power",
+    "radiation efficiency",
+    "total-gain pattern cuts at phi 0 and phi 90 degrees from theta 0 through 180 degrees"
+  ],
+  "invariants": [
+    "opposite segments have equal current magnitude and wrapped phase",
+    "phi 0 and phi 90 pattern cuts are identical at every sampled theta",
+    "input power equals radiated plus structure-loss plus network-loss power",
+    "the 11, 21, and 41 segment series has decreasing successive feed-impedance and broadside-gain deltas"
+  ],
+  "units": {
+    "frequency": "MHz",
+    "impedance": "ohm",
+    "current": "A",
+    "power": "W",
+    "angle": "degree",
+    "gain": "dB",
+    "efficiency": "percent"
+  },
+  "reference_precision": {
+    "kind": "computed-only",
+    "policy": "No external numeric literal is asserted; comparisons use the frozen qualification tolerance policy and emitted report precision."
+  },
+  "solver_applicability": {
+    "maintained_nec2c": [
+      "msys-posix",
+      "ucrt64"
+    ],
+    "internal_nec2dx": "secondary-diagnostic-only"
+  },
+  "permitted_evidence_sources": [
+    "authenticated deck bytes",
+    "fresh maintained NEC2C reports",
+    "fresh internal NEC2DX report as secondary evidence only",
+    "declared physical and convergence invariants"
+  ]
+}

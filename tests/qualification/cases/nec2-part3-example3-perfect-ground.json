@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "case_id": "nec2-part3-example3-perfect-ground",
+    "title": "NEC-2 Part III Example 3 perfect-ground monopole"
+  },
+  "purpose": "Direct published-reference conformance for perfect-ground feed, current, power, pattern, average gain, and rotational symmetry.",
+  "origin": {
+    "kind": "project-authored-reconstruction",
+    "basis": "Executable parameter facts from NEC-2 Part III Section IV Example 3 perfect-ground stage; no manual prose is reproduced."
+  },
+  "citation": {
+    "title": "Numerical Electromagnetics Code (NEC) - Method of Moments, Part III: User's Guide",
+    "record_id": "ADA956129",
+    "section": "IV, Example 3",
+    "official_record_url": "https://ntrl.ntis.gov/NTRL/dashboard/searchResults/titleDetail/ADA956129.xhtml",
+    "scan_pdf_pages": "643-655",
+    "manual_printed_pages": "97-109",
+    "verification": "Expected values were scan-checked against the official NTIS PDF."
+  },
+  "deck": {
+    "path": "tests/qualification/cases/nec2-part3-example3-perfect-ground.nec",
+    "sha256": "a81b99a75df45d5ddb27f0d8ae4ec6ef7102037fb0442e7d2041489c3f5c1606"
+  },
+  "expected_observables": [
+    {
+      "frequency_mhz": "30",
+      "feed_impedance_ohm": {
+        "real": "106.436",
+        "imaginary": "9.90546"
+      },
+      "feed_current_a": {
+        "real": "9.31462E-03",
+        "imaginary": "-8.66863E-04"
+      },
+      "power_budget_w": {
+        "input": "4.6573E-03",
+        "radiated": "4.6573E-03",
+        "structure_loss": "0.0000E+00",
+        "network_loss": "0.0000E+00"
+      },
+      "efficiency_percent": "100.00",
+      "average_power_gain": "2.02794",
+      "maximum_total_gain_db": "8.52",
+      "maximum_theta_degrees": "90.00",
+      "pattern_phi_0_total_gain_db": [
+        ["0.00", "-999.99"],
+        ["10.00", "-9.87"],
+        ["20.00", "-4.21"],
+        ["30.00", "-1.70"],
+        ["40.00", "-1.74"],
+        ["50.00", "-6.73"],
+        ["60.00", "-10.04"],
+        ["70.00", "2.67"],
+        ["80.00", "7.20"],
+        ["90.00", "8.52"]
+      ]
+    },
+    "the phi 0 and phi 90 pattern cuts are identical at every sampled theta"
+  ],
+  "units": {
+    "frequency": "MHz",
+    "impedance": "ohm",
+    "current": "A",
+    "power": "W",
+    "angle": "degree",
+    "gain": "dB",
+    "average_power_gain": "dimensionless",
+    "efficiency": "percent"
+  },
+  "reference_precision": {
+    "kind": "published-decimal",
+    "policy": "Compare candidate and reference half-LSD intervals with the printed exponent honored: equal centers are PASS, distinct intersecting intervals are PASS_WITH_REFERENCE_PRECISION_LIMIT, and disjoint intervals are FAIL; -999.99 dB is the publication's null sentinel."
+  },
+  "solver_applicability": {
+    "maintained_nec2c": [
+      "msys-posix",
+      "ucrt64"
+    ],
+    "internal_nec2dx": "secondary-diagnostic-only"
+  },
+  "permitted_evidence_sources": [
+    "official NTIS ADA956129 scan",
+    "authenticated reconstructed deck bytes",
+    "fresh maintained NEC2C reports",
+    "fresh internal NEC2DX report as secondary evidence only",
+    "declared physical and algebraic invariants"
+  ]
+}

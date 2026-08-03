@@ -1,0 +1,9 @@
+CM SPDX-License-Identifier: BSD-2-Clause
+CM Project-authored 21-segment refinement of the minimal dipole
+CE
+GW 1 21 0 0 -5 0 0 5 0.001
+GE 0
+FR 0 1 0 0 14.2 0
+EX 0 1 11 0 1 0
+RP 0 19 2 1000 0 0 10 90 0 0
+EN

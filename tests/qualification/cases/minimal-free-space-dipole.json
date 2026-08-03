@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "case_id": "minimal-free-space-dipole",
+    "title": "Existing 11-segment minimal free-space dipole"
+  },
+  "purpose": "Baseline parser, feed, current, power-budget, and broadside-pattern coverage using the existing smoke deck.",
+  "origin": {
+    "kind": "project-authored",
+    "source": "Existing repository smoke case"
+  },
+  "citation": {
+    "kind": "repository",
+    "path": "tests/smoke/minimal-dipole.nec"
+  },
+  "deck": {
+    "path": "tests/smoke/minimal-dipole.nec",
+    "sha256": "395603f62e0e0682215d9985443e4e13ff73f583646427b8dc9785ca76571520"
+  },
+  "expected_observables": [
+    "feed impedance at 14.2 MHz",
+    "complex segment-current distribution",
+    "input, radiated, structure-loss, and network-loss power",
+    "radiation efficiency",
+    "total broadside gain at theta 90 degrees and phi 0 degrees"
+  ],
+  "invariants": [
+    "opposite segments have equal current magnitude and wrapped phase",
+    "input power equals radiated plus structure-loss plus network-loss power",
+    "a perfect conductor has zero structure loss and 100 percent structure efficiency",
+    "the 11, 21, and 41 segment series has decreasing successive feed-impedance and broadside-gain deltas"
+  ],
+  "units": {
+    "frequency": "MHz",
+    "impedance": "ohm",
+    "current": "A",
+    "power": "W",
+    "angle": "degree",
+    "gain": "dB",
+    "efficiency": "percent"
+  },
+  "reference_precision": {
+    "kind": "computed-only",
+    "policy": "No external numeric literal is asserted; comparisons use the frozen qualification tolerance policy and emitted report precision."
+  },
+  "solver_applicability": {
+    "maintained_nec2c": [
+      "msys-posix",
+      "ucrt64"
+    ],
+    "internal_nec2dx": "secondary-diagnostic-only"
+  },
+  "permitted_evidence_sources": [
+    "authenticated deck bytes",
+    "fresh maintained NEC2C reports",
+    "fresh internal NEC2DX report as secondary evidence only",
+    "declared physical and algebraic invariants"
+  ]
+}
