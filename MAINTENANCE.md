@@ -8,8 +8,10 @@ The following annotated tags are permanent:
   envelope
 - `preservation/nec2c-1.3.1-intake-v1` — archival commit plus project preservation
   documentation and verification tooling
+- `maintained/nec2c-1.3.1-hf-portability-v1` — preserved maintained-source v1 identity,
+  targeting `05f9a4f7ad9a089e45459db9099e47e0bf4533c2`
 
-Never force-update, delete, move, or recreate either tag after publication. Confirm tag objects
+Never force-update, delete, move, or recreate any of these tags after publication. Confirm tag objects
 and peeled commit targets before and after every repository transfer:
 
 ```powershell
@@ -17,6 +19,8 @@ git cat-file -t archive/nec2c-1.3.1-original
 git rev-parse 'archive/nec2c-1.3.1-original^{}'
 git cat-file -t preservation/nec2c-1.3.1-intake-v1
 git rev-parse 'preservation/nec2c-1.3.1-intake-v1^{}'
+git cat-file -t maintained/nec2c-1.3.1-hf-portability-v1
+git rev-parse 'maintained/nec2c-1.3.1-hf-portability-v1^{}'
 ```
 
 Run `.\verify-preservation.ps1` after clones, storage moves, Git upgrades, and before any public
@@ -51,35 +55,52 @@ A2b local evidence uses the same ignored `.build-temp/` and `.build-output/` roo
 identifiers are single-use. Do not delete evidence during a run; if later removal is explicitly
 authorized, validate the exact task-created child path first.
 
-## Maintained source v1
+## Maintained source identities
 
-`src/nec2c/` is the independent `HF_NEC2C_MAINTAINED_SOURCE_V1` candidate. It is reconstructed
-from the authenticated original archive by the combined maintained patch recorded in
-`manifests/maintained-source-v1.json`; it never replaces or mutates `upstream/`. Any maintained
-source change must update the combined patch and manifest, re-prove fresh reconstruction, and
-retain the mixed-provenance license boundary.
+`HF_NEC2C_MAINTAINED_SOURCE_V1` remains preserved by its unchanged manifest, combined patch,
+documentation, and immutable tag. Do not rewrite those v1 artifacts to describe later source.
+
+`src/nec2c/` is now the independent `HF_NEC2C_MAINTAINED_SOURCE_V2` candidate. Relative to v1,
+it contains exactly one four-line source-fidelity correction in `calculations.c`: the corrected
+`cc5` exponent, the distinct `cn` constant, and the restored small- and medium-regime returns.
+The complete combined v2 patch reconstructs all 36 files and 788,941 bytes directly from the
+authenticated original archive; its identity and every source hash are recorded in
+[`manifests/maintained-source-v2.json`](manifests/maintained-source-v2.json). It never replaces or
+mutates `upstream/`.
+
+Any later maintained-source change must update the combined patch and manifest, re-prove fresh
+reconstruction, and retain the mixed-provenance license boundary. `calculations.c`, `main.c`,
+`misc.c`, and `nec2c.h` remain original files containing exactly identified project-authored
+modifications; their retained original material is not relabeled as BSD-2-Clause.
 
 Builds stay out of tree under ignored task directories. Executables, objects, dependency files,
-generated Makefiles, configuration logs, and smoke reports are never tracked. The v1 candidate is
+generated Makefiles, configuration logs, and reports are never tracked. The v2 candidate is
 unqualified, unreleased, and unapplied. The
-[NEC2DX oracle decision](docs/NEC2DX_ORACLE_DECISION.md) allows only internal secondary-cross-check
-use. The later internal build and reproducibility prerequisites did not alter its
-non-redistribution boundary or authorize integration.
+[NEC2DX oracle decision](docs/NEC2DX_ORACLE_DECISION.md) continues to allow only internal
+secondary-cross-check use. Do not create or move a maintained-source v2 tag before review and
+merge.
 
-## Numerical qualification v0.0.5f-B
+## Numerical qualification v0.0.5f-C
 
-The frozen eight-case seed corpus has disposition **NUMERICAL QUALIFICATION BLOCKED**. The
-authoritative NEC-2 Part III Example 2 `LD` type 5 conductivity stage disagrees with both fresh
-maintained builds; the first implicated boundary is `zint()` in the circular-wire
-internal-impedance path. Maintained source was deliberately left unchanged. See the
-[qualification record](docs/NUMERICAL_QUALIFICATION_V0_0_5F_B.md),
+The frozen eight-case v1 baseline remains recorded unchanged in the
+[v0.0.5f-B qualification record](docs/NUMERICAL_QUALIFICATION_V0_0_5F_B.md) and its existing
+result summary. The complete v2 rerun has disposition **B. V2 SOURCE FIX VALIDATED;
+QUALIFICATION REMAINS BLOCKED BY THE FROZEN REFERENCE MISMATCH.** All 24 reports passed integrity;
+all cross-platform comparisons, invariants, convergence checks, and power-conservation checks
+passed; all unaffected results remained exact; and no NEC2DX secondary disagreement remains.
+
+The sole failure is the frozen official Example 2 feed-current imaginary literal
+`-3.86680E-03 A`, versus approximately `-3.8666E-03 A` from both v2 primary builds and internal
+NEC2DX. Do not widen its tolerance, replace or relabel the expected literal, declare it a
+publication error, or begin an unrelated source investigation to route around it. See the
+[v0.0.5f-C qualification record](docs/NUMERICAL_QUALIFICATION_V0_0_5F_C.md), unchanged
 [suite manifest](manifests/numerical-qualification-v0.0.5f-b.json), and
-[normalized result summary](manifests/numerical-qualification-v0.0.5f-b-results.json).
+[v2 result summary](manifests/numerical-qualification-v0.0.5f-c-results.json).
 
 Keep rerun builds, executables, raw reports, official-manual files, and all NEC2DX material in
-ignored task storage. Do not widen tolerances or expand the corpus to route around the failure.
-Any `LD` type 5 / `zint()` investigation, source correction, requalification, binary release, or
-HF Propagation Control integration requires its own authorization and reviewed milestone.
+ignored task storage. The exact next milestone is independent review and merge of the v2
+source-fix/requalification pull request. Release and HF Propagation Control integration remain
+deferred pending resolution of the frozen reference mismatch.
 
 ## Post-review replication procedures
 

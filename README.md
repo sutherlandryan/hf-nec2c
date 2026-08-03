@@ -6,9 +6,9 @@ by Neoklis Kyriazis.
 
 The repository preserves the original-author NEC2C 1.3.1 distribution, records the untouched-source
 Windows compiler baselines, and carries the independently authored
-`HF_NEC2C_MAINTAINED_SOURCE_V1` portability candidate under `src/nec2c/`. The immutable archive and
-upstream extraction remain byte-preserved; maintained changes are isolated and reconstructible
-from a deterministic combined patch.
+`HF_NEC2C_MAINTAINED_SOURCE_V2` candidate under `src/nec2c/`. Maintained-source v1 remains
+preserved and tagged. The immutable archive and upstream extraction remain byte-preserved;
+maintained changes are isolated and reconstructible from deterministic combined patches.
 
 ## Preservation identity
 
@@ -147,42 +147,53 @@ byte-identical to the MSYS report. See the
 [native UCRT64 parser-control-character probe](docs/NATIVE_UCRT64_CONTROL_CHAR_PROBE.md) for the
 bounded evidence and non-qualification limits.
 
-## Maintained source candidate
+## Maintained source identities
 
-The validated probe sequence has been promoted into the provenance-complete
-`HF_NEC2C_MAINTAINED_SOURCE_V1` tree at `src/nec2c/`. The final tree contains 36 files and 788,897
-bytes. A fresh authenticated extraction reconstructed it byte-for-byte using only the combined
-[`nec2c-1.3.1-hf-portability-v1.patch`](patches/maintained/nec2c-1.3.1-hf-portability-v1.patch),
+The validated portability sequence remains preserved as
+`HF_NEC2C_MAINTAINED_SOURCE_V1`. Its immutable tag
+`maintained/nec2c-1.3.1-hf-portability-v1` still targets
+`05f9a4f7ad9a089e45459db9099e47e0bf4533c2`; its manifest, combined patch, and documentation are
+unchanged.
+
+The current `src/nec2c/` tree is `HF_NEC2C_MAINTAINED_SOURCE_V2`. It adds exactly one
+authenticated four-line source-fidelity correction in `calculations.c`: the `cc5` exponent, the
+distinct `cn` constant, and the small- and medium-regime returns. The complete tree contains 36
+files and 788,941 bytes. A fresh authenticated extraction was reconstructed byte-for-byte by
+applying only the 7,624-byte combined
+[`nec2c-1.3.1-hf-portability-zint-v2.patch`](patches/maintained/nec2c-1.3.1-hf-portability-zint-v2.patch),
 whose SHA-256 is
-`cfb8da8689ec85817d12c2f95c51c599117c1b5e140f589a0a05bd82c9899e5b`.
+`9b165d93e4e3335f4c2762c70950a7086d1f6c7ee0559a1f3f3f5c08f6219e52`.
 
-Exactly one maintained-source MSYS build retained the accepted 6,825-byte report identity.
-Exactly one native UCRT64 build compiled all 12 translation units, linked PE32+ AMD64 without an
-`msys-2.0.dll` import, and produced a report that matched MSYS byte-for-byte after only CRLF-to-LF
-normalization. These are build and bounded regression results, not numerical qualification.
+Direct tests of the actual compiled `zint()` passed all 12 frozen regime and boundary inputs under
+MSYS GCC 15.3.0 and native UCRT64 GCC 16.1.0. Fresh maintained builds and the complete frozen
+corpus also remained aligned across both primary runtimes. These results validate the source fix
+but do not numerically qualify or release the solver.
 
-See the [maintained-source record](docs/MAINTAINED_SOURCE_V1.md) and
-[manifest](manifests/maintained-source-v1.json) for construction, provenance, hashes, build
-evidence, and current limitations.
+See the [v2 maintained-source record](docs/MAINTAINED_SOURCE_V2.md) and
+[manifest](manifests/maintained-source-v2.json) for construction, provenance, hashes, direct-test
+evidence, build identities, and current limitations. The preserved
+[v1 record](docs/MAINTAINED_SOURCE_V1.md) remains the historical v1 identity.
 
-## Numerical qualification seed corpus
+## Numerical qualification corpus
 
-The eight-case v0.0.5f-B seed milestone has disposition **NUMERICAL QUALIFICATION BLOCKED**.
-Seven cases met their bounded case criteria, but both maintained builds disagree with the
-authoritative NEC-2 Part III Example 2 `LD` type 5 conductivity result. MSYS and native UCRT64
-agree with each other; internal NEC2DX agrees with the published side as secondary evidence. The
-first implicated boundary is the circular-wire `zint()` translation, and maintained source was
-left unchanged.
+The complete eight-case v0.0.5f-C rerun has disposition **B. V2 SOURCE FIX VALIDATED;
+QUALIFICATION REMAINS BLOCKED BY THE FROZEN REFERENCE MISMATCH.** All 24 reports passed integrity;
+all cross-platform and invariant checks passed; all seven unaffected cases were exactly unchanged
+as complete parsed v1/v2 reports for both primary builds; and Example 2 snapshots 0 through 2 were
+unchanged. Only the corrected loaded snapshot changed.
 
-The bounded [`zint()` translation investigation](docs/ZINT_TRANSLATION_INVESTIGATION.md) confirms
-the lost branch transfers and two separate medium-regime mistranslations, proposes but does not
-apply a source correction, and leaves numerical qualification blocked.
+The rerun reduced the frozen authoritative failures from eight to one without altering an
+expected value or tolerance. The sole blocker remains the official Example 2 feed-current
+imaginary literal `-3.86680E-03 A`, versus approximately `-3.8666E-03 A` from both v2 primary
+builds and internal NEC2DX. Its cause remains unresolved; the repository does not declare it a
+publication error.
 
-See the [qualification record](docs/NUMERICAL_QUALIFICATION_V0_0_5F_B.md),
-[suite manifest](manifests/numerical-qualification-v0.0.5f-b.json), and
-[normalized result summary](manifests/numerical-qualification-v0.0.5f-b-results.json). This result
-does not qualify the solver, authorize a binary release, or approve HF Propagation Control
-integration.
+See the [v0.0.5f-C qualification record](docs/NUMERICAL_QUALIFICATION_V0_0_5F_C.md),
+[frozen suite manifest](manifests/numerical-qualification-v0.0.5f-b.json), and
+[v2 normalized result summary](manifests/numerical-qualification-v0.0.5f-c-results.json). The
+preserved [v0.0.5f-B record](docs/NUMERICAL_QUALIFICATION_V0_0_5F_B.md) remains the frozen v1
+baseline. No result authorizes a binary release, distribution, a v2 tag before merge, or HF
+Propagation Control integration.
 
 ## Relationship to HF Propagation Control
 

@@ -1,0 +1,168 @@
+{
+  "schema": "HF_NEC2C_MAINTAINED_SOURCE_MANIFEST_V2",
+  "maintained_source_identity": "HF_NEC2C_MAINTAINED_SOURCE_V2",
+  "original_source": {
+    "author": "Neoklis Kyriazis",
+    "release": "NEC2C 1.3.1",
+    "archive": {
+      "path": "archive/nec2c-1.3.1.tar.bz2",
+      "bytes": 186124,
+      "sha256": "8c706008bcb11c34bf33a3f8f78711c79f7bb49de8a22d74df6b10e1203c013e"
+    },
+    "preservation_tag": {
+      "name": "preservation/nec2c-1.3.1-intake-v1",
+      "object": "3e9ab7a1438401fc40e6c970facfc0fc25142678",
+      "target": "58df591335b8b19babf960e9825a423a2cf836f7"
+    }
+  },
+  "v1_lineage": {
+    "identity": "HF_NEC2C_MAINTAINED_SOURCE_V1",
+    "manifest": {
+      "path": "manifests/maintained-source-v1.json",
+      "bytes": 5121,
+      "sha256": "627bc5a6fe9b5214d6ce6d49fca29d0c8a5f7fd1e4bd727587a29b390084ea07"
+    },
+    "combined_patch": {
+      "path": "patches/maintained/nec2c-1.3.1-hf-portability-v1.patch",
+      "bytes": 6152,
+      "sha256": "cfb8da8689ec85817d12c2f95c51c599117c1b5e140f589a0a05bd82c9899e5b"
+    },
+    "documentation": {
+      "path": "docs/MAINTAINED_SOURCE_V1.md",
+      "bytes": 5822,
+      "sha256": "bd0feb95ac87eb697e6974e0cba1c5ffee674ba478819b1626f9e3f39e0e651a"
+    },
+    "tag": {
+      "name": "maintained/nec2c-1.3.1-hf-portability-v1",
+      "object": "1ca11974e247407b41f47d0a9d2a6288d172dd86",
+      "target": "05f9a4f7ad9a089e45459db9099e47e0bf4533c2"
+    }
+  },
+  "validated_portability_patches": [
+    {
+      "path": "probes/portable-process-timing-v1.patch",
+      "bytes": 2434,
+      "sha256": "f65347275a21bbdc90b009aec4fb9db10a2918ac33a77be30809fb1db57b8aae"
+    },
+    {
+      "path": "probes/portable-signal-registration-v1.patch",
+      "bytes": 2624,
+      "sha256": "6fc3f4b63eef0a90ae7a78708aa77bca01da802864a1cd1b6fc85091027e27af"
+    },
+    {
+      "path": "probes/portable-parser-control-chars-v1.patch",
+      "bytes": 1570,
+      "sha256": "d010c3d04a78537b03f717674947fd610747e9c347845d4a109cb2595e459283"
+    }
+  ],
+  "authenticated_zint_correction": {
+    "investigation_commit": "2f36e4211632aef6a283416803f0404d1ddb2a5e",
+    "investigation_document": {
+      "path": "docs/ZINT_TRANSLATION_INVESTIGATION.md",
+      "bytes": 26036,
+      "sha256": "458098cf4c88a316a4655e7875c6f955dd41601c48b8ce458a8ad31f9708be01"
+    },
+    "source_path": "calculations.c",
+    "source_before_sha256": "868bfecee7bbd2b1f555852b3a11f7940e732aa088a3c31a1faeb36a3d188d00",
+    "source_after_sha256": "bfecdc21edc1b26b96e33db462d979e3abe20ea7a615667b1afc2035ee7d9ddb",
+    "logical_corrections": [
+      {
+        "id": "cc5-exponent-sign",
+        "from": "0. - I*9.765e4",
+        "to": "0. - I*9.765e-4"
+      },
+      {
+        "id": "distinct-cn-constant",
+        "from": "#define cn cc14",
+        "to": "#define cn (0.70710678 + I*0.70710678)"
+      },
+      {
+        "id": "small-regime-transfer",
+        "change": "Add return immediately after the small-regime result assignment."
+      },
+      {
+        "id": "medium-regime-transfer",
+        "change": "Add return immediately after the medium-regime result assignment."
+      }
+    ],
+    "source_diff_scope": {
+      "files_changed": 1,
+      "insertions": 4,
+      "deletions": 2
+    }
+  },
+  "combined_maintained_patch": {
+    "path": "patches/maintained/nec2c-1.3.1-hf-portability-zint-v2.patch",
+    "bytes": 7624,
+    "sha256": "9b165d93e4e3335f4c2762c70950a7086d1f6c7ee0559a1f3f3f5c08f6219e52"
+  },
+  "final_source": {
+    "regular_file_count": 36,
+    "total_bytes": 788941,
+    "files_sha256": {
+      "AUTHORS": "6d6ef980132838372e17c5a41191e3addecb5b183ee98cd39431097fd06af0d6",
+      "COPYING": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "ChangeLog": "44fb32501c9ccd979fb9b951c864834b416845434c2bd836aa272585ce3838ba",
+      "INSTALL": "dccabba4ddf2e1eb8303fed9fb25b5401ce0b8646a5e8e56e332b44c95e308d8",
+      "Makefile.am": "b6b3c34898bf78336f7ee85186b0898d4c259ca4736f9926f3207b9f7acca83e",
+      "Makefile.in": "ed77da7270a176e893e3124dc96e836b839c3a7c98581a87efe7ffc93b40f8b7",
+      "NEC2-bug.txt": "3278a10cd2aa9e6a0fda4565fb4eba599fb6373df6e966e52fcab8c6c602e57c",
+      "NEWS": "44fb32501c9ccd979fb9b951c864834b416845434c2bd836aa272585ce3838ba",
+      "README": "8a5542b7753814265448633ac6b2fb92bb8c74aece333615a0baad2a590c6984",
+      "aclocal.m4": "e0e2643d114eb487ee174845a6cd702fe02ec836d0feb59dd7b585f16a025967",
+      "autogen.sh": "c9ac7f3a80ec0b2b712c3cdf68e4415014e843674f82ffda5c81c05983e7965d",
+      "calculations.c": "bfecdc21edc1b26b96e33db462d979e3abe20ea7a615667b1afc2035ee7d9ddb",
+      "compile": "c8af04e62bad4ab75dafd22119026e5e3943f385bdcbe7731a4938102453754c",
+      "config.guess": "3512ebcecded7cd11e6ce5594accf315ed1c582310fddd00cafcd4bb9c0218f2",
+      "config.h.in": "8563a78d847352f3d1c1f4aafee34cc88ab1eca06b2cc18860791026a3a72736",
+      "config.sub": "fda8e5ddb44c25e3b813d3c67e2744e9e3aedac8b3304934644d81c88a698b36",
+      "configure": "2e3714c3ae9d0257837ddebcf7f30cb414fcc4225906b0a61e120e5ee1bbc918",
+      "configure.ac": "e5ed103b17277fc104b679ea4d0f37f59b13257078a26be8ee8ce53d9ac21d64",
+      "depcomp": "732bcd6b9e23f241e015d71b0a3a862104053aba20718c1f56b292cee7e29371",
+      "fields.c": "b337b7b7ffce60ea96bd201fd655dee229b72510e1055cab2338535f554c3f4f",
+      "geometry.c": "ea68f36752f769583e4cf39aefcac5fe2ad536df50069d0a14ed2ad60ff83950",
+      "ground.c": "7a3db2fba62f6b5b126eff023bb2ab4949d17f3d2a5242662baeb42d7bf7556e",
+      "input.c": "65c382d7b9e83e7ae2564b5128036f47f9ca36778167e58227240a9efee15ab4",
+      "install-sh": "608b76d735bb2ec2bcb1271644c3d5e7a428fb8d2338e114e8a48ebf91ccfd23",
+      "main.c": "8648f01c636c802f24f231a2827fac988da07f677a4fdfcc6a8b2fa21c6881d5",
+      "matrix.c": "8bef0d7626f6ff679fce7b908f5bd037d30d51097a0312f979387ba5b13ee293",
+      "misc.c": "63433ce16cf5627e6d986d9cb702ca39ba7041d7795f90454e1606c0a83b9f02",
+      "missing": "a67e772d8ad6aad493a784e41eeb98fb23c4237e9831c8687cc72f4b3454873c",
+      "nec2c.h": "089e65709686a0130a77435bc397b7f221da51c299d48582a141bd8fd6dc9293",
+      "network.c": "ba8825778207966f8dbd055e346d86ad1ed6106834d8631430ccdadb5bece919",
+      "platform_signal.h": "98d951be6db74edf30db80606e0c9313112e0df6b8429aa2f7439162676fb85e",
+      "platform_time.h": "1fbaf347e7e79c4d0f8992acc57b6695928b8c3656fe811fb5fd82a19f30759e",
+      "radiation.c": "9aada8c8f0ab61d86a51e753330ac2c275bdf255103ebfa160b8f3b95f7e871a",
+      "shared.c": "661f55d163d45173c14c6cb9752a5174ff4d1b7b00c347399b2541196d52ec82",
+      "shared.h": "cf85bec6d95db8afdbf4dbce433aa4c1638c5c8de2b539cbbc03bc7bc094dea9",
+      "somnec.c": "467601c167ad0304a6ad5c7020c8ae677f76649c6ce17711ffbb5a4cd68d0799"
+    }
+  },
+  "original_files_modified": [
+    "calculations.c",
+    "main.c",
+    "misc.c",
+    "nec2c.h"
+  ],
+  "project_authored_files_added": [
+    "platform_signal.h",
+    "platform_time.h"
+  ],
+  "original_files_remaining_byte_identical": 30,
+  "maintained_v1_3_3_import_statement": "No maintained NEC2C v1.3.3 or later-contributor source was imported.",
+  "numerical_qualification": {
+    "baseline_manifest": {
+      "path": "manifests/numerical-qualification-v0.0.5f-b.json",
+      "sha256": "7df54bd3b5c44b2f9b588b42534d201ddd3a2fffbbb8a8d8fb663fd51262c817"
+    },
+    "baseline_results": {
+      "path": "manifests/numerical-qualification-v0.0.5f-b-results.json",
+      "sha256": "dfa0fff497cd8fb1b51894e3975cf75031a65a7c18ef89e58403efa318f297b2"
+    },
+    "v2_result_path": "manifests/numerical-qualification-v0.0.5f-c-results.json",
+    "v2_status": "QUALIFICATION_REMAINS_BLOCKED_BY_FROZEN_REFERENCE_MISMATCH",
+    "milestone_disposition": "B. V2 SOURCE FIX VALIDATED; QUALIFICATION REMAINS BLOCKED BY THE FROZEN REFERENCE MISMATCH"
+  },
+  "distribution_status": "UNRELEASED",
+  "integration_status": "NOT_APPROVED"
+}

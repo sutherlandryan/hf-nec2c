@@ -25,7 +25,9 @@
 /src/nec2c/somnec.c binary !eol -filter -ident -working-tree-encoding
 /patches/maintained/** text eol=lf
 /manifests/maintained-source-v1.json text eol=lf
+/manifests/maintained-source-v2.json text eol=lf
 /manifests/numerical-qualification-v0.0.5f-b*.json text eol=lf
+/manifests/numerical-qualification-v0.0.5f-c-results.json text eol=lf
 
 # Maintained source and literal reconstruction patches preserve authenticated
 # historical formatting. Their manifests and byte-reconstruction checks are
